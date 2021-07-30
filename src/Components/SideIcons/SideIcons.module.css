@@ -1,0 +1,91 @@
+/* .container {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+} */
+.icons {
+	width: 80px;
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0;
+	bottom: 0;
+}
+.iconsRihgt {
+	right: 0;
+}
+li {
+	text-align: -webkit-match-parent;
+	cursor: pointer;
+	list-style: none;
+	transition: .3s;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	text-decoration-skip-ink: auto;
+	color: inherit;
+	position: relative;
+	transition: var(--transition);
+}
+.icons li a {
+	padding: 10px;
+}
+.icons li a svg {
+	width: 20px;
+	height: 20px;
+	color: #8892b0;
+}
+.line {
+	width: 1px;
+	height: 100px;
+	margin-top: 20px;
+	margin-left: -2px;
+	background: #8892b0;
+}
+.rightEmail {
+	/* background: coral; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.rightEmail a:first-child {
+	color: #8892b0;
+	transform: rotate(90deg);
+	top: -80px;
+	transition: .3s;
+}
+.rightEmail a:first-child:hover {
+	color: #64ffda;
+	top: -85px;
+}
+li:hover {
+	transform: translateY(-6px);
+}
+li:hover {
+	color: #64ffda;
+}
+
+@media only screen and (max-width: 750px) {
+	.container {
+		position: relative;
+		justify-content: center;
+	}
+	.icons {
+		width: fit-content;
+		height: fit-content;
+		flex-direction: row;
+	}
+	.rightEmail,
+	.line {
+		display: none;
+	}
+}

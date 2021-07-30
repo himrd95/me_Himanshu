@@ -1,0 +1,80 @@
+.card {
+	width: 80%;
+	margin: 10vh auto;
+	padding: 20px;
+	/* padding: 1.5rem 0; */
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* opacity: .5; */
+	box-shadow: 3px 3px 5px #212b41;
+	border-radius: 30px;
+	backdrop-filter: blur(5px);
+}
+
+.card__Container {
+	width: 90%;
+	min-height: 180px;
+	display: flex;
+	/* background: rgb(1, 47, 47); */
+	@media screen(max-width:1100px) {
+		width: 80%;
+	}
+}
+.image {
+	width: 100%;
+	margin-right: 20px;
+}
+.image img {
+	width: 100%;
+	border-radius: 20px 0 0 20px;
+}
+
+.card .card__Container .description {
+	width: 15%;
+	/* max-height: 50px; */
+	background: #cabafb;
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	top: 60%;
+	opacity: 0;
+	transform: translateX(0);
+	transition: .5s;
+}
+
+.card:hover .card__Container .description {
+	width: 30%;
+	opacity: .7;
+}
+.description_container {
+	opacity: 0;
+	padding: 20px 30px;
+	font-size: 30px;
+}
+.card:hover .description_container {
+	display: flex;
+	opacity: 1;
+}
+.titleContainer {
+	color: cornsilk;
+	text-align: right;
+}
+.description i {
+	margin-right: 25px;
+	transition: .3s;
+}
+.description i:hover {
+	color: #004635;
+	transform: translateY(-5px);
+}
+
+/* @keyframes descriptionOn {
+	from {
+		width: 0px;
+	}
+	to {
+		width: 80%;
+	}
+} */
