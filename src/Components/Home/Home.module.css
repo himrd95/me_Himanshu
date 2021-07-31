@@ -56,15 +56,18 @@ body::after {
 }
 .profile {
 	margin-top: 0;
-	height: 700PX;
+	height: 650px;
 	width: 100vw;
 	background-size: 40vw;
-	background-position: right;
+	background-position: right bottom;
 	background-image: url('/src/assets/profile.png');
 	background-color: #0e0914;
 	/* background-color: #fbe5ef; */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}
+.profileImage {
+	display: none;
 }
 .btn {
 	padding-top: 50px;
@@ -85,4 +88,41 @@ body::after {
 	width: 12vw;
 	margin: 10px auto;
 	border-radius: 10px;
+}
+@media screen and (max-width: 1100px) {
+	.profile {
+		background-position: right bottom;
+		background-size: 50vw;
+		/* background-attachment: scroll; */
+	}
+}
+@media screen and (max-width: 800px) {
+	.profile {
+		background-position: right bottom;
+		background-size: 50vw;
+		background-attachment: scroll;
+	}
+}
+@media screen and (max-width: 650px) {
+	.profile {
+		height: 80vh;
+		background-size: 100vw;
+		background-position: center;
+		background-attachment: fixed;
+		background-blend-mode: soft-light;
+		background-image: url("https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true");
+	}
+	.intro {
+		max-width: 95% !important;
+		text-align: center;
+		padding: 10vh 0 !important;
+		font-size: .9em;
+		margin: auto;
+	}
+	.name {
+		font-size: 42px;
+	}
+	.intro h1:nth-child(2) {
+		height: 80px;
+	}
 }

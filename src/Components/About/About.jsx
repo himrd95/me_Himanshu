@@ -1,7 +1,15 @@
 import React from 'react';
+import WindowSize from '../../Utils/WindowSize';
 import styles from './About.module.css';
 
 const About = () => {
+	const [
+		width
+	] = WindowSize();
+	const img =
+		width < 650
+			? 'https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true'
+			: 'https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true';
 	return (
 		<div
 			data-aos="fade-down"
@@ -11,7 +19,7 @@ const About = () => {
 			className={styles.container}
 		>
 			<div className={styles.first}>
-				<img src="https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true" alt="" />
+				<img src={img} alt="" />
 			</div>
 			<div className={styles.second}>
 				<h1 className={styles.heading}>About Me</h1>

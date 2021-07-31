@@ -19,6 +19,11 @@ const Home = () => {
 		<div>
 			<SideIcons />
 			<div className={styles.profile}>
+				<img
+					className={styles.profileImage}
+					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
+					alt=""
+				/>
 				<div data-aos="fade-zoom-out" className={styles.intro}>
 					<h1>
 						<span>Hi, My name is</span> <span className={styles.name}>Himanshu Dwivedi.</span>

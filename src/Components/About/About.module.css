@@ -61,7 +61,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.container {
-		width: 70vw;
+		width: 80vw;
 		flex-direction: column;
 	}
 	.first {
