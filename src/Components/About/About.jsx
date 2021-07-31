@@ -11,12 +11,12 @@ const About = () => {
 			className={styles.container}
 		>
 			<div className={styles.first}>
-				<img src="/developer.gif" alt="" />
+				<img src="https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true" alt="" />
 			</div>
 			<div className={styles.second}>
-				<h2 className={styles.heading}>About Me</h2>
+				<h1 className={styles.heading}>About Me</h1>
 				<div className={styles.borderBottom} />
-				<p style={{ color: '#8993b1' }}>
+				<p className={styles.aboutMe} style={{ color: '#8993b1' }}>
 					Hello! My name is Himanshu and I enjoy creating things that live on the internet. My interest in web
 					development started back in last year when I was tryng to edit things on web — taught me a lot about
 					HTML & CSS!. <br /> Fast Forwarding to today, I built a number of web applications and 4 major

@@ -1,6 +1,6 @@
 export const projects = [
 	{
-		img: '/projectImages/masai_refresh.png',
+		img: 'https://github.com/himrd95/portfolio/blob/main/public/ProjectImages/masai_refresh.png?raw=true',
 		title: 'Masai Refresh',
 		des:
 			'A Quiz App that tests your knowledge based on your preferred stack topic, and analyse results. A comprehensive report is presented at the end of each quiz.',
@@ -9,6 +9,7 @@ export const projects = [
 		gitHub: 'https://github.com/masai-oss/Masai_Refresh.git',
 		technologies: [
 			'React',
+			'Redux',
 			'HTML',
 			'CSS',
 			'javaScript'
@@ -25,6 +26,23 @@ export const projects = [
 		gitHub: 'https://github.com/arshadalitalwar/bookmyshow.git',
 		technologies: [
 			'React',
+			'Redux',
+			'HTML',
+			'CSS',
+			'javaScript'
+		]
+	},
+	{
+		img: 'https://github.com/himrd95/todo/blob/main/public/dashboard.png?raw=true',
+		title: 'Todo App',
+		des:
+			'A ToDo application made using React, Redux and a few libraries, wherein the user can add a new task, change the status, edit it, edit sub-task and delete it.',
+		demo: '',
+		live: 'https://him-todo.netlify.app/',
+		gitHub: 'https://github.com/himrd95/todo.git',
+		technologies: [
+			'React',
+			'Redux',
 			'HTML',
 			'CSS',
 			'javaScript'

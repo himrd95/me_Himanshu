@@ -2,9 +2,9 @@ body {
 	padding: 0;
 	margin: 0;
 	max-width: 100%;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 	background: #fefaf6;
-	background: #091425;
+	background: #0f1825;
 	scroll-behavior: smooth;
 }
 body::before {
@@ -40,7 +40,7 @@ body::after {
 .extraIntro {
 	width: 60vw;
 	padding: 30px;
-	margin: 5vh auto;
+	margin: 150px auto;
 
 	font-weight: 400;
 	font-style: italic;
@@ -61,11 +61,28 @@ body::after {
 	background-size: 40vw;
 	background-position: right;
 	background-image: url('/src/assets/profile.png');
-	background-color: #19161d;
+	background-color: #0e0914;
 	/* background-color: #fbe5ef; */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
 .btn {
 	padding-top: 50px;
+}
+.projects {
+	margin-top: 5vh;
+	width: fit-content;
+	margin: auto;
+}
+.heading {
+	width: fit-content;
+	margin: auto;
+	color: #8993b1;
+	line-height: 40px;
+}
+.borderBottom {
+	border-bottom: 3px solid #0282bd;
+	width: 12vw;
+	margin: 10px auto;
+	border-radius: 10px;
 }

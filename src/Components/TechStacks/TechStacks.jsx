@@ -10,7 +10,7 @@ const TechStacks = () => {
 			data-aos-duration="800"
 			className={styles.techStacks}
 		>
-			<h2 className={styles.heading}>Proficiencies</h2>
+			<h1 className={styles.heading}>Proficiencies</h1>
 			<div className={styles.borderBottom} />
 			<div className={styles.container}>
 				<div className={styles.logoWrapper}>

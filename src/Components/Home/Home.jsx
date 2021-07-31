@@ -55,6 +55,10 @@ const Home = () => {
 				"Himanshu is not only great for development, he is a problem solver who always delivers an exceptional
 				quality of work. Highly recommended."
 			</div>
+			<div className={styles.projects}>
+				<h1 className={styles.heading}>Few Things I've Build</h1>
+				<div className={styles.borderBottom} />
+			</div>
 			<div>{projects.map((item) => <Card {...item} />)}</div>
 		</div>
 	);
