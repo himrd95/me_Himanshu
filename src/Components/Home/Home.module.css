@@ -4,7 +4,7 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	background: #fefaf6;
-	background: #0f1825;
+	background: #1a1c23;
 	scroll-behavior: smooth;
 }
 body::before {
@@ -59,12 +59,14 @@ body::after {
 	height: 650px;
 	width: 100vw;
 	background-size: 40vw;
-	background-position: right bottom;
+	background-position: center;
 	background-image: url('/src/assets/profile.png');
+
 	background-color: #0e0914;
-	/* background-color: #fbe5ef; */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-position-x: 55vw;
+	background-position-y: 10vh;
 }
 .profileImage {
 	display: none;
@@ -85,7 +87,7 @@ body::after {
 }
 .borderBottom {
 	border-bottom: 3px solid #0282bd;
-	width: 12vw;
+	width: 200px;
 	margin: 10px auto;
 	border-radius: 10px;
 }
@@ -100,7 +102,7 @@ body::after {
 	.profile {
 		background-position: right bottom;
 		background-size: 50vw;
-		background-attachment: scroll;
+		background-attachment: fixed;
 	}
 }
 @media screen and (max-width: 650px) {

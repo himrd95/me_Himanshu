@@ -19,6 +19,12 @@ const Home = () => {
 		<div>
 			<SideIcons />
 			<div className={styles.profile}>
+				{/* <Parallax
+					blur={10}
+					bgImage="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
+					bgImageAlt="the cat"
+					strength={200}
+				/> */}
 				<img
 					className={styles.profileImage}
 					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"

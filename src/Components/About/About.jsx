@@ -18,6 +18,11 @@ const About = () => {
 			data-aos-duration="800"
 			className={styles.container}
 		>
+			{/* <img
+				className={styles.testImage}
+				src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
+				alt=""
+			/> */}
 			<div className={styles.first}>
 				<img src={img} alt="" />
 			</div>
