@@ -2,7 +2,7 @@
 	width: 70vw;
 	display: flex;
 	justify-content: space-between;
-	box-shadow: 3px 3px 10px #212b41;
+
 	margin: 15vh auto;
 	border-radius: 30px;
 	padding: 30px;
@@ -24,7 +24,6 @@
 	text-align: left;
 	width: fit-content;
 	margin: auto;
-	color: #8993b1;
 	line-height: 40px;
 }
 .borderBottom {

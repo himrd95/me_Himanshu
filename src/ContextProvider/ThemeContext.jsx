@@ -1,22 +1,22 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
+import { theme } from '../Utils/themes';
 
-const ThemeContext = createContext();
-const theme = {
-	dark: {
-		background: '#091425',
-		imageBackground: '#19161d',
-		title: ''
-	},
-	light: {
-		background: '#fefaf6',
-		imageBackground: '#fbe5ef',
-		title: ''
-	}
-};
+export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
-	const value = {};
+	const [
+		mode,
+		setMode
+	] = React.useState('light');
+
+	const handleMode = () => {
+		setMode(mode === 'dark' ? 'light' : 'dark');
+	};
+
+	const newTheme = theme[mode];
+
+	const value = { mode, newTheme, handleMode };
 	return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };
 
-export default ThemeContextProvider;
+export { ThemeContextProvider };

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Home.module.css';
 import Card from '../Card/Card';
 import Typewriter from 'typewriter-effect';
@@ -10,21 +10,27 @@ import 'aos/dist/aos.css';
 import { Button } from '../Button/Button';
 import About from '../About/About';
 import { projects } from '../../Utils/Projects';
+import Contact from '../Contact/Contact';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
 
-const Home = () => {
+const Home = ({ scrollRef }) => {
+	const { newTheme } = React.useContext(ThemeContext);
 	useEffect(() => {
 		AOS.init();
 	});
+
+	useEffect(
+		() => {
+			document.body.style.backgroundColor = newTheme.background;
+		},
+		[
+			newTheme
+		]
+	);
 	return (
-		<div>
+		<div ref={scrollRef}>
 			<SideIcons />
-			<div className={styles.profile}>
-				{/* <Parallax
-					blur={10}
-					bgImage="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
-					bgImageAlt="the cat"
-					strength={200}
-				/> */}
+			<div id="top" className={styles.profile}>
 				<img
 					className={styles.profileImage}
 					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
@@ -54,23 +60,35 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+
 			<TechStacks />
+
+			<div id="about" style={{ background: `${newTheme.line}` }} className={styles.line} />
+
 			<About />
+
+			<div id="projects" style={{ background: `${newTheme.line}` }} className={styles.line} />
+			<div className={styles.projects}>
+				<h1  style={{ color: `${newTheme.title}` }} className={styles.heading}>Few Things I've Build</h1>
+				<div className={styles.borderBottom} />
+			</div>
+			<div>{projects.map((item) => <Card {...item} />)}</div>
+
+			<div style={{ background: `${newTheme.line}` }} className={styles.line} />
+
 			<div
 				data-aos="fade-right"
 				data-aos-offset="200"
 				data-aos-easing="ease-in-sine"
 				data-aos-duration="800"
 				className={styles.extraIntro}
+				style={{ color: `${newTheme.para}` }}
 			>
 				"Himanshu is not only great for development, he is a problem solver who always delivers an exceptional
 				quality of work. Highly recommended."
 			</div>
-			<div className={styles.projects}>
-				<h1 className={styles.heading}>Few Things I've Build</h1>
-				<div className={styles.borderBottom} />
-			</div>
-			<div>{projects.map((item) => <Card {...item} />)}</div>
+			<div id="contact" style={{ background: `${newTheme.line}` }} className={styles.line} />
+			<Contact />
 		</div>
 	);
 };

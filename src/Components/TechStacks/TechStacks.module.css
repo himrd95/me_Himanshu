@@ -13,7 +13,7 @@
 .logoWrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 20px 20px;
+	padding: 20px 35px;
 	color: cornsilk;
 	transition: .5s;
 	/* background: chartreuse; */
@@ -63,13 +63,13 @@
 	border-radius: 10px;
 }
 .logoWrapper i {
-	font-size: 40px;
+	font-size: 45px;
 }
 .logoWrapper p {
 	font-size: 20px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1100px) {
 	.container {
 		grid-template-columns: auto auto auto auto;
 		grid-template-rows: auto auto;

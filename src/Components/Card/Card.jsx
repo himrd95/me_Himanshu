@@ -1,7 +1,9 @@
 import React from 'react';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import styles from './Card.module.css';
 
 const Card = (props) => {
+	const { newTheme } = React.useContext(ThemeContext);
 	const { img, des, title, demo, live, gitHub, technologies } = props;
 	return (
 		<div
@@ -10,6 +12,7 @@ const Card = (props) => {
 			data-aos-easing="ease-in-sine"
 			data-aos-duration="800"
 			className={styles.card}
+			style={{ boxShadow: `3px 3px 5px ${newTheme.line}` }}
 		>
 			<div className={styles.image}>
 				<img src={img} alt="" />
@@ -18,11 +21,11 @@ const Card = (props) => {
 
 			<div className={styles.card__Container}>
 				<div className={styles.titleContainer}>
-					<h2 style={{ color: '#ccd6f6' }}>{title}</h2>
-					<p style={{ color: '#8993b1' }}>{des}</p>
+					<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
+					<p style={{ color: `${newTheme.para}` }}>{des}</p>
 					<div>
 						{technologies.map((technology) => (
-							<span style={{ marginLeft: '20px', color: '#ccd6f6' }}>{technology}</span>
+							<span style={{ marginLeft: '20px', color: `${newTheme.title}` }}>{technology}</span>
 						))}
 					</div>
 				</div>

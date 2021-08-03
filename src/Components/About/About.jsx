@@ -1,8 +1,10 @@
 import React from 'react';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import WindowSize from '../../Utils/WindowSize';
 import styles from './About.module.css';
 
 const About = () => {
+	const { newTheme } = React.useContext(ThemeContext);
 	const [
 		width
 	] = WindowSize();
@@ -17,6 +19,7 @@ const About = () => {
 			data-aos-easing="ease-in-sine"
 			data-aos-duration="800"
 			className={styles.container}
+			style={{ boxShadow: `3px 3px 5px ${newTheme.line}` }}
 		>
 			{/* <img
 				className={styles.testImage}
@@ -27,9 +30,11 @@ const About = () => {
 				<img src={img} alt="" />
 			</div>
 			<div className={styles.second}>
-				<h1 className={styles.heading}>About Me</h1>
+				<h1 style={{ color: `${newTheme.title}` }} className={styles.heading}>
+					About Me
+				</h1>
 				<div className={styles.borderBottom} />
-				<p className={styles.aboutMe} style={{ color: '#8993b1' }}>
+				<p style={{ color: `${newTheme.para}` }} className={styles.aboutMe}>
 					Hello! My name is Himanshu and I enjoy creating things that live on the internet. My interest in web
 					development started back in last year when I was tryng to edit things on web — taught me a lot about
 					HTML & CSS!. <br /> Fast Forwarding to today, I built a number of web applications and 4 major
