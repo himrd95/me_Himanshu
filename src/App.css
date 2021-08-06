@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
-button{
-  cursor: pointer;
+button {
+	cursor: pointer;
+	outline: none;
 }

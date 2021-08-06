@@ -7,7 +7,7 @@ const ThemeContextProvider = ({ children }) => {
 	const [
 		mode,
 		setMode
-	] = React.useState('light');
+	] = React.useState('dark');
 
 	const handleMode = () => {
 		setMode(mode === 'dark' ? 'light' : 'dark');
