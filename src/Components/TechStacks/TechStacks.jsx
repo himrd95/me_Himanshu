@@ -54,6 +54,8 @@ const TechStacks = () => {
 					<i className="devicon-redis-plain colored" />
 					<p>Redis</p>
 				</div> */}
+
+				
 			</div>
 		</div>
 	);
