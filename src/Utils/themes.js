@@ -1,18 +1,20 @@
 export const theme = {
 	dark: {
 		background: '#091425',
-		imageBackground: '#19161d',
 		title: '#CCD6F6',
 		para: '#8993b1',
 		heading: '#CCD6F6',
-		line: '#24243a'
+		line: '#24243a',
+		imgBackground:'#0E0914',
+		heighLights:'#081220'
 	},
 	light: {
-		background: '#fefaf6',
-		imageBackground: '#fbe5ef',
-		title: '#47000b',
-		para: '#a68488',
-		heading: '',
-		line: 'lightgray'
+		background: '#FFF9ED',
+		title: '#233742',
+		para: '#233742',
+		heading: '#233742',
+		line: 'lightgray',
+		imgBackground:'#FFF5DE',
+		heighLights:'#FFF6E3'
 	}
 };

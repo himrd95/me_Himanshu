@@ -30,21 +30,21 @@ const Home = ({ scrollRef }) => {
 	return (
 		<div ref={scrollRef}>
 			<SideIcons />
-			<div id="top" className={styles.profile}>
-				<img
+			<div id="top" className={styles.profile}  style={{ backgroundColor: `${newTheme.imgBackground}` }} >
+				{/* <img
 					className={styles.profileImage}
 					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
 					alt=""
-				/>
-				<div data-aos="fade-zoom-out" className={styles.intro}>
+				/> */}
+				<div data-aos="fade-zoom-out" className={styles.intro} style={{ color: `${newTheme.para}`}}>
 					<h1>
-						<span>Hi, My name is</span> <span className={styles.name}>Himanshu Dwivedi.</span>
+						<span>Hi, My name is</span> <span className={styles.name}  style={{ color: `${newTheme.title}`}}>Himanshu Dwivedi.</span>
 					</h1>
-					<h1>
+					<h1 >
 						<Typewriter
 							options={{
 								strings: [
-									'I am a Full Stack Deveoper.',
+									'I am a Full Stack Developer.',
 									'I build things for web.'
 								],
 								autoStart: true,
@@ -87,7 +87,7 @@ const Home = ({ scrollRef }) => {
 				"Himanshu is not only great for development, he is a problem solver who always delivers an exceptional
 				quality of work. Highly recommended."
 			</div>
-			<div id="contact" style={{ background: `${newTheme.line}` }} className={styles.line} />
+			{/* <div id="contact" style={{ background: `${newTheme.line}` }} className={styles.line} /> */}
 			<Contact />
 		</div>
 	);

@@ -1,15 +1,22 @@
+.footer{
+	width: 100%;
+	padding: 10vh 0;
+	/* background: #081220; */
+}
 .container {
 	width: fit-content;
-	margin: 10vh auto;
+	margin: auto;
 }
 .paragraph {
 	width: 45vw;
 	font-size: 1.2em;
+	margin: auto;
 }
 .contactOptions {
 	text-align: center;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 .contactOptions i {
 	font-size: 50px;

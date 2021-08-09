@@ -5,7 +5,8 @@ import styles from './Contact.module.css';
 const Contact = () => {
 	const { newTheme } = React.useContext(ThemeContext);
 	return (
-		<div className={styles.container}>
+		<footer className={styles.footer}  style={{ background: `${newTheme.heighLights}` }}>
+			<div className={styles.container}>
 			<h1 style={{ color: `${newTheme.title}` }}>Get in Touch</h1>
 			<p style={{ color: `${newTheme.para}` }} className={styles.paragraph}>
 				I'm currently actively looking for any new opportunities, in full-stack web development. If you are an
@@ -29,6 +30,7 @@ const Contact = () => {
 				</a>
 			</div>
 		</div>
+		</footer>
 	);
 };
 
