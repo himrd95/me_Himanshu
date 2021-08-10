@@ -82,7 +82,7 @@ const Home = ({ scrollRef }) => {
 								text={
 									<span className={styles.resumeBtn}>
 										<span>Resume</span>{" "}
-										<img src="../../../assets/download.gif" alt="" />
+										<img src="" alt="" />
 									</span>
 								}
 								handleButton={handleButton}
