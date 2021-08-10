@@ -1,11 +1,19 @@
 .navContainer {
 	width: 100%;
+	/* max-height: 40px; */
 	padding: 15px;
 	position: fixed;
 	z-index: 20;
 	top: 0;
 	transition: top 0.6s;
 	
+}
+.logo img {
+	position: absolute;
+	top: -8px;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
 }
 .navbar {
 	width: 80%;
@@ -15,6 +23,7 @@
 	display: flex;
 	/* opacity: .4; */
 	justify-content: space-between;
+	align-items: center;
 }
 .links {
 	width: fit-content;
