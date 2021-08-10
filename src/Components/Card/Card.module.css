@@ -128,7 +128,7 @@
 		width: 50%;
 		position: absolute;
 		background: none;
-		color: pink;
+		/* color: pink; */
 		z-index: 16;
 		right: 10%;
 		opacity: .9;

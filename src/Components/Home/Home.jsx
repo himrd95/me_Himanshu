@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.css";
 import Card from "../Card/Card";
 import Typewriter from "typewriter-effect";
@@ -14,6 +14,7 @@ import Contact from "../Contact/Contact";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 
 const Home = ({ scrollRef }) => {
+	const [projectArray, setProjectArray] = useState(projects.slice(0,3));
 	const { newTheme } = React.useContext(ThemeContext);
 	useEffect(() => {
 		AOS.init();
@@ -22,6 +23,16 @@ const Home = ({ scrollRef }) => {
 	useEffect(() => {
 		document.body.style.backgroundColor = newTheme.background;
 	}, [newTheme]);
+
+	const handleButton = () => {};
+
+	const handleShowMoreBtn = ()=>{
+		if (projects.length === projectArray.length) {
+			setProjectArray(projects.slice(0,3))
+		}else{
+			setProjectArray(projects)
+		}
+	}
 	return (
 		<div ref={scrollRef}>
 			<SideIcons />
@@ -66,7 +77,17 @@ const Home = ({ scrollRef }) => {
 						/>
 					</h1>
 					<div className={styles.btn}>
-						<Button text={"Get in Touch"} />
+						<a href="" download>
+							<Button
+								text={
+									<span className={styles.resumeBtn}>
+										<span>Resume</span>{" "}
+										<img src="../../../assets/download.gif" alt="" />
+									</span>
+								}
+								handleButton={handleButton}
+							/>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -96,10 +117,12 @@ const Home = ({ scrollRef }) => {
 				<div className={styles.borderBottom} />
 			</div>
 			<div>
-				{projects.map((item) => (
+				{projectArray.map((item) => (
 					<Card {...item} />
 				))}
 			</div>
+
+			<Button text={projects.length !== projectArray.length?"Show More":"Show Less"} handleButton={handleShowMoreBtn} />
 
 			<div
 				style={{ background: `${newTheme.line}` }}

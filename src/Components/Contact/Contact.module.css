@@ -22,6 +22,7 @@
 	font-size: 40px;
 	/* color: blanchedalmond; */
 	margin: 20px 40px;
+	transition: .5s;
 }
 
 .contactOptions i:hover {

@@ -47,7 +47,7 @@ const Card = (props) => {
 				{/* -----------------For hovering container--------------- */}
 				<div
 					className={styles.description}
-					style={{ color: `${newTheme.title}` }}
+					// style={{ color: `${newTheme.title}` }}
 				>
 					{/* <div className={styles.description_container}> */}
 					<a href={gitHub} rel="noopener noreferrer" target="_blank">
