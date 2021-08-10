@@ -5,7 +5,7 @@ import styles from './Contact.module.css';
 const Contact = () => {
 	const { newTheme } = React.useContext(ThemeContext);
 	return (
-		<footer className={styles.footer}  style={{ background: `${newTheme.heighLights}` }}>
+		<footer className={styles.footer}  style={{ background: `${newTheme.highlightBackground}` }}>
 			<div className={styles.container}>
 			<h1 style={{ color: `${newTheme.title}` }}>Get in Touch</h1>
 			<p style={{ color: `${newTheme.para}` }} className={styles.paragraph}>

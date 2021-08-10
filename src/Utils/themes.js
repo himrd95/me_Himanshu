@@ -6,7 +6,8 @@ export const theme = {
 		heading: '#CCD6F6',
 		line: '#24243a',
 		imgBackground:'#0E0914',
-		heighLights:'#081220'
+		highlightBackground:'#081220',
+		sideIcons:'#8892b0'
 	},
 	light: {
 		background: '#FFF9ED',
@@ -15,6 +16,7 @@ export const theme = {
 		heading: '#233742',
 		line: 'lightgray',
 		imgBackground:'#FFF5DE',
-		heighLights:'#FFF6E3'
+		highlightBackground:'#FFF6E3',
+		sideIcons:'#766161'
 	}
 };

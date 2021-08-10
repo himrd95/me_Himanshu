@@ -1,6 +1,6 @@
 .navContainer {
 	width: 100%;
-	padding: 20px;
+	padding: 15px;
 	position: fixed;
 	z-index: 20;
 	top: 0;
@@ -24,7 +24,7 @@
 	transition: .3s;
 }
 .links a:hover {
-	color: teal;
+	color: #00a0a0;
 }
 .modeButton {
 	font-size: 30px;

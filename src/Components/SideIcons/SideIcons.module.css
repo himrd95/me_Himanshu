@@ -40,7 +40,7 @@ a {
 .icons li a svg {
 	width: 20px;
 	height: 20px;
-	color: #8892b0;
+	/* color: #8892b0; */
 }
 .line {
 	width: 1px;
@@ -58,20 +58,20 @@ a {
 	align-items: center;
 }
 .rightEmail a:first-child {
-	color: #8892b0;
+	/* color: #8892b0; */
 	transform: rotate(90deg);
 	top: -80px;
 	transition: .3s;
 }
 .rightEmail a:first-child:hover {
-	color: #64ffda;
+	color: #00a0a0;
 	top: -85px;
 }
 li:hover {
 	transform: translateY(-6px);
 }
 li:hover {
-	color: #64ffda;
+	color: #00a0a0;
 }
 
 @media only screen and (max-width: 750px) {

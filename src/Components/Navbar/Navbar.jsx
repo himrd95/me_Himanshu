@@ -25,7 +25,7 @@ const Navbar = () => {
 	};
 	console.log(mode);
 	return (
-		<nav ref={navRef} className={styles.navContainer} style={{ background: `${newTheme.background}` }}>
+		<nav ref={navRef} className={styles.navContainer} style={{ background: `${newTheme.background}`,  boxShadow: `3px 3px 10px ${newTheme.line}` }}>
 			<div className={styles.navbar}>
 				<div className={styles.logo}>Logo</div>
 
@@ -44,51 +44,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// export default class Navbar extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       prevScrollpos: window.pageYOffset,
-//       visible: true
-//     };
-//   }
-
-//   // Adds an event listener when the component is mount.
-//   componentDidMount() {
-//     window.addEventListener("scroll", this.handleScroll);
-//   }
-
-//   // Remove the event listener when the component is unmount.
-//   componentWillUnmount() {
-//     window.removeEventListener("scroll", this.handleScroll);
-//   }
-
-//   // Hide or show the menu.
-//   handleScroll = () => {
-//     const { prevScrollpos } = this.state;
-
-//     const currentScrollPos = window.pageYOffset;
-//     const visible = prevScrollpos > currentScrollPos;
-
-//     this.setState({
-//       prevScrollpos: currentScrollPos,
-//       visible
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <nav
-//         className={classnames("navbar", {
-//           "navbar--hidden": !this.state
-//         })}
-//       >
-//         <a href="#">Item 1</a>
-//         <a href="#">Item 2</a>
-//         <a href="#">Item 3</a>
-//       </nav>
-//     );
-//   }
-// }
