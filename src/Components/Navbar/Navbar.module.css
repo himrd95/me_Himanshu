@@ -32,3 +32,47 @@
 	background: none;
 	transform: .5s;
 }
+.bars{
+
+	position: relative;
+	width: 50px;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	z-index: 99;
+	cursor: pointer;
+}
+.bars div{
+	width: 30px;
+	height: 5px;
+	margin: 2px;
+	background: #03b8d8;
+	border-radius: 2.5px;
+	transition: 1s;
+	transform-origin: left;
+}
+@media screen and (max-width:850px) {
+	.links a {
+		margin: 0 8px;
+		transition: .3s;
+	}
+	
+}
+@media screen and (max-width:650px) {
+	.links{
+		display: none;
+	}
+	.bars{
+		display: flex;
+	}
+	.modeButton {
+		font-size: 25px;
+	}
+	.bars div{
+		width: 25px;
+		
+		height: 4px;
+		border-radius: 2px;
+	}
+}

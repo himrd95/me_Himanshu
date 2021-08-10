@@ -7,7 +7,9 @@ export const theme = {
 		line: '#24243a',
 		imgBackground:'#0E0914',
 		highlightBackground:'#081220',
-		sideIcons:'#8892b0'
+		sideIcons:'#8892b0',
+		menuBackground:'#093047',
+		card:'#112240'
 	},
 	light: {
 		background: '#FFF9ED',
@@ -17,6 +19,8 @@ export const theme = {
 		line: 'lightgray',
 		imgBackground:'#FFF5DE',
 		highlightBackground:'#FFF6E3',
-		sideIcons:'#766161'
+		sideIcons:'#766161',
+		menuBackground:'#fff2c8',
+		card:'#ebc5b5'
 	}
 };

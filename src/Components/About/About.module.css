@@ -66,10 +66,11 @@
 }
 @media only screen and (max-width: 500px) {
 	.container {
-		width: 80vw;
+		max-width: 80vw;
 		flex-direction: column;
+		box-shadow: none;
 	}
 	.first {
-		width: 80%;
+		width: 90%;
 	}
 }

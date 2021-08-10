@@ -110,6 +110,10 @@ body::after {
 		background-size: 50vw;
 		background-attachment: fixed;
 	}
+	.extraIntro{
+		width: 70vw;
+		font-size: 1.5rem;
+	}
 }
 @media screen and (max-width: 650px) {
 	.profile {

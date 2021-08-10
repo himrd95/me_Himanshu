@@ -5,3 +5,22 @@ button {
 	cursor: pointer;
 	outline: none;
 }
+.links{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 25px;
+	z-index: 5;
+	font-weight: 700;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	transition: .5s;
+}
+.links a {
+	margin: 20px;
+}
+a:hover {
+	color: #00a0a0;
+}

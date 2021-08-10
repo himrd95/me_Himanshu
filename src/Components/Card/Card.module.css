@@ -93,7 +93,8 @@
 	}
 	.titleContainer {
 		height: 230px;
-		background: #112240;
+		/* background: #112240;
+		background: #ebc5b5; */
 		opacity: .8;
 		padding: 10px;
 		position: absolute;
@@ -109,9 +110,7 @@
 		align-items: center;
 		justify-content: flex-start;
 	}
-	.titleContainer h2 {
-		/* line-height: 10px; */
-	}
+	
 	.titleContainer p {
 		width: 90%;
 		max-height: 150px;

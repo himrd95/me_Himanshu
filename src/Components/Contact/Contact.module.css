@@ -1,8 +1,7 @@
 .footer{
 	width: 100%;
 	padding: 10vh 0;
-	/* background: #081220; */
-}
+ }
 .container {
 	width: fit-content;
 	margin: auto;
@@ -17,11 +16,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 3rem 0;
 }
 .contactOptions i {
-	font-size: 50px;
+	font-size: 40px;
 	/* color: blanchedalmond; */
-	margin: 20px 45px;
+	margin: 20px 40px;
 }
 
 .contactOptions i:hover {
@@ -50,5 +50,24 @@
 	40%,
 	60% {
 		transform: translate3d(4px, 0, 0);
+	}
+}
+@media screen and (max-width: 800px) {
+	.paragraph {
+		width: 60vw;
+		font-size: 1.2em;
+	}
+	
+}
+@media screen and (max-width: 500px) {
+	.paragraph {
+		width: 70vw;
+		font-size: 1em;
+		margin: auto;
+	}
+	.contactOptions i {
+		font-size: 30px;
+		/* color: blanchedalmond; */
+		margin: 20px 5vw;
 	}
 }

@@ -11,8 +11,8 @@ function WindowSize () {
 	useLayoutEffect(() => {
 		function updateSize () {
 			setSize([
-				window.screen.width,
-				window.screen.height
+				window.screen.innerWidth,
+				window.screen.innerHeight
 			]);
 		}
 		window.addEventListener('resize', updateSize);
