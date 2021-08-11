@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
 import { theme } from '../Utils/themes';
 
 export const ThemeContext = createContext();

@@ -5,7 +5,7 @@ import styles from "./Card.module.css";
 
 const Card = (props) => {
 	const { newTheme } = React.useContext(ThemeContext);
-	const { img, des, title, demo, live, gitHub, technologies } = props;
+	const { img, des, title, live, gitHub, technologies } = props;
 
 	const [width] = WindowSize();
 	console.log(width)

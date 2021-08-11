@@ -25,7 +25,7 @@ const Navbar = () => {
 	);
 	// const [state, setState] = useState(true);
 	const navRef = useRef();
-	
+
 	const { newTheme, mode, handleMode, open, handleMenu } =
 		useContext(ThemeContext);
 
@@ -39,7 +39,6 @@ const Navbar = () => {
 		setPreScrollPos(currentScrollPos);
 	};
 
-	
 	return (
 		<nav
 			ref={navRef}
@@ -50,7 +49,12 @@ const Navbar = () => {
 			}}
 		>
 			<div className={styles.navbar}>
-				<div className={styles.logo}><img src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo2.png?raw=true" alt="" /></div>
+				<div className={styles.logo}>
+					<img
+						src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo2.png?raw=true"
+						alt="Logo"
+					/>
+				</div>
 
 				<div
 					style={{ color: `${newTheme.title}` }}
@@ -76,13 +80,25 @@ const Navbar = () => {
 
 				<div onClick={handleMenu} className={styles.bars}>
 					<div
-						style={ open ? {background: `${newTheme.title}`} : barStyle.bar1}
+						style={
+							open
+								? { background: `${newTheme.title}` }
+								: barStyle.bar1
+						}
 					></div>
 					<div
-						style={open ? {background: `${newTheme.title}`} : barStyle.bar2}
+						style={
+							open
+								? { background: `${newTheme.title}` }
+								: barStyle.bar2
+						}
 					></div>
 					<div
-						style={open ? {background: `${newTheme.title}`} : barStyle.bar3}
+						style={
+							open
+								? { background: `${newTheme.title}` }
+								: barStyle.bar3
+						}
 					></div>
 				</div>
 			</div>

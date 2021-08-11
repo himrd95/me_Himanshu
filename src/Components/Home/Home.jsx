@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import Card from "../Card/Card";
 import Typewriter from "typewriter-effect";
@@ -44,7 +44,7 @@ const Home = ({ scrollRef }) => {
 				<img
 					className={styles.profileImage}
 					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
-					alt=""
+					alt="Profile pic"
 				/>
 				<div
 					id="home"
@@ -77,7 +77,7 @@ const Home = ({ scrollRef }) => {
 						/>
 					</h1>
 					<div className={styles.btn}>
-						<a href="" download>
+						<a href="https://doc-00-7o-docs.googleusercontent.com/docs/securesc/rseo9t0t4ofriqtkmn0gltkeatg74ano/vboju6jnm9nmshd3o0arl9d3guj1t0nn/1628658075000/12828743192551370486/12828743192551370486/1ZSZbDSOKZga0ULLGw-blL5qETIWUJ1ua?e=download&authuser=0&nonce=8re814ivsb1i0&user=12828743192551370486&hash=0tk6q1rv5sch3ks9mbj5ttjj3a9q4iqh" download>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>

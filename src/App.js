@@ -7,10 +7,10 @@ import { ThemeContext } from './ContextProvider/ThemeContext';
 function App () {
 	const {newTheme, open, handleMenu} = React.useContext(ThemeContext);
 	const scrollRef = useRef();
-	const handleTop = () => {
-		console.log('clicked', scrollRef);
-		scrollRef.current.scrollTop = 0;
-	};
+	// const handleTop = () => {
+	// 	console.log('clicked', scrollRef);
+	// 	scrollRef.current.scrollTop = 0;
+	// };
 	return (
 		<div className="App">
 			<div
