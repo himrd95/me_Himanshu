@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./App.css";
-import Home from "./Components/Home/Home";
-import Navbar from "./Components/Navbar/Navbar";
-import { ThemeContext } from "./ContextProvider/ThemeContext";
+import React, { useEffect, useRef, useState } from 'react';
+import './App.css';
+import Home from './Components/Home/Home';
+import Navbar from './Components/Navbar/Navbar';
+import { ThemeContext } from './ContextProvider/ThemeContext';
 
 function App() {
 	const [state, setState] = useState(false);
@@ -27,35 +27,35 @@ function App() {
 					style={{
 						background: `${newTheme.background}`,
 					}}
-					className="logoStart"
+					className='logoStart'
 				>
 					<img
-						src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true"
-						alt="logo"
+						src='https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true'
+						alt='logo'
 					/>
 				</div>
 			) : (
-				<div className="components">
+				<div className='components'>
 					<div
 						style={{
 							color: `${newTheme.title}`,
-							left: `${open ? "-100vw" : "0"}`,
+							left: `${open ? '-100vw' : '0'}`,
 						}}
-						className="links"
+						className='links'
 					>
-						<a onClick={handleMenu} href="#home">
+						<a onClick={handleMenu} href='#home'>
 							Home
 						</a>
-						<a onClick={handleMenu} href="#about">
+						<a onClick={handleMenu} href='#about'>
 							About
 						</a>
-						<a onClick={handleMenu} href="#techStacks">
+						<a onClick={handleMenu} href='#techStacks'>
 							Profeciencies
 						</a>
-						<a onClick={handleMenu} href="#projects">
+						<a onClick={handleMenu} href='#projects'>
 							Projects
 						</a>
-						<a onClick={handleMenu} href="#contact">
+						<a onClick={handleMenu} href='#contact'>
 							Contact
 						</a>
 					</div>
