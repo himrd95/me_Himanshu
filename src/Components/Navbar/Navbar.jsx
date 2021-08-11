@@ -51,7 +51,7 @@ const Navbar = () => {
 			<div className={styles.navbar}>
 				<div className={styles.logo}>
 					<img
-						src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo2.png?raw=true"
+						src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true"
 						alt="Logo"
 					/>
 				</div>
