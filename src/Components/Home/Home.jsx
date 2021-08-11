@@ -80,7 +80,7 @@ const Home = ({ scrollRef }) => {
 					</h1>
 					<div className={styles.btn}>
 						<a
-							href="https://doc-00-7o-docs.googleusercontent.com/docs/securesc/rseo9t0t4ofriqtkmn0gltkeatg74ano/vboju6jnm9nmshd3o0arl9d3guj1t0nn/1628658075000/12828743192551370486/12828743192551370486/1ZSZbDSOKZga0ULLGw-blL5qETIWUJ1ua?e=download&authuser=0&nonce=8re814ivsb1i0&user=12828743192551370486&hash=0tk6q1rv5sch3ks9mbj5ttjj3a9q4iqh"
+							href="https://raw.githubusercontent.com/himrd95/me_Himanshu/main/public/Resume.pdf"
 							download
 						>
 							<Button
