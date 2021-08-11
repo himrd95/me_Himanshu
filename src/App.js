@@ -38,6 +38,7 @@ function App() {
 				<div className='components'>
 					<div
 						style={{
+							background:`${newTheme.menuBackground}`,
 							color: `${newTheme.title}`,
 							left: `${open ? '-100vw' : '0'}`,
 						}}
