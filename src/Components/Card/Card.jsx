@@ -8,7 +8,6 @@ const Card = (props) => {
 	const { img, des, title, live, gitHub, technologies } = props;
 
 	const [width] = WindowSize();
-	console.log(width)
 	return (
 		<div
 			data-aos="fade-right"
@@ -26,13 +25,18 @@ const Card = (props) => {
 			<div className={styles.card__Container}>
 				<div
 					className={styles.titleContainer}
-					style={width <= 1000 ? {background: `${newTheme.card}` }:{background:'none'}}
+					style={
+						width <= 1000
+							? { background: `${newTheme.card}` }
+							: { background: "none" }
+					}
 				>
 					<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
 					<p style={{ color: `${newTheme.para}` }}>{des}</p>
 					<div>
-						{technologies.map((technology) => (
+						{technologies.map((technology, index) => (
 							<span
+								key={index}
 								style={{
 									marginLeft: "20px",
 									color: `${newTheme.title}`,
@@ -45,18 +49,13 @@ const Card = (props) => {
 				</div>
 
 				{/* -----------------For hovering container--------------- */}
-				<div
-					className={styles.description}
-					// style={{ color: `${newTheme.title}` }}
-				>
-					{/* <div className={styles.description_container}> */}
+				<div className={styles.description}>
 					<a href={gitHub} rel="noopener noreferrer" target="_blank">
 						<i className="fab fa-github" />
 					</a>
 					<a href={live} rel="noopener noreferrer" target="_blank">
-						<i class="fas fa-external-link-alt" />
+						<i className="fas fa-external-link-alt" />
 					</a>
-					{/* </div> */}
 				</div>
 			</div>
 		</div>

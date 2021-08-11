@@ -25,18 +25,36 @@ const Contact = () => {
 					className={styles.contactOptions}
 				>
 					<a
-						href="https://github.com/himrd95"
+						href="tel:9454538373"
 						aria-label="GitHub"
+						rel="noreferrer"
 						target="_blank"
 					>
-						<i class="fas fa-phone-alt" />
+						<i className="fas fa-phone-alt" />
+					</a>
+					<a
+						href="mailto: himrd95@gmail.com"
+						aria-label="email"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<i className="far fa-envelope"></i>
+					</a>
+					<a
+						href="https://wa.me/+919454538373?text=Hi%20please%20drop%20your%20message%20here."
+						aria-label="wahtsapp"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<i className="fab fa-whatsapp"></i>
 					</a>
 					<a
 						href="https://github.com/himrd95"
 						aria-label="GitHub"
+						rel="noreferrer"
 						target="_blank"
 					>
-						<i class="fab fa-github" />
+						<i className="fab fa-github" />
 					</a>
 
 					<a
@@ -45,7 +63,7 @@ const Contact = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<i class="fab fa-linkedin-in" />
+						<i className="fab fa-linkedin-in" />
 					</a>
 				</div>
 			</div>

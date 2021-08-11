@@ -1,5 +1,29 @@
-.App {
+.logoStart {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.logoStart img {
+	width: 200px;
+	animation: revolve 2.3s;
+}
+@keyframes revolve {
+	0%   {width: 200px;}
+  25%  {width: 100px;}
+  50%  {width: 150px;}
+  75%  {width: 100px; opacity: 1;}
+  100% {width: 500px;opacity: 0;}
+}
+.components {
 	text-align: center;
+	animation: wakeup 1s;
+}
+@keyframes wakeup {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
 }
 button {
 	cursor: pointer;

@@ -14,6 +14,7 @@ const SideIcons = () => {
 					<a
 						href="https://github.com/himrd95"
 						aria-label="GitHub"
+						rel="noreferrer"
 						target="_blank"
 					>
 						<svg
@@ -22,9 +23,8 @@ const SideIcons = () => {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
 							className="feather feather-github"
 						>
 							<title>GitHub</title>
@@ -45,9 +45,8 @@ const SideIcons = () => {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
 							className="feather feather-instagram"
 						>
 							<title>Instagram</title>
@@ -77,9 +76,8 @@ const SideIcons = () => {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
 							className="feather feather-twitter"
 						>
 							<title>Twitter</title>
@@ -100,9 +98,8 @@ const SideIcons = () => {
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="2"
+							strokeLinecap="round"
 							className="feather feather-linkedin"
 						>
 							<title>LinkedIn</title>
@@ -121,9 +118,10 @@ const SideIcons = () => {
 				<div className={styles.rightEmail}>
 					<a
 						className={styles.email}
-						href="himrd95@gmail.com"
+						href="mailto: himrd95@gmail.com"
 						aria-label="Email"
 						target="_blank"
+						rel="noreferrer"
 					>
 						himrd95@gmail.com
 					</a>

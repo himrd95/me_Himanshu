@@ -58,7 +58,13 @@
 		width: 60vw;
 		font-size: 1.2em;
 	}
-	
+	.contactOptions i {
+		/* font-size: 30px; */
+		margin: 20px 5vw;
+	}
+	.contactOptions {
+		flex-wrap: wrap;
+	}
 }
 @media screen and (max-width: 500px) {
 	.paragraph {
@@ -66,6 +72,7 @@
 		font-size: 1em;
 		margin: auto;
 	}
+	
 	.contactOptions i {
 		font-size: 30px;
 		/* color: blanchedalmond; */

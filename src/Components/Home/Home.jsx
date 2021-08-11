@@ -14,7 +14,9 @@ import Contact from "../Contact/Contact";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 
 const Home = ({ scrollRef }) => {
-	const [projectArray, setProjectArray] = useState(projects.slice(0,3));
+	const [projectArray, setProjectArray] = useState(
+		projects.slice(0, 3),
+	);
 	const { newTheme } = React.useContext(ThemeContext);
 	useEffect(() => {
 		AOS.init();
@@ -26,13 +28,13 @@ const Home = ({ scrollRef }) => {
 
 	const handleButton = () => {};
 
-	const handleShowMoreBtn = ()=>{
+	const handleShowMoreBtn = () => {
 		if (projects.length === projectArray.length) {
-			setProjectArray(projects.slice(0,3))
-		}else{
-			setProjectArray(projects)
+			setProjectArray(projects.slice(0, 3));
+		} else {
+			setProjectArray(projects);
 		}
-	}
+	};
 	return (
 		<div ref={scrollRef}>
 			<SideIcons />
@@ -77,12 +79,15 @@ const Home = ({ scrollRef }) => {
 						/>
 					</h1>
 					<div className={styles.btn}>
-						<a href="https://doc-00-7o-docs.googleusercontent.com/docs/securesc/rseo9t0t4ofriqtkmn0gltkeatg74ano/vboju6jnm9nmshd3o0arl9d3guj1t0nn/1628658075000/12828743192551370486/12828743192551370486/1ZSZbDSOKZga0ULLGw-blL5qETIWUJ1ua?e=download&authuser=0&nonce=8re814ivsb1i0&user=12828743192551370486&hash=0tk6q1rv5sch3ks9mbj5ttjj3a9q4iqh" download>
+						<a
+							href="https://doc-00-7o-docs.googleusercontent.com/docs/securesc/rseo9t0t4ofriqtkmn0gltkeatg74ano/vboju6jnm9nmshd3o0arl9d3guj1t0nn/1628658075000/12828743192551370486/12828743192551370486/1ZSZbDSOKZga0ULLGw-blL5qETIWUJ1ua?e=download&authuser=0&nonce=8re814ivsb1i0&user=12828743192551370486&hash=0tk6q1rv5sch3ks9mbj5ttjj3a9q4iqh"
+							download
+						>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
 										<span>Resume</span>{" "}
-										<i class="fas fa-file-download"></i>
+										<i className="fas fa-file-download"></i>
 									</span>
 								}
 								handleButton={handleButton}
@@ -117,12 +122,19 @@ const Home = ({ scrollRef }) => {
 				<div className={styles.borderBottom} />
 			</div>
 			<div>
-				{projectArray.map((item) => (
-					<Card {...item} />
+				{projectArray.map((item, index) => (
+					<Card key={index} {...item} />
 				))}
 			</div>
 
-			<Button text={projects.length !== projectArray.length?"Show More":"Show Less"} handleButton={handleShowMoreBtn} />
+			<Button
+				text={
+					projects.length !== projectArray.length
+						? "Show More"
+						: "Show Less"
+				}
+				handleButton={handleShowMoreBtn}
+			/>
 
 			<div
 				style={{ background: `${newTheme.line}` }}
@@ -141,7 +153,6 @@ const Home = ({ scrollRef }) => {
 				solver who always delivers an exceptional quality of work.
 				Highly recommended."
 			</div>
-			{/* <div id="contact" style={{ background: `${newTheme.line}` }} className={styles.line} /> */}
 			<Contact />
 		</div>
 	);
