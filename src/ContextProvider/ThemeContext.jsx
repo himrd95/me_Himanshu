@@ -1,7 +1,7 @@
 import React, { createContext, useEffect } from "react";
 import { theme } from "../Utils/themes";
 
-const getMode = JSON.parse(localStorage.getItem("theme") || "dark")
+const getMode = JSON.parse(localStorage.getItem("theme")) || "dark"
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
