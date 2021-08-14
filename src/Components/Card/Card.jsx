@@ -1,7 +1,7 @@
-import React from "react";
-import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import WindowSize from "../../Utils/WindowSize";
-import styles from "./Card.module.css";
+import React from 'react';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
+import WindowSize from '../../Utils/WindowSize';
+import styles from './Card.module.css';
 
 const Card = (props) => {
 	const { newTheme } = React.useContext(ThemeContext);
@@ -10,15 +10,18 @@ const Card = (props) => {
 	const [width] = WindowSize();
 	return (
 		<div
-			data-aos="fade-right"
-			data-aos-offset="400"
-			data-aos-easing="ease-in-sine"
-			data-aos-duration="800"
+			data-aos='fade-right'
+			data-aos-offset='400'
+			data-aos-easing='ease-in-sine'
+			data-aos-duration='800'
 			className={styles.card}
-			style={{ boxShadow: `3px 3px 5px ${newTheme.line}` }}
+			style={{
+				boxShadow: `3px 3px 5px ${newTheme.line}`,
+				backgroundColor: `${newTheme.highlightBackground}`,
+			}}
 		>
 			<div className={styles.image}>
-				<img src={img} alt="" />
+				<img src={img} alt='' />
 				<div className={styles.colorDiv} />
 			</div>
 
@@ -28,7 +31,7 @@ const Card = (props) => {
 					style={
 						width <= 1000
 							? { background: `${newTheme.card}` }
-							: { background: "none" }
+							: { background: 'none' }
 					}
 				>
 					<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
@@ -38,7 +41,7 @@ const Card = (props) => {
 							<span
 								key={index}
 								style={{
-									marginLeft: "20px",
+									marginLeft: '20px',
 									color: `${newTheme.title}`,
 								}}
 							>
@@ -50,11 +53,11 @@ const Card = (props) => {
 
 				{/* -----------------For hovering container--------------- */}
 				<div className={styles.description}>
-					<a href={gitHub} rel="noopener noreferrer" target="_blank">
-						<i className="fab fa-github" />
+					<a href={gitHub} rel='noopener noreferrer' target='_blank'>
+						<i className='fab fa-github' />
 					</a>
-					<a href={live} rel="noopener noreferrer" target="_blank">
-						<i className="fas fa-external-link-alt" />
+					<a href={live} rel='noopener noreferrer' target='_blank'>
+						<i className='fas fa-external-link-alt' />
 					</a>
 				</div>
 			</div>

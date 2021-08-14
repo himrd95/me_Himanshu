@@ -10,6 +10,7 @@
 	/* box-shadow: 3px 3px 5px #212b41; */
 	border-radius: 30px;
 	backdrop-filter: blur(5px);
+	opacity: 0.8;
 }
 
 .card__Container {
