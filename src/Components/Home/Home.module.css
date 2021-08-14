@@ -10,7 +10,7 @@ body::before {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	opacity: .1;
+	opacity: 0.1;
 	background: linear-gradient(#7f04f1, #ffb011);
 	clip-path: circle(18% at right 60%);
 }
@@ -21,7 +21,7 @@ body::after {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	opacity: .2;
+	opacity: 0.2;
 	background: linear-gradient(#7f04f1, #ffb011);
 	clip-path: circle(10% at 5% 5%);
 }
@@ -32,7 +32,7 @@ body::after {
 	color: #8993b1;
 	padding-left: 10vw;
 	padding-top: 13vw;
-	transition: .5s;
+	transition: 0.5s;
 }
 .extraIntro {
 	width: 60vw;
@@ -101,6 +101,7 @@ body::after {
 	margin-left: 10px;
 	font-size: 20px;
 }
+
 @media screen and (max-width: 1100px) {
 	.profile {
 		background-position: right bottom;
@@ -113,7 +114,7 @@ body::after {
 		background-size: 50vw;
 		background-attachment: fixed;
 	}
-	.extraIntro{
+	.extraIntro {
 		width: 70vw;
 		font-size: 1.5rem;
 	}
@@ -125,13 +126,13 @@ body::after {
 		background-position: center;
 		background-attachment: fixed;
 		background-blend-mode: soft-light;
-		background-image: url("https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true");
+		background-image: url('https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true');
 	}
 	.intro {
 		max-width: 95% !important;
 		text-align: center;
 		padding: 10vh 0 !important;
-		font-size: .9em;
+		font-size: 0.9em;
 		margin: 5vh auto;
 	}
 	.name {

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Home.module.css";
-import Card from "../Card/Card";
-import Typewriter from "typewriter-effect";
-import SideIcons from "../SideIcons/SideIcons";
-import TechStacks from "../TechStacks/TechStacks";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect, useState } from 'react';
+import styles from './Home.module.css';
+import Card from '../Card/Card';
+import Typewriter from 'typewriter-effect';
+import SideIcons from '../SideIcons/SideIcons';
+import TechStacks from '../TechStacks/TechStacks';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import { Button } from "../Button/Button";
-import About from "../About/About";
-import { projects } from "../../Utils/Projects";
-import Contact from "../Contact/Contact";
-import { ThemeContext } from "../../ContextProvider/ThemeContext";
+import { Button } from '../Button/Button';
+import About from '../About/About';
+import { projects } from '../../Utils/Projects';
+import Contact from '../Contact/Contact';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
 
 const Home = ({ scrollRef }) => {
 	const [projectArray, setProjectArray] = useState(
@@ -39,23 +39,23 @@ const Home = ({ scrollRef }) => {
 		<div ref={scrollRef}>
 			<SideIcons />
 			<div
-				id="top"
+				id='top'
 				className={styles.profile}
 				style={{ backgroundColor: `${newTheme.imgBackground}` }}
 			>
 				<img
 					className={styles.profileImage}
-					src="https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true"
-					alt="Profile pic"
+					src='https://github.com/himrd95/portfolio/blob/main/src/assets/profile.png?raw=true'
+					alt='Profile pic'
 				/>
 				<div
-					id="home"
-					data-aos="fade-zoom-out"
+					id='home'
+					data-aos='fade-zoom-out'
 					className={styles.intro}
 					style={{ color: `${newTheme.para}` }}
 				>
 					<h1>
-						<span>Hi, My name is</span>{" "}
+						<span>Hi, My name is</span>{' '}
 						<span
 							className={styles.name}
 							style={{ color: `${newTheme.title}` }}
@@ -67,12 +67,12 @@ const Home = ({ scrollRef }) => {
 						<Typewriter
 							options={{
 								strings: [
-									"I am a Full Stack Developer.",
-									"I build things for web.",
+									'I am a Full Stack Developer.',
+									'I build things for web.',
 								],
 								autoStart: true,
 								loop: true,
-								delay: "natural",
+								delay: 'natural',
 								deleteSpeed: 25,
 								pauseFor: 1000,
 							}}
@@ -80,14 +80,14 @@ const Home = ({ scrollRef }) => {
 					</h1>
 					<div className={styles.btn}>
 						<a
-							href="https://raw.githubusercontent.com/himrd95/me_Himanshu/main/public/Resume.pdf"
+							href='https://raw.githubusercontent.com/himrd95/me_Himanshu/main/public/Resume.pdf'
 							download
 						>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
-										<span>Resume</span>{" "}
-										<i className="fas fa-file-download"></i>
+										<span>Resume</span>{' '}
+										<i className='fas fa-file-download'></i>
 									</span>
 								}
 								handleButton={handleButton}
@@ -100,7 +100,7 @@ const Home = ({ scrollRef }) => {
 			<TechStacks />
 
 			<div
-				id="about"
+				id='about'
 				style={{ background: `${newTheme.line}` }}
 				className={styles.line}
 			/>
@@ -108,7 +108,7 @@ const Home = ({ scrollRef }) => {
 			<About />
 
 			<div
-				id="projects"
+				id='projects'
 				style={{ background: `${newTheme.line}` }}
 				className={styles.line}
 			/>
@@ -130,8 +130,8 @@ const Home = ({ scrollRef }) => {
 			<Button
 				text={
 					projects.length !== projectArray.length
-						? "Show More"
-						: "Show Less"
+						? 'Show More'
+						: 'Show Less'
 				}
 				handleButton={handleShowMoreBtn}
 			/>
@@ -142,10 +142,10 @@ const Home = ({ scrollRef }) => {
 			/>
 
 			<div
-				data-aos="fade-right"
-				data-aos-offset="200"
-				data-aos-easing="ease-in-sine"
-				data-aos-duration="800"
+				data-aos='fade-right'
+				data-aos-offset='200'
+				data-aos-easing='ease-in-sine'
+				data-aos-duration='800'
 				className={styles.extraIntro}
 				style={{ color: `${newTheme.para}` }}
 			>
@@ -154,6 +154,7 @@ const Home = ({ scrollRef }) => {
 				Highly recommended."
 			</div>
 			<Contact />
+			
 		</div>
 	);
 };
