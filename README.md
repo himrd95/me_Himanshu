@@ -10,6 +10,9 @@
 git clone https://github.com/himrd95/me_Himanshu.git
 ```
 ```
+cd me_Himanshu
+```
+```
 npm install
 ```
 ``` 
