@@ -1,6 +1,6 @@
 .card {
 	width: 70%;
-
+	/* background: #fff; */
 	margin: 80px auto;
 	padding: 20px;
 	position: relative;
@@ -39,9 +39,9 @@
 	position: absolute;
 	z-index: 10;
 	top: 0;
-	opacity: .6;
+	opacity: 0.6;
 	border-radius: 20px 0 0 20px;
-	transition: .5s;
+	transition: 0.5s;
 }
 .image:hover .colorDiv {
 	opacity: 0;
@@ -61,7 +61,7 @@
 	top: -30%;
 	opacity: 0;
 	transform: translateX(0);
-	transition: .5s;
+	transition: 0.5s;
 }
 
 .card:hover .card__Container .description {
@@ -78,7 +78,7 @@
 }
 .description i {
 	font-size: 30px;
-	transition: .3s;
+	transition: 0.3s;
 }
 .description i:hover {
 	color: #00084d;
@@ -95,7 +95,7 @@
 		height: 230px;
 		/* background: #112240;
 		background: #ebc5b5; */
-		opacity: .8;
+		opacity: 0.8;
 		padding: 10px;
 		position: absolute;
 		bottom: 25px;
@@ -110,7 +110,7 @@
 		align-items: center;
 		justify-content: flex-start;
 	}
-	
+
 	.titleContainer p {
 		width: 90%;
 		max-height: 150px;
@@ -131,17 +131,17 @@
 		/* color: pink; */
 		z-index: 16;
 		right: 10%;
-		opacity: .9;
+		opacity: 0.9;
 		top: 90%;
 		transform: translateX(0);
-		transition: .5s;
+		transition: 0.5s;
 		justify-content: space-around;
 		align-items: center;
 		text-align: center;
 	}
 	.card:hover .card__Container .description {
 		width: 70%;
-		opacity: .9;
+		opacity: 0.9;
 		top: 90%;
 		right: 0;
 	}
@@ -179,7 +179,7 @@
 		width: 90%;
 		height: 90%;
 		border-radius: 20px;
-		opacity: .95;
+		opacity: 0.95;
 	}
 	.card:hover .card__Container {
 		opacity: 1;
@@ -193,7 +193,7 @@
 	}
 	.card .card__Container .description {
 		width: 100px;
-		opacity: .9;
+		opacity: 0.9;
 		color: black;
 		background: linear-gradient(135deg, #7953f6, #ceab67);
 		right: 50%;

@@ -1,6 +1,6 @@
 .footer {
 	width: 100%;
-	padding: 10vh 0;
+	padding: 10vh 0 5vh;
 }
 .container {
 	width: fit-content;
@@ -56,7 +56,7 @@
 .line {
 	width: 80%;
 	height: 1px;
-	margin: 0 auto 50px;
+	margin: 0 auto 5vh;
 }
 .copyright {
 	width: fit-content;
@@ -89,5 +89,9 @@
 		font-size: 30px;
 		/* color: blanchedalmond; */
 		margin: 20px 5vw;
+	}
+	.copyright {
+		width: 70vw;
+		text-align: center;
 	}
 }

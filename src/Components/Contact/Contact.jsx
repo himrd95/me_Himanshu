@@ -7,7 +7,7 @@ const Contact = () => {
 	return (
 		<footer
 			className={styles.footer}
-			style={{ background: `${newTheme.highlightBackground}` }}
+			// style={{ background: `${newTheme.highlightBackground}` }}
 		>
 			<div className={styles.container}>
 				<h1 style={{ color: `${newTheme.title}` }}>Get in Touch</h1>

@@ -34,10 +34,16 @@ body::after {
 	padding-top: 13vw;
 	transition: 0.5s;
 }
+
+.tagline {
+	width: 100%;
+	padding: 130px 0;
+	margin: 150px auto 100px;
+}
 .extraIntro {
-	width: 60vw;
+	width: 60%;
 	padding: 30px;
-	margin: 150px auto;
+	margin: auto;
 
 	font-weight: 400;
 	font-style: italic;

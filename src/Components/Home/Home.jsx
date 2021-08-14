@@ -101,18 +101,15 @@ const Home = ({ scrollRef }) => {
 
 			<div
 				id='about'
-				style={{ background: `${newTheme.line}` }}
-				className={styles.line}
-			/>
+				style={{
+					background: `${newTheme.highlightBackground}`,
+				}}
+				className={styles.tagline}
+			>
+				<About />
+			</div>
 
-			<About />
-
-			<div
-				id='projects'
-				style={{ background: `${newTheme.line}` }}
-				className={styles.line}
-			/>
-			<div className={styles.projects}>
+			<div id='projects' className={styles.projects}>
 				<h1
 					style={{ color: `${newTheme.title}` }}
 					className={styles.heading}
@@ -137,24 +134,26 @@ const Home = ({ scrollRef }) => {
 			/>
 
 			<div
-				style={{ background: `${newTheme.line}` }}
-				className={styles.line}
-			/>
-
-			<div
-				data-aos='fade-right'
-				data-aos-offset='200'
-				data-aos-easing='ease-in-sine'
-				data-aos-duration='800'
-				className={styles.extraIntro}
-				style={{ color: `${newTheme.para}` }}
+				style={{
+					background: `${newTheme.highlightBackground}`,
+				}}
+				className={styles.tagline}
 			>
-				"Himanshu is not only great for development, he is a problem
-				solver who always delivers an exceptional quality of work.
-				Highly recommended."
+				<div
+					id='contact'
+					data-aos='fade-right'
+					data-aos-offset='150'
+					data-aos-easing='ease-in-sine'
+					data-aos-duration='600'
+					className={styles.extraIntro}
+					style={{ color: `${newTheme.para}` }}
+				>
+					"Himanshu is not only great for development, he is a problem
+					solver who always delivers an exceptional quality of work.
+					Highly recommended."
+				</div>
 			</div>
 			<Contact />
-			
 		</div>
 	);
 };

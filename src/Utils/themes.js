@@ -12,7 +12,7 @@ export const theme = {
 		card:'#112240'
 	},
 	light: {
-		background: '#FFF9ED',
+		background: '#F9F9F9',
 		title: '#233742',
 		para: '#233742',
 		heading: '#233742',
