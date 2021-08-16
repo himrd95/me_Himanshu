@@ -1,21 +1,21 @@
-import React, { useState, useRef, useContext } from "react";
-import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import styles from "./Navbar.module.css";
+import React, { useState, useRef, useContext } from 'react';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
+import styles from './Navbar.module.css';
 
 const barStyle = {
 	bar1: {
-		position: "absolute",
-		width: "15px",
-		transform: "rotate(45deg)",
+		position: 'absolute',
+		width: '15px',
+		transform: 'rotate(45deg)',
 	},
 	bar2: {
-		position: "absolute",
-		left: "-2px",
+		position: 'absolute',
+		left: '-2px',
 	},
 	bar3: {
-		position: "absolute",
-		width: "15px",
-		transform: "rotate(-45deg)",
+		position: 'absolute',
+		width: '15px',
+		transform: 'rotate(-45deg)',
 	},
 };
 
@@ -31,9 +31,9 @@ const Navbar = () => {
 	window.onscroll = () => {
 		let currentScrollPos = window.pageYOffset;
 		if (preScrollPos > currentScrollPos) {
-			navRef.current.style.top = "0";
+			navRef.current.style.top = '0';
 		} else {
-			navRef.current.style.top = "-80px";
+			navRef.current.style.top = '-80px';
 		}
 		setPreScrollPos(currentScrollPos);
 	};
@@ -48,32 +48,34 @@ const Navbar = () => {
 			}}
 		>
 			<div className={styles.navbar}>
-				<div className={styles.logo}>
-					<img
-						src="https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true"
-						alt="Logo"
-					/>
-				</div>
+				<a href='/'>
+					<div className={styles.logo}>
+						<img
+							src='https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true'
+							alt='Logo'
+						/>
+					</div>
+				</a>
 
 				<div
 					style={{ color: `${newTheme.title}` }}
 					className={styles.links}
 				>
-					<a href="#home">Home</a>
-					<a href="#about">About</a>
-					<a href="#techStacks">Profeciencies</a>
-					<a href="#projects">Projects</a>
-					<a href="#contact">Contact</a>
+					<a href='#home'>Home</a>
+					<a href='#about'>About</a>
+					<a href='#techStacks'>Profeciencies</a>
+					<a href='#projects'>Projects</a>
+					<a href='#contact'>Contact</a>
 				</div>
 				<button
 					style={{ color: `${newTheme.title}` }}
 					className={styles.modeButton}
 					onClick={handleMode}
 				>
-					{mode === "light" ? (
-						<i className="fas fa-moon" />
+					{mode === 'light' ? (
+						<i className='fas fa-moon' />
 					) : (
-						<i className="fas fa-sun" />
+						<i className='fas fa-sun' />
 					)}
 				</button>
 
