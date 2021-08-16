@@ -48,7 +48,7 @@ const Navbar = () => {
 			}}
 		>
 			<div className={styles.navbar}>
-				<a href='/'>
+				<a href='https://himrd95.github.io/me_Himanshu/'>
 					<div className={styles.logo}>
 						<img
 							src='https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true'
