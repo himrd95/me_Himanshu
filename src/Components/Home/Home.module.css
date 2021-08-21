@@ -58,17 +58,18 @@ body::after {
 }
 .profile {
 	margin-top: 0;
-	height: 650px;
+	height: 100vh;
 	width: 100vw;
-	background-size: 40vw;
-	background-position: center;
-	background-image: url('/src/assets/profile.png');
+	background-size: 550px;
+	/* background-position: center; */
+	background-image: url('/src/assets/profile_pic_without_background.png');
 
 	background-color: #0e0914;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position-x: 55vw;
+	background-position-x: 60vw;
 	background-position-y: 10vh;
+	/* filter: drop-shadow(40%); */
 }
 .profileImage {
 	display: none;
@@ -110,19 +111,29 @@ body::after {
 
 @media screen and (max-width: 1100px) {
 	.profile {
-		background-position: right bottom;
-		background-size: 50vw;
+		background-position-x: 55vw;
+		background-position-y: 12vh;
+		background-size: 400px;
 	}
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
 	.profile {
-		background-position: right bottom;
+		background-position-x: 50vw;
+		background-position-y: 15vh;
 		background-size: 50vw;
 		background-attachment: fixed;
+	}
+	.intro {
+		max-width: 45%;
 	}
 	.extraIntro {
 		width: 70vw;
 		font-size: 1.5rem;
+	}
+}
+@media screen and (max-width: 830px) {
+	.profile {
+		background-position: bottom right;
 	}
 }
 @media screen and (max-width: 650px) {
