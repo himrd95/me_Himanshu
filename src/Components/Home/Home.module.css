@@ -4,6 +4,7 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	/* filter: contrast(90%); */
 }
 body::before {
 	content: '';
@@ -69,7 +70,6 @@ body::after {
 	background-attachment: fixed;
 	background-position-x: 60vw;
 	background-position-y: 10vh;
-	/* filter: drop-shadow(40%); */
 }
 .profileImage {
 	display: none;
@@ -109,6 +109,11 @@ body::after {
 	font-size: 20px;
 }
 
+@media screen and (max-width: 1350px) {
+	.profile {
+		background-position-x: 55vw;
+	}
+}
 @media screen and (max-width: 1100px) {
 	.profile {
 		background-position-x: 55vw;
