@@ -1,13 +1,11 @@
 .card {
 	width: 70%;
-	/* background: #fff; */
-	margin: 80px auto;
+	margin: 50px auto;
 	padding: 20px;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* box-shadow: 3px 3px 5px #212b41; */
 	border-radius: 30px;
 	backdrop-filter: blur(5px);
 	opacity: 0.8;
@@ -36,7 +34,7 @@
 .colorDiv {
 	width: 100%;
 	height: 300px;
-	background: linear-gradient(110deg, #7953f6 60%, #ceab67);
+	/* background: linear-gradient(110deg, #7953f6 60%, #ceab67); */
 	position: absolute;
 	z-index: 10;
 	top: 0;

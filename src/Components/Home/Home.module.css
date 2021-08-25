@@ -39,7 +39,7 @@ body::after {
 .tagline {
 	width: 100%;
 	padding: 130px 0;
-	margin: 150px auto 100px;
+	/* margin: 150px auto 100px; */
 }
 .extraIntro {
 	width: 60%;
@@ -55,7 +55,8 @@ body::after {
 }
 .name {
 	color: #ccd6f6;
-	font-size: 50px;
+	margin-left: -5px;
+	font-size: clamp(40px, 8vw, 80px);
 }
 .profile {
 	margin-top: 0;
@@ -78,9 +79,9 @@ body::after {
 	padding-top: 50px;
 }
 .projects {
-	margin-top: 5vh;
 	width: fit-content;
 	margin: auto;
+	padding: 8vh 0;
 }
 .heading {
 	width: fit-content;
@@ -108,7 +109,10 @@ body::after {
 	margin-left: 10px;
 	font-size: 20px;
 }
-
+.techStacks {
+	padding: 12vh 0;
+	margin: 5vh 0;
+}
 @media screen and (max-width: 1350px) {
 	.profile {
 		background-position-x: 55vw;

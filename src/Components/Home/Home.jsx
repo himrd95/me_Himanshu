@@ -12,6 +12,7 @@ import About from '../About/About';
 import { projects } from '../../Utils/Projects';
 import Contact from '../Contact/Contact';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
+import Experiences from '../Experiences/Experiences';
 
 const Home = ({ scrollRef }) => {
 	const [projectArray, setProjectArray] = useState(
@@ -55,13 +56,13 @@ const Home = ({ scrollRef }) => {
 					style={{ color: `${newTheme.para}` }}
 				>
 					<h1>
-						<span>Hi, My name is</span>{' '}
-						<span
+						<span>Hi, My name is</span>
+						<div
 							className={styles.name}
 							style={{ color: `${newTheme.title}` }}
 						>
 							Himanshu Dwivedi.
-						</span>
+						</div>
 					</h1>
 					<h1>
 						<Typewriter
@@ -97,18 +98,32 @@ const Home = ({ scrollRef }) => {
 				</div>
 			</div>
 
-			<TechStacks />
-
-			<div
-				id='about'
-				style={{
-					background: `${newTheme.highlightBackground}`,
-				}}
-				className={styles.tagline}
-			>
+			<div id='about' className={styles.tagline}>
 				<About />
 			</div>
 
+			<div
+				className={styles.tagline}
+				style={{
+					background: `${newTheme.highlightBackground}`,
+				}}
+			>
+				<div
+					id='contact'
+					data-aos='fade-right'
+					data-aos-offset='150'
+					data-aos-easing='ease-in-sine'
+					data-aos-duration='700'
+					style={{ color: `${newTheme.para}` }}
+				>
+					<Experiences />
+					{/* "Himanshu is not only great for development, he is a problem
+					solver who always delivers an exceptional quality of work.
+					Highly recommended." */}
+				</div>
+			</div>
+
+			{/* project section from here => */}
 			<div id='projects' className={styles.projects}>
 				<h1
 					style={{ color: `${newTheme.title}` }}
@@ -117,42 +132,35 @@ const Home = ({ scrollRef }) => {
 					Few Things I've Build
 				</h1>
 				<div className={styles.borderBottom} />
+				<div>
+					{projectArray.map((item, index) => (
+						<Card key={index} {...item} />
+					))}
+				</div>
+				<Button
+					text={
+						projects.length !== projectArray.length
+							? 'Show More'
+							: 'Show Less'
+					}
+					handleButton={handleShowMoreBtn}
+				/>
 			</div>
-			<div>
-				{projectArray.map((item, index) => (
-					<Card key={index} {...item} />
-				))}
-			</div>
-
-			<Button
-				text={
-					projects.length !== projectArray.length
-						? 'Show More'
-						: 'Show Less'
-				}
-				handleButton={handleShowMoreBtn}
-			/>
 
 			<div
+				id='techStacks'
+				data-aos='fade-right'
+				data-aos-offset='200'
+				data-aos-easing='ease-in-sine'
+				data-aos-duration='800'
+				className={styles.techStacks}
 				style={{
 					background: `${newTheme.highlightBackground}`,
 				}}
-				className={styles.tagline}
 			>
-				<div
-					id='contact'
-					data-aos='fade-right'
-					data-aos-offset='150'
-					data-aos-easing='ease-in-sine'
-					data-aos-duration='600'
-					className={styles.extraIntro}
-					style={{ color: `${newTheme.para}` }}
-				>
-					"Himanshu is not only great for development, he is a problem
-					solver who always delivers an exceptional quality of work.
-					Highly recommended."
-				</div>
+				<TechStacks />
 			</div>
+			
 			<Contact />
 		</div>
 	);

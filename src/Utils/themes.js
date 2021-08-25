@@ -10,6 +10,7 @@ export const theme = {
 		sideIcons: '#8892b0',
 		menuBackground: '#093047',
 		card: '#112240',
+		productImg: 'linear-gradient(100deg, #7953f6 60%, #ceab67)',
 	},
 	light: {
 		background: '#FFFFFF',
@@ -22,5 +23,6 @@ export const theme = {
 		sideIcons: '#766161',
 		menuBackground: '#fff2c8',
 		card: '#ebc5b5',
+		productImg: 'linear-gradient(110deg, #b6a3f5 60%, #f3d8a1)',
 	},
 };

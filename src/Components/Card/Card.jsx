@@ -11,9 +11,9 @@ const Card = (props) => {
 	return (
 		<div
 			data-aos='fade-right'
-			data-aos-offset='400'
+			data-aos-offset='300'
 			data-aos-easing='ease-in-sine'
-			data-aos-duration='800'
+			data-aos-duration='700'
 			className={styles.card}
 			style={{
 				boxShadow: `3px 3px 5px ${newTheme.line}`,
@@ -21,8 +21,13 @@ const Card = (props) => {
 			}}
 		>
 			<div className={styles.image}>
-				<img src={img} alt='' />
-				<div className={styles.colorDiv} />
+				<img src={img} alt='project image' />
+				<div
+					className={styles.colorDiv}
+					style={{
+						background: `${newTheme.productImg}`,
+					}}
+				/>
 			</div>
 
 			<div className={styles.card__Container}>

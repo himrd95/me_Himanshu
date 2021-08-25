@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import styles from "./TechStacks.module.css";
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../ContextProvider/ThemeContext';
+import styles from './TechStacks.module.css';
 
 const TechStacks = () => {
 	const { newTheme } = useContext(ThemeContext);
 	return (
 		<div
-			id="techStacks"
-			data-aos="fade-zoom-in"
-			data-aos-offset="200"
-			data-aos-easing="ease-in-sine"
-			data-aos-duration="800"
-			className={styles.techStacks}
+			
 		>
 			<h1
 				style={{ color: `${newTheme.title}` }}
@@ -22,32 +17,32 @@ const TechStacks = () => {
 			<div className={styles.borderBottom} />
 			<div className={styles.container}>
 				<div className={styles.logoWrapper}>
-					<i className="devicon-html5-plain colored" />
+					<i className='devicon-html5-plain colored' />
 					<p style={{ color: `${newTheme.title}` }}>HTML</p>
 				</div>
 				<div className={styles.logoWrapper}>
-					<i className="devicon-css3-plain colored" />
+					<i className='devicon-css3-plain colored' />
 					<p style={{ color: `${newTheme.title}` }}>CSS</p>
 				</div>
 				<div className={styles.logoWrapper}>
-					<i className="devicon-javascript-plain colored" />
+					<i className='devicon-javascript-plain colored' />
 					<p style={{ color: `${newTheme.title}` }}>Javascript</p>
 				</div>
 				<div className={styles.logoWrapper}>
-					<i className="devicon-react-original colored" />
+					<i className='devicon-react-original colored' />
 					<p style={{ color: `${newTheme.title}` }}>React</p>
 				</div>
 				<div className={styles.logoWrapper}>
 					<i
-						style={{ color: "#7248B6" }}
-						className="devicon-redux-original"
+						style={{ color: '#7248B6' }}
+						className='devicon-redux-original'
 					/>
 					<p style={{ color: `${newTheme.title}` }}>Redux</p>
 				</div>
 				<div className={styles.logoWrapper}>
 					<i
-						style={{ color: "#509941" }}
-						className="devicon-nodejs-plain"
+						style={{ color: '#509941' }}
+						className='devicon-nodejs-plain'
 					/>
 					<p style={{ color: `${newTheme.title}` }}>Node</p>
 				</div>
@@ -55,11 +50,11 @@ const TechStacks = () => {
 					style={{ color: `${newTheme.title}` }}
 					className={styles.logoWrapper}
 				>
-					<i className="devicon-express-original" />
+					<i className='devicon-express-original' />
 					<p>Express</p>
 				</div>
 				<div className={styles.logoWrapper}>
-					<i className="devicon-mongodb-plain colored" />
+					<i className='devicon-mongodb-plain colored' />
 					<p style={{ color: `${newTheme.title}` }}>MongoDB</p>
 				</div>
 			</div>
