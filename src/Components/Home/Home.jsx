@@ -103,13 +103,13 @@ const Home = ({ scrollRef }) => {
 			</div>
 
 			<div
+				id='experience'
 				className={styles.tagline}
 				style={{
 					background: `${newTheme.highlightBackground}`,
 				}}
 			>
 				<div
-					id='contact'
 					data-aos='fade-right'
 					data-aos-offset='150'
 					data-aos-easing='ease-in-sine'
@@ -160,7 +160,7 @@ const Home = ({ scrollRef }) => {
 			>
 				<TechStacks />
 			</div>
-			
+
 			<Contact />
 		</div>
 	);

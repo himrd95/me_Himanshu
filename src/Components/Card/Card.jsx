@@ -21,7 +21,7 @@ const Card = (props) => {
 			}}
 		>
 			<div className={styles.image}>
-				<img src={img} alt='project image' />
+				<img src={img} alt='project' />
 				<div
 					className={styles.colorDiv}
 					style={{

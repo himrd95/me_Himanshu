@@ -38,7 +38,7 @@ function App() {
 				<div className='components'>
 					<div
 						style={{
-							background:`${newTheme.menuBackground}`,
+							background: `${newTheme.menuBackground}`,
 							color: `${newTheme.title}`,
 							left: `${open ? '-100vw' : '0'}`,
 						}}
@@ -50,11 +50,15 @@ function App() {
 						<a onClick={handleMenu} href='#about'>
 							About
 						</a>
-						<a onClick={handleMenu} href='#techStacks'>
-							Profeciencies
+						<a onClick={handleMenu} href='#experience'>
+							Experience
 						</a>
+
 						<a onClick={handleMenu} href='#projects'>
 							Projects
+						</a>
+						<a onClick={handleMenu} href='#techStacks'>
+							Profeciencies
 						</a>
 						<a onClick={handleMenu} href='#contact'>
 							Contact
