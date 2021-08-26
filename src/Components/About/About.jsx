@@ -37,11 +37,11 @@ const About = () => {
 					Hello! My name is Himanshu and I enjoy creating things that
 					live on the internet. My interest in web development started
 					back in last year when I was tryng to edit things on web —
-					taught me a lot about HTML & CSS!. <br /> Fast Forwarding to
-					today, I built a number of web applications and 4 major
-					projects. Learned a great deal about teamwork, leadership,
-					and communication. After months of rigorous training, here I
-					am
+					taught me a lot about HTML & CSS!. <br />
+					<br /> Fast Forwarding to today, I built a number of web
+					applications and 4 major projects. Learned a great deal
+					about teamwork, leadership, and communication. After months
+					of rigorous training, here I am
 					<span style={{ color: `#00a0a0` }}>
 						{' '}
 						looking for an opportunity as a full stack web developer

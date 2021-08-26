@@ -1,27 +1,23 @@
-/* .container {
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	z-index: 10;
+.container {
 	display: flex;
-	justify-content: space-between;
-} */
+	/* justify-content: center; */
+}
 .icons {
 	width: 80px;
-	position: fixed;
+	position: absolute;
 	z-index: 10;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	padding: 0;
-	bottom: 0;
+	margin-top: 50vh;
+	right: 0;
 }
 .iconsRihgt {
 	right: 0;
 }
 .icons li {
-	text-align: -webkit-match-parent;
 	cursor: pointer;
 	list-style: none;
 	transition: 0.3s;
@@ -42,13 +38,7 @@ a {
 	height: 20px;
 	/* color: #8892b0; */
 }
-.line {
-	width: 1px;
-	height: 100px;
-	margin-top: 20px;
-	margin-left: -2px;
-	background: #8892b0;
-}
+
 .rightEmail {
 	/* background: coral; */
 	position: relative;
@@ -58,8 +48,6 @@ a {
 	align-items: center;
 }
 .rightEmail a:first-child {
-	/* color: #8892b0; */
-	transform: rotate(90deg);
 	top: -80px;
 	transition: 0.3s;
 }

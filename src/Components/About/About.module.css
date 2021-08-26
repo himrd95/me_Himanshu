@@ -2,10 +2,10 @@
 	width: 70vw;
 	display: flex;
 	justify-content: space-between;
-
+	align-items: center;
 	margin: auto;
 	border-radius: 30px;
-	/* padding: 30px; */
+	padding: 10px 0;
 	backdrop-filter: blur(5px);
 }
 .first {
@@ -31,11 +31,14 @@
 	width: 100px;
 	margin: 5px auto;
 	border-radius: 10px;
+	color: #aaeff8;
 }
 .aboutMe {
 	font-weight: 400;
 	font-family: var(--font-sans);
+	font-family: 'Roboto Mono', monospace;
 	font-size: 1.2rem;
+	padding-right: 20px;
 }
 
 @media only screen and (max-width: 1050px) {

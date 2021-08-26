@@ -149,10 +149,6 @@ const Home = ({ scrollRef }) => {
 
 			<div
 				id='techStacks'
-				data-aos='fade-right'
-				data-aos-offset='200'
-				data-aos-easing='ease-in-sine'
-				data-aos-duration='800'
 				className={styles.techStacks}
 				style={{
 					background: `${newTheme.highlightBackground}`,

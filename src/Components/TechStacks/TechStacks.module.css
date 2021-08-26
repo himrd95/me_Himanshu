@@ -7,12 +7,26 @@
 }
 
 .logoWrapper {
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+	margin: 10px;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
-	padding: 20px 35px;
+	padding: 10px;
 	color: cornsilk;
 	transition: 0.5s;
-	/* background: chartreuse; */
+	clip-path: polygon(
+		50% 0%,
+		90% 20%,
+		100% 87%,
+		75% 100%,
+		25% 100%,
+		0 88%,
+		10% 20%
+	);
 }
 .logoWrapper:hover {
 	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -44,7 +58,7 @@
 }
 .techStacks img {
 	width: 80px;
-	margin: 20px;
+	margin: 10px;
 }
 .heading {
 	width: fit-content;
@@ -59,33 +73,36 @@
 	border-radius: 10px;
 }
 .logoWrapper i {
-	font-size: 45px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-size: 40px;
 }
 .logoWrapper p {
-	font-size: 20px;
+	font-size: 1.1em;
+	margin: 5px !important;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1150px) {
 	.container {
 		grid-template-columns: auto auto auto auto;
 		grid-template-rows: auto auto;
 	}
 }
-@media only screen and (max-width: 650px) {
+/* @media only screen and (max-width: 650px) {
 	.logoWrapper {
 		padding: 20px 20px;
 	}
-}
-@media only screen and (max-width: 500px) {
+} */
+@media only screen and (max-width: 600px) {
 	.container {
 		grid-template-columns: auto auto auto;
 		grid-template-rows: auto auto auto;
 	}
-	.logoWrapper {
+	/* .logoWrapper {
 		padding: 20px 20px;
-	}
+	} */
 }
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 450px) {
 	.container {
 		grid-template-columns: auto auto;
 		grid-template-rows: auto auto auto auto;

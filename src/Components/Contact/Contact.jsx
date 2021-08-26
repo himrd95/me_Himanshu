@@ -7,6 +7,7 @@ const Contact = () => {
 	return (
 		<footer
 			className={styles.footer}
+			id='contact'
 			// style={{ background: `${newTheme.highlightBackground}` }}
 		>
 			<div className={styles.container}>

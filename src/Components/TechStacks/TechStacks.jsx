@@ -6,7 +6,10 @@ const TechStacks = () => {
 	const { newTheme } = useContext(ThemeContext);
 	return (
 		<div
-			
+			data-aos='fade-right'
+			data-aos-offset='200'
+			data-aos-easing='ease-in-sine'
+			data-aos-duration='800'
 		>
 			<h1
 				style={{ color: `${newTheme.title}` }}
@@ -16,46 +19,91 @@ const TechStacks = () => {
 			</h1>
 			<div className={styles.borderBottom} />
 			<div className={styles.container}>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i className='devicon-html5-plain colored' />
-					<p style={{ color: `${newTheme.title}` }}>HTML</p>
+					<span>HTML</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i className='devicon-css3-plain colored' />
-					<p style={{ color: `${newTheme.title}` }}>CSS</p>
+					<span>CSS</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i className='devicon-javascript-plain colored' />
-					<p style={{ color: `${newTheme.title}` }}>Javascript</p>
+					<span>Javascript</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i className='devicon-react-original colored' />
-					<p style={{ color: `${newTheme.title}` }}>React</p>
+					<span>React</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i
 						style={{ color: '#7248B6' }}
 						className='devicon-redux-original'
 					/>
-					<p style={{ color: `${newTheme.title}` }}>Redux</p>
+					<span>Redux</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i
 						style={{ color: '#509941' }}
 						className='devicon-nodejs-plain'
 					/>
-					<p style={{ color: `${newTheme.title}` }}>Node</p>
+					<span>Node</span>
 				</div>
 				<div
-					style={{ color: `${newTheme.title}` }}
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
 					className={styles.logoWrapper}
 				>
 					<i className='devicon-express-original' />
-					<p>Express</p>
+					<span>Express</span>
 				</div>
-				<div className={styles.logoWrapper}>
+				<div
+					style={{
+						color: `${newTheme.title}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.logoWrapper}
+				>
 					<i className='devicon-mongodb-plain colored' />
-					<p style={{ color: `${newTheme.title}` }}>MongoDB</p>
+					<span>MongoDB</span>
 				</div>
 			</div>
 		</div>

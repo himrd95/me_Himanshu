@@ -22,12 +22,7 @@ const Card = (props) => {
 		>
 			<div className={styles.image}>
 				<img src={img} alt='project' />
-				<div
-					className={styles.colorDiv}
-					style={{
-						background: `${newTheme.productImg}`,
-					}}
-				/>
+				<div className={styles.colorDiv} />
 			</div>
 
 			<div className={styles.card__Container}>
@@ -57,7 +52,13 @@ const Card = (props) => {
 				</div>
 
 				{/* -----------------For hovering container--------------- */}
-				<div className={styles.description}>
+				<div
+					style={{
+						color: `${newTheme.para}`,
+						background: `${newTheme.linkHover}`,
+					}}
+					className={styles.description}
+				>
 					<a href={gitHub} rel='noopener noreferrer' target='_blank'>
 						<i className='fab fa-github' />
 					</a>

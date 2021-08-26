@@ -4,7 +4,7 @@ body {
 	max-width: 100%;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-	/* filter: contrast(90%); */
+	font-family: 'Roboto Mono', monospace;
 }
 body::before {
 	content: '';
@@ -12,7 +12,7 @@ body::before {
 	width: 100%;
 	height: 100%;
 	opacity: 0.1;
-	background: linear-gradient(#7f04f1, #ffb011);
+	background: linear-gradient(#7f04f1, #3bf8b9);
 	clip-path: circle(18% at right 60%);
 }
 body::after {
@@ -23,13 +23,12 @@ body::after {
 	width: 100%;
 	height: 100%;
 	opacity: 0.2;
-	background: linear-gradient(#7f04f1, #ffb011);
+	background: linear-gradient(#1b2aff, #11dbff);
 	clip-path: circle(10% at 5% 5%);
 }
 .intro {
 	max-width: 60vw;
 	text-align: left;
-
 	color: #8993b1;
 	padding-left: 10vw;
 	padding-top: 13vw;
@@ -39,7 +38,6 @@ body::after {
 .tagline {
 	width: 100%;
 	padding: 130px 0;
-	/* margin: 150px auto 100px; */
 }
 .extraIntro {
 	width: 60%;
@@ -63,9 +61,7 @@ body::after {
 	height: 100vh;
 	width: 100vw;
 	background-size: 550px;
-	/* background-position: center; */
 	background-image: url('/src/assets/profile_pic_without_background.png');
-
 	background-color: #0e0914;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
