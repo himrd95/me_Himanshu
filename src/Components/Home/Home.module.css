@@ -1,0 +1,166 @@
+body {
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Mono', monospace;
+}
+body::before {
+	content: '';
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	background: linear-gradient(#7f04f1, #3bf8b9);
+	clip-path: circle(18% at right 60%);
+}
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	background: linear-gradient(#1b2aff, #11dbff);
+	clip-path: circle(10% at 5% 5%);
+}
+.intro {
+	max-width: 60vw;
+	text-align: left;
+	color: #8993b1;
+	padding-left: 10vw;
+	padding-top: 13vw;
+	transition: 0.5s;
+}
+
+.tagline {
+	width: 100%;
+	padding: 130px 0;
+}
+.extraIntro {
+	width: 60%;
+	padding: 30px;
+	margin: auto;
+
+	font-weight: 400;
+	font-style: italic;
+	font-size: 2em;
+	margin-top: -10px;
+	color: #8993b1;
+	font-family: var(--font-sans);
+}
+.name {
+	color: #ccd6f6;
+	margin-left: -5px;
+	font-size: clamp(40px, 8vw, 80px);
+}
+.profile {
+	margin-top: 0;
+	height: 100vh;
+	width: 100vw;
+	background-size: 550px;
+	background-image: url('/src/assets/profile_pic_without_background.png');
+	background-color: #0e0914;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position-x: 60vw;
+	background-position-y: 10vh;
+}
+.profileImage {
+	display: none;
+}
+.btn {
+	padding-top: 50px;
+}
+.projects {
+	width: fit-content;
+	margin: auto;
+	padding: 8vh 0;
+}
+.heading {
+	width: fit-content;
+	margin: auto;
+	color: #8993b1;
+	line-height: 40px;
+}
+.borderBottom {
+	border-bottom: 3px solid #0282bd;
+	width: 200px;
+	margin: 10px auto;
+	border-radius: 10px;
+}
+.line {
+	width: 80%;
+	height: 1px;
+	margin: 150px auto;
+}
+.resumeBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.resumeBtn i {
+	margin-left: 10px;
+	font-size: 20px;
+}
+.techStacks {
+	padding: 12vh 0;
+	margin: 5vh 0;
+}
+@media screen and (max-width: 1350px) {
+	.profile {
+		background-position-x: 55vw;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.profile {
+		background-position-x: 55vw;
+		background-position-y: 12vh;
+		background-size: 400px;
+	}
+}
+@media screen and (max-width: 830px) {
+	.profile {
+		background-position-x: 50vw;
+		background-position-y: 15vh;
+		background-size: 50vw;
+		background-attachment: fixed;
+	}
+	.intro {
+		max-width: 45%;
+	}
+	.extraIntro {
+		width: 70vw;
+		font-size: 1.5rem;
+	}
+}
+@media screen and (max-width: 830px) {
+	.profile {
+		background-position: bottom right;
+	}
+}
+@media screen and (max-width: 650px) {
+	.profile {
+		height: 80vh;
+		background-size: 100vw;
+		background-position: center;
+		background-attachment: fixed;
+		background-blend-mode: soft-light;
+		background-image: url('https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true');
+	}
+	.intro {
+		max-width: 95% !important;
+		text-align: center;
+		padding: 10vh 0 !important;
+		font-size: 0.9em;
+		margin: 5vh auto;
+	}
+	.name {
+		font-size: 42px;
+	}
+	.intro h1:nth-child(2) {
+		height: 80px;
+	}
+}
