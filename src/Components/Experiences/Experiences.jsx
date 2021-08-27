@@ -26,16 +26,23 @@ const Experiences = () => {
 					</legend>
 					<ul>
 						<li>
-							Lead the team with creating LMS for placement team to
-							furnished the students details.{' '}
+							Led the team of 4 where we were working on the frontend
+							part of LMS for student profile.
 						</li>
 						<li>
-							Developed a Quiz App, that is currently being used by
-							outgoing batch students for interview preparations.
+							Developed a Quiz App 'Masai Refresh', that is currently
+							being used by over 200+ students for interview
+							preparations.
 						</li>
 						<li>
-							Assisted faculties with answering queries of students in
-							daily stand ups. Delivered lectures whenever required.
+							Assisted faculties with reviewing the projects made by
+							students in construct week. Delivered lectures whenever
+							required.
+						</li>
+						<li>
+							Managed a batch of 50+ students and resolved their
+							queries on daily basis and helped them to enhance their
+							skills in technologies such as HTML, CSS, React.
 						</li>
 					</ul>
 				</fieldset>
