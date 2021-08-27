@@ -80,10 +80,7 @@ const Home = ({ scrollRef }) => {
 						/>
 					</h1>
 					<div className={styles.btn}>
-						<a
-							href='https://raw.githubusercontent.com/himrd95/me_Himanshu/main/public/Resume.pdf'
-							download
-						>
+						<a href='https://raw.githubusercontent.com/himrd95/me_Himanshu/69c00d268312b2e343a848e5e5a0ca3c0a6e0602/src/assets/Resume.pdf'>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
