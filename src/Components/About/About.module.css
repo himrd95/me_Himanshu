@@ -69,8 +69,9 @@
 		overflow: hidden;
 		align-items: flex-start;
 	}
-	.second {
+	.second{
 		margin-left: 15px;
+
 	}
 }
 @media only screen and (max-width: 500px) {
@@ -82,4 +83,5 @@
 	.first {
 		width: 90%;
 	}
+	
 }
