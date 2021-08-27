@@ -18,7 +18,7 @@ const Contact = () => {
 				>
 					I'm currently actively looking for any new opportunities, in
 					full-stack web development. If you are an employer looking
-					for dedicated web developer, HIRE me before someone else
+					for a dedicated web developer, HIRE me before someone else
 					does.
 				</p>
 				<div
