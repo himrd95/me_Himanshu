@@ -42,12 +42,12 @@ const Contact = () => {
 						<i className='far fa-envelope'></i>
 					</a>
 					<a
-						href='https://wa.me/+919454538373?text=Hi%20please%20drop%20your%20message%20here.'
-						aria-label='wahtsapp'
+						href='https://twitter.com/himansh03285202'
+						aria-label='Twitter'
 						target='_blank'
 						rel='noreferrer'
 					>
-						<i className='fab fa-whatsapp'></i>
+						<i className='fab fa-twitter'></i>
 					</a>
 					<a
 						href='https://github.com/himrd95'
