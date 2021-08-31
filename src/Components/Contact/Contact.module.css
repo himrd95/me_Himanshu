@@ -1,6 +1,7 @@
 .footer {
 	width: 100%;
-	padding: 10vh 0 5vh;
+	padding: 8vh 0 5vh;
+	margin-top: 5vh;
 }
 .container {
 	width: fit-content;

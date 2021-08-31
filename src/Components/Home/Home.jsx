@@ -95,8 +95,18 @@ const Home = ({ scrollRef }) => {
 				</div>
 			</div>
 
-			<div id='about' className={styles.tagline}>
+			<div
+				id='about'
+				style={{
+					background: `${newTheme.highlightBackground}`,
+				}}
+				className={styles.tagline}
+			>
 				<About />
+			</div>
+
+			<div id='techStacks' className={styles.techStacks}>
+				<TechStacks />
 			</div>
 
 			<div
@@ -145,15 +155,12 @@ const Home = ({ scrollRef }) => {
 			</div>
 
 			<div
-				id='techStacks'
-				className={styles.techStacks}
 				style={{
 					background: `${newTheme.highlightBackground}`,
 				}}
 			>
-				<TechStacks />
+				<Contact />
 			</div>
-			<Contact />
 		</div>
 	);
 };
