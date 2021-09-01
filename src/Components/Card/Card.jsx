@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import WindowSize from '../../Utils/WindowSize';
+import { Button } from '../Button/Button';
 import styles from './Card.module.css';
+import Dialog from '@material-ui/core/Dialog';
 
 const Card = (props) => {
+	const [state, setState] = useState(false);
 	const { newTheme } = React.useContext(ThemeContext);
 	const { img, des, title, live, gitHub, technologies } = props;
 
 	const [width] = WindowSize();
+
+	const handleButton = () => {
+		setState(!state);
+	};
+	const handleClose = (value) => {
+		setState(false);
+	};
 	return (
 		<div
 			data-aos='fade-right'
@@ -35,6 +45,13 @@ const Card = (props) => {
 					}
 				>
 					<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
+					{width <= 800 && (
+						<Button
+							text='Read More'
+							handleButton={handleButton}
+							padding='10px 20px'
+						/>
+					)}
 					<p style={{ color: `${newTheme.para}` }}>{des}</p>
 					<div>
 						{technologies.map((technology, index) => (
@@ -51,6 +68,47 @@ const Card = (props) => {
 					</div>
 				</div>
 
+				<Dialog
+					aria-labelledby='alert-dialog-title'
+					aria-describedby='alert-dialog-description'
+					open={state}
+					onClose={handleClose}
+				>
+					<div
+						style={{
+							backgroundColor: `${newTheme.highlightBackground}`,
+							padding: '20px',
+						}}
+					>
+						<div className={styles.image}>
+							<img src={img} alt='project' />
+						</div>
+						<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
+						<p style={{ color: `${newTheme.para}` }}>{des}</p>
+						<p>{}</p>
+						<div className={styles.dialogElements}>
+							<div>
+								{technologies.map((technology, index) => (
+									<span
+										key={index}
+										style={{
+											marginRight: '20px',
+											color: `${newTheme.title}`,
+										}}
+									>
+										{technology}
+										{index !== technologies.length-1 && ','}
+									</span>
+								))}
+							</div>
+							<Button
+								text='close'
+								handleButton={handleClose}
+								padding='10px 20px'
+							/>
+						</div>
+					</div>
+				</Dialog>
 				{/* -----------------For hovering container--------------- */}
 				<div
 					style={{

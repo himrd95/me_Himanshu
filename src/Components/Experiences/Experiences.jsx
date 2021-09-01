@@ -19,7 +19,7 @@ const Experiences = () => {
 					Instructional Associate | Software Developer{' '}
 					<a href='https://www.masaischool.com/'>@ Masai School</a>
 				</div>
-				<div className={styles.date}>Mar 2021 - present</div>
+				<div className={styles.date}>March 2021 - present</div>
 				<fieldset className={styles.responsibilites}>
 					<legend>
 						<h3> Roles & responsibilites </h3>
@@ -27,22 +27,26 @@ const Experiences = () => {
 					<ul>
 						<li>
 							Led the team of 4 where we were working on the frontend
-							part of LMS for student profile.
+							part of LMS for student profiles to furnish their
+							details.
 						</li>
 						<li>
-							Developed a Quiz App 'Masai Refresh', that is currently
-							being used by over 200+ students for interview
+							Worked on the main layout part along with maintaining
+							the state using Redux. Maintained the documentation.
+						</li>
+						<li>
+							Developed a Live Quiz App 'Masai Refresh', that is
+							currently being used by over 200+ students for interview
 							preparations.
 						</li>
 						<li>
-							Assisted faculties with reviewing the projects made by
-							students in construct week. Delivered lectures whenever
-							required.
+							Worked on the frontend part with a quiz-specific modal
+							where students can skip, submit, and report the
+							questions.
 						</li>
 						<li>
-							Managed a batch of 50+ students and resolved their
-							queries on daily basis and helped them to enhance their
-							skills in technologies such as HTML, CSS, React.
+							Assisted faculties and reviewing the projects made by
+							students. Delivered lectures whenever required.
 						</li>
 					</ul>
 				</fieldset>

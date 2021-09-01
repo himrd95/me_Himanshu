@@ -6,20 +6,16 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-radius: 30px;
+	border-radius: 15px;
 	backdrop-filter: blur(5px);
 	opacity: 0.8;
 }
 
 .card__Container {
 	width: 90%;
-	min-height: 180px;
+	/* min-height: 80px; */
 	display: flex;
-
 	position: relative;
-	@media screen(max-width:1100px) {
-		width: 80%;
-	}
 }
 .image {
 	width: 100%;
@@ -29,7 +25,7 @@
 .image img {
 	width: 100%;
 	height: 300px;
-	border-radius: 20px 0 0 20px;
+	border-radius: 10px 0 0 10px;
 }
 .colorDiv {
 	width: 100%;
@@ -39,7 +35,7 @@
 	z-index: 10;
 	top: 0;
 	opacity: 0.6;
-	border-radius: 20px 0 0 20px;
+	border-radius: 10px 0 0 10px;
 	transition: 0.5s;
 }
 .image:hover .colorDiv {
@@ -73,6 +69,7 @@
 .titleContainer {
 	text-align: right;
 }
+
 .description i {
 	font-size: 30px;
 	transition: 0.3s;
@@ -81,11 +78,26 @@
 	transform: translateY(-5px);
 }
 
+@media screen and (max-width: 1200px) {
+	.card {
+		width: 85vw;
+	}
+}
 @media screen and (max-width: 1000px) {
+	.card {
+		width: 85vw;
+	}
+	.card__Container {
+		height: 180px;
+		transform: translateY(20px);
+	}
 	.image img,
 	.colorDiv {
 		height: 250px;
 		width: 120%;
+	}
+	.colorDiv {
+		display: none;
 	}
 	.titleContainer {
 		height: 230px;
@@ -97,7 +109,7 @@
 		right: 0;
 		margin-top: -20px;
 		z-index: 15;
-		border-radius: 20px;
+		border-radius: 10px;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
@@ -145,52 +157,68 @@
 		font-size: 25px;
 	}
 	.description i {
-	font-size: 25px;
+		font-size: 25px;
+	}
 }
+.dialogElements {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-@media screen and (max-width: 700px) {
+.dialogElements div {
+	width: 65%;
+	display: flex;
+	flex-wrap: wrap;
+}
+@media screen and (max-width: 800px) {
 	.card {
-		box-shadow: none;
+		width: 80vw;
+		background: none !important;
+		box-shadow: none !important;
 		padding: 0;
+		margin: 30px auto !important;
+		flex-direction: column;
 	}
 	.card__Container {
-		position: absolute;
-		/* opacity: 0; */
+		height: fit-content !important;
 		width: 100%;
-		height: 250px;
-		top: -10px;
-		left: 10px;
 	}
 	.image img {
-		height: 260px;
+		height: fit-content !important;
+		border: 2px solid rgb(163, 163, 163);
+		border-radius: 10px !important;
 		width: 100%;
-		border-radius: 20px;
 	}
 	.colorDiv {
 		display: none;
 	}
 	.titleContainer {
-		width: 90%;
-		height: 90%;
-		border-radius: 20px;
-		opacity: 0.95;
+		position: relative;
+		width: 100%;
+		height: fit-content !important;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: 20px;
+		left: -10px;
+		padding: 0 !important;
+		font-size: 13px;
+		background: none !important;
 	}
+
 	.card:hover .card__Container {
 		opacity: 1;
 		width: 100%;
 	}
 	.titleContainer p {
-		width: 90%;
-		max-height: 150px;
-		overflow: hidden;
-		/* background: chocolate !important; */
+		display: none;
 	}
 	.card .card__Container .description {
+		display: none;
 		width: 100px;
 		opacity: 0.9;
 		color: black;
 		right: 50%;
-		top: 80%;
+		/* top: 80%; */
 		transform: translateX(50%);
 		font-size: 16px;
 		padding: 10px 15px;
@@ -220,9 +248,11 @@
 }
 @media screen and (max-width: 500px) {
 	.card {
-		width: 85%;
+		width: 90%;
+		margin-left: 8% !important;
 	}
-	.card__Container {
-		height: 260px;
+	.titleContainer h2 {
+		width: 40%;
+		text-align: left;
 	}
 }

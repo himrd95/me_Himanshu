@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import Card from '../Card/Card';
-import Typewriter from 'typewriter-effect';
 import SideIcons from '../SideIcons/SideIcons';
 import TechStacks from '../TechStacks/TechStacks';
 import AOS from 'aos';
@@ -19,9 +18,19 @@ const Home = ({ scrollRef }) => {
 		projects.slice(0, 3),
 	);
 	const { newTheme } = React.useContext(ThemeContext);
+	const [offset, setOffset] = useState(0);
 	useEffect(() => {
 		AOS.init();
 	});
+
+	const handleOffset = () => {
+		setOffset(window.pageYOffset);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleOffset);
+		return () => window.removeEventListener('scroll', handleOffset);
+	}, []);
 
 	useEffect(() => {
 		document.body.style.backgroundColor = newTheme.background;
@@ -31,29 +40,30 @@ const Home = ({ scrollRef }) => {
 
 	const handleShowMoreBtn = () => {
 		if (projects.length === projectArray.length) {
-			setProjectArray(projects.slice(0, 3));
+			setProjectArray(projects.slice(0, 4));
 		} else {
 			setProjectArray(projects);
 		}
 	};
+
 	return (
 		<div ref={scrollRef}>
 			<SideIcons />
 			<div
-				id='top'
+				id='home'
 				className={styles.profile}
 				style={{ backgroundColor: `${newTheme.imgBackground}` }}
 			>
-				<img
-					className={styles.profileImage}
-					src='../../assets/profile_pic_without_background.png'
-					alt='Profile pic'
-				/>
 				<div
-					id='home'
 					data-aos='fade-zoom-out'
 					className={styles.intro}
-					style={{ color: `${newTheme.para}` }}
+					style={{
+						color: `${newTheme.para}`,
+						transform: `translateX(-${offset * 2.5}px)`,
+						opacity: `${
+							offset > 300 ? '0' : offset > 160 ? '.5' : '1'
+						}`,
+					}}
 				>
 					<h1>
 						<span>Hi, My name is</span>
@@ -65,22 +75,11 @@ const Home = ({ scrollRef }) => {
 						</div>
 					</h1>
 					<h1>
-						<Typewriter
-							options={{
-								strings: [
-									'I am a Full Stack Developer.',
-									'I build things for web.',
-								],
-								autoStart: true,
-								loop: true,
-								delay: 'natural',
-								deleteSpeed: 25,
-								pauseFor: 1000,
-							}}
-						/>
+						I am a Full Stack Developer based in Mirzapur. I build
+						things for web.
 					</h1>
 					<div className={styles.btn}>
-						<a href='https://raw.githubusercontent.com/himrd95/me_Himanshu/main/src/assets/Resume.pdf'>
+						<a href='https://drive.google.com/file/d/189VXAnVmpkSwXqErB6hYkxiw_oZFUOOz/view?usp=sharing'>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
@@ -93,6 +92,21 @@ const Home = ({ scrollRef }) => {
 						</a>
 					</div>
 				</div>
+
+				<div
+					style={{
+						transform: `translateX(${offset * 2.5}px)`,
+						opacity: `${
+							offset > 300 ? '0' : offset > 160 ? '.5' : '1'
+						}`,
+					}}
+					className={styles.profileImage}
+				>
+					<img
+						src='https://github.com/himrd95/me_Himanshu/blob/main/src/assets/profile_pic_without_background.png?raw=true'
+						alt='Profile pic'
+					/>
+				</div>
 			</div>
 
 			<div
@@ -100,7 +114,7 @@ const Home = ({ scrollRef }) => {
 				style={{
 					background: `${newTheme.highlightBackground}`,
 				}}
-				className={styles.tagline}
+				className={styles.experience}
 			>
 				<About />
 			</div>
@@ -111,7 +125,7 @@ const Home = ({ scrollRef }) => {
 
 			<div
 				id='experience'
-				className={styles.tagline}
+				className={styles.experience}
 				style={{
 					background: `${newTheme.highlightBackground}`,
 				}}

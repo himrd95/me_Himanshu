@@ -27,17 +27,18 @@ body::after {
 	clip-path: circle(10% at 5% 5%);
 }
 .intro {
-	max-width: 60vw;
+	max-width: 50vw;
 	text-align: left;
 	color: #8993b1;
 	padding-left: 10vw;
-	padding-top: 13vw;
 	transition: 0.5s;
+	font-size: clamp(10px, 2vw, 15px);
+	position: fixed;
 }
 
-.tagline {
+.experience {
 	width: 100%;
-	padding: 130px 0;
+	padding: 80px 0;
 }
 .extraIntro {
 	width: 60%;
@@ -49,19 +50,18 @@ body::after {
 	font-size: 2em;
 	margin-top: -10px;
 	color: #8993b1;
-	font-family: var(--font-sans);
 }
 .name {
 	color: #ccd6f6;
-	margin-left: -5px;
 	font-size: clamp(40px, 8vw, 80px);
 }
 .profile {
 	margin-top: 0;
 	height: 100vh;
 	width: 100vw;
+	display: flex;
+	align-items: center;
 	background-size: 550px;
-	background-image: url('/src/assets/profile_pic_without_background.png');
 	background-color: #0e0914;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -69,10 +69,27 @@ body::after {
 	background-position-y: 10vh;
 }
 .profileImage {
-	display: none;
+	width: 400px;
+	height: 400px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	border-bottom: 7px solid #9802be;
+	transform: rotate(-2deg);
+	transition: 0.5s;
+	position: fixed;
+	right: 8vw;
 }
-.btn {
-	padding-top: 50px;
+.profileImage img {
+	width: 400px;
+}
+
+.techStacks {
+	padding: 50px 0;
+	margin: 5vh 0;
 }
 .projects {
 	width: fit-content;
@@ -105,20 +122,26 @@ body::after {
 	margin-left: 10px;
 	font-size: 20px;
 }
-.techStacks {
-	padding: 12vh 0;
-	margin: 5vh 0;
-}
-@media screen and (max-width: 1350px) {
+
+@media screen and (max-width: 1300px) {
 	.profile {
-		background-position-x: 55vw;
+		padding-right: 5vw;
+	}
+	.intro {
+		width: 50%;
+		padding-left: 5vw;
+	}
+	.profileImage {
+		margin-left: 30px;
 	}
 }
-@media screen and (max-width: 1100px) {
-	.profile {
-		background-position-x: 55vw;
-		background-position-y: 12vh;
-		background-size: 400px;
+@media screen and (max-width: 900px) {
+	.profileImage {
+		width: 300px;
+		height: 300px;
+	}
+	.profileImage img {
+		width: 300px;
 	}
 }
 @media screen and (max-width: 830px) {
@@ -143,24 +166,41 @@ body::after {
 }
 @media screen and (max-width: 650px) {
 	.profile {
-		height: 80vh;
+		min-height: 100vh;
 		background-size: 100vw;
 		background-position: center;
 		background-attachment: fixed;
 		background-blend-mode: soft-light;
-		background-image: url('https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true');
+		padding: 0;
 	}
 	.intro {
-		max-width: 95% !important;
+		min-width: 95% !important;
 		text-align: center;
-		padding: 10vh 0 !important;
+		padding: 3vh 0 !important;
 		font-size: 0.9em;
 		margin: 5vh auto;
+		margin-top: 68vw;
+		padding: 0;
+	}
+
+	.profileImage {
+		position: fixed;
+		width: 50vw;
+		height: 50vw;
+		top: 80px;
+		right: 50%;
+		transform: translateX(50%) !important;
+	}
+	.profileImage img {
+		width: 50vw;
 	}
 	.name {
 		font-size: 42px;
 	}
-	.intro h1:nth-child(2) {
-		height: 80px;
+}
+
+@media screen and (max-width: 300px) {
+	.intro {
+		margin-top: 30vh;
 	}
 }

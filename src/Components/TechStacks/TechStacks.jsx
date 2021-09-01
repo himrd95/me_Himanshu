@@ -18,6 +18,12 @@ const TechStacks = () => {
 				Proficiencies
 			</h1>
 			<div className={styles.borderBottom} />
+			{/* <h2
+				style={{ color: `${newTheme.para}` }}
+				className={styles.heading}
+			>
+				Frontened
+			</h2> */}
 			<div className={styles.container}>
 				<div
 					style={{
