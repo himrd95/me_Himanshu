@@ -11,7 +11,6 @@
 .first {
 	width: 40%;
 	display: flex;
-	/* align-items: flex-end; */
 }
 .first img {
 	width: 95%;
@@ -49,8 +48,9 @@
 }
 @media only screen and (max-width: 800px) {
 	.container {
-		flex-direction: column;
 		width: 90vw;
+		flex-direction: column;
+		align-items: center;
 		box-shadow: none !important;
 	}
 	.first {
@@ -59,19 +59,20 @@
 		border-bottom: 1px solid #212b41;
 	}
 	.second {
-		text-align: justify;
-		width: 100%;
+		width: 100% !important;
+		padding: 0;
+		margin: 0;
 		font-size: 16px;
 		padding-top: 20px;
+	}
+	.aboutMe {
+		padding-right: 0;
 	}
 }
 @media only screen and (max-width: 650px) {
 	.first {
 		overflow: hidden;
 		align-items: flex-end;
-	}
-	.second {
-		margin-left: 15px;
 	}
 }
 @media only screen and (max-width: 500px) {

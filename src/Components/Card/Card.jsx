@@ -45,7 +45,7 @@ const Card = (props) => {
 					}
 				>
 					<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
-					{width <= 800 && (
+					{width <= 840 && (
 						<Button
 							text='Read More'
 							handleButton={handleButton}
@@ -85,7 +85,13 @@ const Card = (props) => {
 						</div>
 						<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
 						<p style={{ color: `${newTheme.para}` }}>{des}</p>
-						<p>{}</p>
+						<div
+							style={{
+								backgroundColor: `${newTheme.line}`,
+								height: '1px',
+							}}
+						/>
+						<br />
 						<div className={styles.dialogElements}>
 							<div>
 								{technologies.map((technology, index) => (
@@ -97,7 +103,7 @@ const Card = (props) => {
 										}}
 									>
 										{technology}
-										{index !== technologies.length-1 && ','}
+										{index !== technologies.length - 1 && ','}
 									</span>
 								))}
 							</div>

@@ -12,10 +12,6 @@ const About = () => {
 			: 'https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true';
 	return (
 		<div
-			// data-aos='fade-down'
-			// data-aos-offset='200'
-			// data-aos-easing='ease-in-sine'
-			// data-aos-duration='800'
 			className={styles.container}
 			style={{ boxShadow: `3px 3px 5px ${newTheme.line}` }}
 		>
