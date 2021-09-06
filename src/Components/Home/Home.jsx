@@ -15,7 +15,7 @@ import Experiences from '../Experiences/Experiences';
 
 const Home = ({ scrollRef }) => {
 	const [projectArray, setProjectArray] = useState(
-		projects.slice(0, 3),
+		projects.slice(0, 4),
 	);
 	const { newTheme } = React.useContext(ThemeContext);
 	const [offset, setOffset] = useState(0);
@@ -103,7 +103,9 @@ const Home = ({ scrollRef }) => {
 					className={styles.profileImage}
 				>
 					<img
-						src='https://github.com/himrd95/me_Himanshu/blob/main/src/assets/profile_pic_without_background.png?raw=true'
+						src={
+							process.env.PUBLIC_URL + '/pic_without_background.jpg'
+						}
 						alt='Profile pic'
 					/>
 				</div>

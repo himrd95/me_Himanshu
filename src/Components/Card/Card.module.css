@@ -77,7 +77,18 @@
 .description i:hover {
 	transform: translateY(-5px);
 }
-
+.popupTech {
+	display: flex;
+	flex-wrap: wrap;
+}
+.actionBtns a:last-child {
+	margin-left: 20px;
+}
+@media screen and (max-width: 1370px) {
+	.card {
+		width: 80vw;
+	}
+}
 @media screen and (max-width: 1200px) {
 	.card {
 		width: 85vw;
