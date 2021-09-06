@@ -103,9 +103,7 @@ const Home = ({ scrollRef }) => {
 					className={styles.profileImage}
 				>
 					<img
-						src={
-							process.env.PUBLIC_URL + '/pic_without_background.jpg'
-						}
+						src='https://github.com/himrd95/me_Himanshu/blob/main/public/pic_without_background.jpg?raw=true'
 						alt='Profile pic'
 					/>
 				</div>
