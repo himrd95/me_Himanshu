@@ -79,7 +79,10 @@ const Home = ({ scrollRef }) => {
 						things for web.
 					</h1>
 					<div className={styles.btn}>
-						<a href='https://drive.google.com/file/d/1PiZEuZ1zs-E8LYuyEf_meBoegX5qrM4a/view?usp=sharing'>
+						<a
+							href='https://drive.google.com/file/d/1PiZEuZ1zs-E8LYuyEf_meBoegX5qrM4a/view?usp=sharing'
+							target='_blank'
+						>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
