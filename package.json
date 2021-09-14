@@ -1,5 +1,4 @@
 {
-	"homepage": "https://himrd95.github.io/me_Himanshu",
 	"name": "i-am-himanshu",
 	"version": "0.1.0",
 	"private": true,
@@ -44,5 +43,6 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^3.2.3"
-	}
+	},
+	"homepage": "."
 }

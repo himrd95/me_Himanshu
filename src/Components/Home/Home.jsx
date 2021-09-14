@@ -15,7 +15,7 @@ import Experiences from '../Experiences/Experiences';
 
 const Home = ({ scrollRef }) => {
 	const [projectArray, setProjectArray] = useState(
-		projects.slice(0, 3),
+		projects.slice(0, 4),
 	);
 	const { newTheme } = React.useContext(ThemeContext);
 	const [offset, setOffset] = useState(0);
