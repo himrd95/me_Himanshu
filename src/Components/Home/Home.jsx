@@ -79,7 +79,10 @@ const Home = ({ scrollRef }) => {
 						things for web.
 					</h1>
 					<div className={styles.btn}>
-						<a href='https://drive.google.com/file/d/189VXAnVmpkSwXqErB6hYkxiw_oZFUOOz/view?usp=sharing'>
+						<a
+							href='https://drive.google.com/file/d/1Hy-ysd6t5ILdb8Wgi93ffH0euRecUiSt/view?usp=sharing'
+							target='_blank'
+						>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
@@ -103,7 +106,7 @@ const Home = ({ scrollRef }) => {
 					className={styles.profileImage}
 				>
 					<img
-						src='https://github.com/himrd95/me_Himanshu/blob/main/src/assets/profile_pic_without_background.png?raw=true'
+						src='https://github.com/himrd95/me_Himanshu/blob/main/public/pic_without_background.jpg?raw=true'
 						alt='Profile pic'
 					/>
 				</div>

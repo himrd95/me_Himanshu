@@ -18,7 +18,7 @@ export const projects = [
 		technologies: ['React', 'Redux', 'HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://github.com/himrd95/todo/blob/main/public/dashboard.png?raw=true',
+		img: 'https://github.com/himrd95/todo/blob/master/public/dashboard.png?raw=true',
 		title: 'Todo App',
 		des: 'A ToDo application made using React, Redux and a few libraries, wherein the user can add a new task, change the status, edit it, edit sub-task and delete it.',
 		demo: '',

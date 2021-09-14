@@ -85,6 +85,20 @@ const Card = (props) => {
 						</div>
 						<h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
 						<p style={{ color: `${newTheme.para}` }}>{des}</p>
+						<div className={styles.popupTech}>
+							{technologies.map((technology, index) => (
+								<div
+									key={index}
+									style={{
+										marginRight: '20px',
+										color: `${newTheme.title}`,
+									}}
+								>
+									{technology}
+									{index !== technologies.length - 1 ? ',' : '.'}
+								</div>
+							))}
+						</div>
 						<div
 							style={{
 								backgroundColor: `${newTheme.line}`,
@@ -93,19 +107,26 @@ const Card = (props) => {
 						/>
 						<br />
 						<div className={styles.dialogElements}>
-							<div>
-								{technologies.map((technology, index) => (
-									<span
-										key={index}
-										style={{
-											marginRight: '20px',
-											color: `${newTheme.title}`,
-										}}
-									>
-										{technology}
-										{index !== technologies.length - 1 && ','}
-									</span>
-								))}
+							<div
+								style={{
+									color: `${newTheme.title}`,
+								}}
+								className={styles.actionBtns}
+							>
+								<a
+									href={gitHub}
+									rel='noopener noreferrer'
+									target='_blank'
+								>
+									<i className='fab fa-github' />
+								</a>
+								<a
+									href={live}
+									rel='noopener noreferrer'
+									target='_blank'
+								>
+									<i className='fas fa-external-link-alt' />
+								</a>
 							</div>
 							<Button
 								text='close'
