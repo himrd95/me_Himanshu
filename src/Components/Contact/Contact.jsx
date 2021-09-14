@@ -16,10 +16,8 @@ const Contact = () => {
 					style={{ color: `${newTheme.para}` }}
 					className={styles.paragraph}
 				>
-					I'm currently actively looking for any new opportunities, in
-					full-stack web development. If you are an employer looking
-					for a dedicated web developer, HIRE me before someone else
-					does.
+					I'm actively looking for any new opportunities, in
+					full-stack web development.
 				</p>
 				<div
 					style={{ color: `${newTheme.title}` }}
