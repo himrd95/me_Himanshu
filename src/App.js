@@ -13,12 +13,8 @@ function App() {
 	useEffect(() => {
 		setTimeout(() => {
 			setState(true);
-		}, 2000);
+		}, 2200);
 	}, []);
-	// const handleTop = () => {
-	// 	console.log('clicked', scrollRef);
-	// 	scrollRef.current.scrollTop = 0;
-	// };
 
 	return (
 		<React.Fragment>
