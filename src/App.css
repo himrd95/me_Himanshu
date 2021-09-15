@@ -9,16 +9,7 @@
 	width: 100px;
 	animation: revolve 0.8s infinite;
 }
-/* @keyframes revolve {
-	0% {
-		width: 100px;
-		opacity: 1;
-	}
-	100% {
-		width: 200px;
-		opacity: 0;
-	}
-} */
+
 
 @keyframes revolve {
 	from {

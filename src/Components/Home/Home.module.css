@@ -1,9 +1,10 @@
+html {
+	scroll-behavior: smooth;
+}
 body {
 	padding: 0;
 	margin: 0;
 	max-width: 100vw;
-	/* overflow-x: hidden; */
-	scroll-behavior: smooth;
 	font-family: 'Roboto Mono', monospace;
 }
 body::before {
@@ -92,13 +93,11 @@ body::after {
 .techStacks {
 	padding: 50px 0;
 	margin: 5vh 0;
-	
 }
 .projects {
 	width: fit-content;
 	margin: auto;
 	padding: 8vh 0;
-
 }
 .heading {
 	width: fit-content;

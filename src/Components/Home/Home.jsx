@@ -19,6 +19,7 @@ const Home = ({ scrollRef }) => {
 	);
 	const { newTheme } = React.useContext(ThemeContext);
 	const [offset, setOffset] = useState(0);
+	const [location, setLocation] = useState(0);
 	useEffect(() => {
 		AOS.init();
 	});
@@ -38,11 +39,14 @@ const Home = ({ scrollRef }) => {
 
 	const handleButton = () => {};
 
+	console.log(offset);
 	const handleShowMoreBtn = () => {
 		if (projects.length === projectArray.length) {
 			setProjectArray(projects.slice(0, 4));
+			window.scrollTo(0, location);
 		} else {
 			setProjectArray(projects);
+			setLocation(offset)
 		}
 	};
 
