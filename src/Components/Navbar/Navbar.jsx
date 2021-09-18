@@ -75,11 +75,9 @@ const Navbar = () => {
 					<a href='#contact'>Contact</a>
 				</div>
 				<button
-					aria-label={mode === 'light' ? 'Light Mode' : 'Dark Mode'}
+					aria-label={mode === 'dark' ? 'Light Mode' : 'Dark Mode'}
 					title={
-						mode === 'light'
-							? 'Toggle Light Mode'
-							: 'Toggle Dark Mode'
+						mode === 'dark' ? 'Toggle Light Mode' : 'Toggle Dark Mode'
 					}
 					style={{ color: `${newTheme.title}` }}
 					className={styles.modeButton}
