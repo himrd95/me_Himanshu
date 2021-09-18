@@ -19,6 +19,13 @@ const barStyle = {
 	},
 };
 
+const circle = {
+	background: 'linear-gradient(40deg, #8983F7, #1c2931 70%)',
+};
+const cresent = {
+	transform: 'scale(1)',
+	// background: '#26242E',
+};
 const Navbar = () => {
 	const [preScrollPos, setPreScrollPos] = useState(
 		window.pageYOffset,
@@ -73,11 +80,15 @@ const Navbar = () => {
 					className={styles.modeButton}
 					onClick={handleMode}
 				>
-					{mode === 'light' ? (
-						<i className='fas fa-moon' />
-					) : (
-						<i className='fas fa-sun' />
-					)}
+					<div
+						className={styles.circle}
+						style={mode === 'light' ? circle : {}}
+					>
+						<div
+							style={mode === 'light' ? cresent : {}}
+							className={styles.crescent}
+						></div>
+					</div>
 				</button>
 
 				<div onClick={handleMenu} className={styles.bars}>

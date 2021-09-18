@@ -81,6 +81,27 @@
 	transition: 1s;
 	transform-origin: left;
 }
+
+.circle {
+	position: relative;
+	border-radius: 100%;
+	width: 2rem;
+	height: 2rem;
+	background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+	margin: auto;
+	transition: 0.6s;
+}
+.crescent {
+	position: absolute;
+	border-radius: 100%;
+	right: 0;
+	width: 1.4rem;
+	height: 1.4rem;
+	background: white;
+	transform: scale(0);
+	transform-origin: top right;
+	transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 @media screen and (max-width: 850px) {
 	.links a {
 		margin: 0 8px;
