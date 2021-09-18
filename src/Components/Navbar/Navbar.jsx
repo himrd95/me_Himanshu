@@ -24,7 +24,6 @@ const circle = {
 };
 const cresent = {
 	transform: 'scale(1)',
-	// background: '#26242E',
 };
 const Navbar = () => {
 	const [preScrollPos, setPreScrollPos] = useState(
@@ -76,6 +75,12 @@ const Navbar = () => {
 					<a href='#contact'>Contact</a>
 				</div>
 				<button
+					aria-label={mode === 'light' ? 'Light Mode' : 'Dark Mode'}
+					title={
+						mode === 'light'
+							? 'Toggle Light Mode'
+							: 'Toggle Dark Mode'
+					}
 					style={{ color: `${newTheme.title}` }}
 					className={styles.modeButton}
 					onClick={handleMode}

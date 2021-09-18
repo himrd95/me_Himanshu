@@ -15,10 +15,7 @@
 }
 .logo img {
 	position: absolute;
-	/* top: -15px; */
-
 	width: 45px;
-	/* height: 50px; */
 	border-radius: 40px;
 }
 .navbar {
@@ -64,7 +61,7 @@
 }
 .bars {
 	position: relative;
-	width: 50px;
+	/* width: 50px; */
 	display: none;
 	flex-direction: column;
 	justify-content: center;
@@ -109,6 +106,12 @@
 	}
 }
 @media screen and (max-width: 650px) {
+	.navContainer{
+		padding: 8px;
+	}
+	.logo img {
+		position: relative;
+	}
 	.links {
 		display: none;
 	}
