@@ -1,6 +1,6 @@
 # Portfolio
 
-### This is personal Portfolio website. Visit [Portfolio](https://himrd95.github.io/me_Himanshu/)
+### This is personal Portfolio website. Visit [Portfolio](https://himanshu-dwivedi.netlify.app/)
 
 ## Build with using
 ### `React `
