@@ -1,4 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
+import { ASSETS } from '../../constants/links';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import styles from './Navbar.module.css';
 
@@ -25,6 +26,7 @@ const circle = {
 const cresent = {
 	transform: 'scale(1)',
 };
+
 const Navbar = () => {
 	const [preScrollPos, setPreScrollPos] = useState(
 		window.pageYOffset,
@@ -56,10 +58,7 @@ const Navbar = () => {
 			<div className={styles.navbar}>
 				<a href='https://himanshu-dwivedi.netlify.app/'>
 					<div className={styles.logo}>
-						<img
-							src='https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true'
-							alt='Logo'
-						/>
+						<img src='/logo.png' alt='Logo' />
 					</div>
 				</a>
 

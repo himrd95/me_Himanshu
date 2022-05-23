@@ -1,5 +1,5 @@
 import React, { createContext, useEffect } from 'react';
-import { theme } from '../Utils/themes';
+import { theme } from '../constants/themes';
 // import { currentTime } from '../Utils/Time';
 
 // const getTheme = () => {

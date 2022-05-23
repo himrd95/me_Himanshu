@@ -8,10 +8,12 @@ import 'aos/dist/aos.css';
 
 import { Button } from '../Button/Button';
 import About from '../About/About';
-import { projects } from '../../Utils/Projects';
+import { projects } from '../../constants/Projects';
 import Contact from '../Contact/Contact';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import Experiences from '../Experiences/Experiences';
+import { greeting, intro, myName } from '../../constants/constants';
+import { ASSETS } from '../../constants/links';
 
 const Home = ({ scrollRef }) => {
 	const [projectArray, setProjectArray] = useState(
@@ -46,7 +48,7 @@ const Home = ({ scrollRef }) => {
 			window.scrollTo(0, location);
 		} else {
 			setProjectArray(projects);
-			setLocation(offset)
+			setLocation(offset);
 		}
 	};
 
@@ -70,27 +72,25 @@ const Home = ({ scrollRef }) => {
 					}}
 				>
 					<h1>
-						<span>Hi, My name is</span>
+						<span>{greeting}</span>
 						<div
 							className={styles.name}
 							style={{ color: `${newTheme.title}` }}
 						>
-							Himanshu Dwivedi.
+							{myName}
 						</div>
 					</h1>
-					<h1>
-						I am a Full Stack Developer based in Mirzapur. I build
-						things for web.
-					</h1>
+					<h1>{intro}</h1>
 					<div className={styles.btn}>
 						<a
 							href='https://drive.google.com/file/d/1Hy-ysd6t5ILdb8Wgi93ffH0euRecUiSt/view?usp=sharing'
 							target='_blank'
+							rel='noreferrer'
 						>
 							<Button
 								text={
 									<span className={styles.resumeBtn}>
-										<span>Resume</span>{' '}
+										<span>Resume</span>
 										<i className='fas fa-file-download'></i>
 									</span>
 								}
@@ -109,10 +109,7 @@ const Home = ({ scrollRef }) => {
 					}}
 					className={styles.profileImage}
 				>
-					<img
-						src='https://github.com/himrd95/me_Himanshu/blob/main/public/pic_without_background.jpg?raw=true'
-						alt='Profile pic'
-					/>
+					<img src='/pic.png' alt='Profile pic' />
 				</div>
 			</div>
 
