@@ -83,7 +83,7 @@ const Home = ({ scrollRef }) => {
 					<h1>{intro}</h1>
 					<div className={styles.btn}>
 						<a
-							href='https://drive.google.com/file/d/1Hy-ysd6t5ILdb8Wgi93ffH0euRecUiSt/view?usp=sharing'
+							href='https://github.com/himrd95/me_Himanshu/blob/main/public/him_resume.pdf'
 							target='_blank'
 							rel='noreferrer'
 						>
