@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useCallback } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import { ASSETS } from './constants/links';
 import { ThemeContext } from './ContextProvider/ThemeContext';
+import { assetsPromise } from './Utils/helpers';
 
 function App() {
 	const [state, setState] = useState(false);
@@ -11,11 +13,30 @@ function App() {
 		React.useContext(ThemeContext);
 	const scrollRef = useRef();
 
-	useEffect(() => {
+	const fetchAllAssets = useCallback((assets) => {
+		let flag = false;
 		setTimeout(() => {
-			setState(true);
+			flag = true;
 		}, 2200);
+
+		Promise.all(assetsPromise(assets))
+			.then((res) => {
+				// console.log(res, 'res');
+				flag
+					? setState(true)
+					: setTimeout(() => {
+							setState(true);
+					  }, 1000);
+			})
+			.catch(() => setState(false));
 	}, []);
+
+	useEffect(() => {
+		fetchAllAssets();
+		setTimeout(() => {
+			// setState(true);
+		}, 2200);
+	}, [fetchAllAssets]);
 
 	return (
 		<React.Fragment>

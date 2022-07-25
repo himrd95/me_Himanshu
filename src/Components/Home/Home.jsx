@@ -22,6 +22,7 @@ const Home = ({ scrollRef }) => {
 	const { newTheme } = React.useContext(ThemeContext);
 	const [offset, setOffset] = useState(0);
 	const [location, setLocation] = useState(0);
+
 	useEffect(() => {
 		AOS.init();
 	});
@@ -41,7 +42,7 @@ const Home = ({ scrollRef }) => {
 
 	const handleButton = () => {};
 
-	console.log(offset);
+	// console.log(offset);
 	const handleShowMoreBtn = () => {
 		if (projects.length === projectArray.length) {
 			setProjectArray(projects.slice(0, 4));
@@ -52,24 +53,32 @@ const Home = ({ scrollRef }) => {
 		}
 	};
 
+	const introStyle = {
+		color: `${newTheme.para}`,
+		// transform: `translateX(-${offset * 2.5}px)`,
+		transform: `scale(${1 - offset / 1000})`,
+		opacity: `${offset > 200 ? '0' : offset > 160 ? '.5' : '1'}`,
+	};
+
 	return (
 		<div ref={scrollRef}>
 			<SideIcons />
 			<div
 				id='home'
 				className={styles.profile}
-				style={{ backgroundColor: `${newTheme.imgBackground}` }}
+				style={{
+					backgroundColor: `${newTheme.imgBackground}`,
+					transition: '.3s',
+					// transform: `scale(${1 - offset / 1000})`,
+					opacity: `${
+						offset > 300 ? '0' : offset > 160 ? '.5' : '1'
+					}`,
+				}}
 			>
 				<div
 					data-aos='fade-zoom-out'
 					className={styles.intro}
-					style={{
-						color: `${newTheme.para}`,
-						transform: `translateX(-${offset * 2.5}px)`,
-						opacity: `${
-							offset > 300 ? '0' : offset > 160 ? '.5' : '1'
-						}`,
-					}}
+					style={introStyle}
 				>
 					<h1>
 						<span>{greeting}</span>
@@ -102,14 +111,15 @@ const Home = ({ scrollRef }) => {
 
 				<div
 					style={{
-						transform: `translateX(${offset * 2.5}px)`,
+						// transform: `translateX(${offset * 2.5}px)`,
+						transform: `scale(${1 - offset / 1000})`,
 						opacity: `${
 							offset > 300 ? '0' : offset > 160 ? '.5' : '1'
 						}`,
 					}}
 					className={styles.profileImage}
 				>
-					<img src='/pic.png' alt='Profile pic' />
+					<img src={ASSETS.PROFILE} alt='Profile pic' />
 				</div>
 			</div>
 

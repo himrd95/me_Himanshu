@@ -7,6 +7,11 @@ body {
 	max-width: 100vw;
 	font-family: 'Roboto Mono', monospace;
 }
+
+* {
+	position: relative;
+	z-index: 4;
+}
 body::before {
 	content: '';
 	position: fixed;
@@ -32,9 +37,10 @@ body::after {
 	text-align: left;
 	color: #8993b1;
 	padding-left: 10vw;
-	transition: 0.5s;
+	transition: 0.3s;
 	font-size: clamp(10px, 2vw, 15px);
 	position: fixed;
+	z-index: 0;
 }
 
 .experience {
@@ -82,7 +88,7 @@ body::after {
 	align-items: flex-start;
 	border-bottom: 7px solid #9802be;
 	transform: rotate(-2deg);
-	transition: 0.5s;
+	transition: 0.3s;
 	position: fixed;
 	right: 8vw;
 }
@@ -126,6 +132,14 @@ body::after {
 	font-size: 20px;
 }
 
+@media screen and (min-width: 650px) {
+	.intro {
+		animation: fromLeft 1s forwards;
+	}
+	.profileImage {
+		animation: fromRight 1s forwards;
+	}
+}
 @media screen and (max-width: 1300px) {
 	.profile {
 		padding-right: 5vw;
@@ -220,5 +234,26 @@ body::after {
 	}
 	.name {
 		font-size: 1.5em;
+	}
+}
+
+@keyframes fromLeft {
+	0% {
+		opacity: 0;
+		left: -200px;
+	}
+	100% {
+		opacity: 1;
+		left: 0px;
+	}
+}
+@keyframes fromRight {
+	0% {
+		opacity: 0;
+		right: -200px;
+	}
+	100% {
+		opacity: 1;
+		right: 8vw;
 	}
 }
