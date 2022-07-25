@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
+import { ASSETS } from './constants/links';
 import { ThemeContext } from './ContextProvider/ThemeContext';
 
 function App() {
@@ -25,10 +26,7 @@ function App() {
 					}}
 					className='logoStart'
 				>
-					<img
-						src='https://github.com/himrd95/portfolio/blob/main/src/assets/logo_new.png?raw=true'
-						alt='logo'
-					/>
+					<img src={ASSETS.LOGO} alt='logo' />
 				</div>
 			) : (
 				<div className='components'>
