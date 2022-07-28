@@ -34,7 +34,7 @@ function App() {
 	useEffect(() => {
 		fetchAllAssets();
 		setTimeout(() => {
-			// setState(true);
+			setState(true);
 		}, 2200);
 	}, [fetchAllAssets]);
 
