@@ -17,7 +17,7 @@ const About = () => {
             style={{ boxShadow: `3px 3px 5px ${newTheme.line}` }}
         >
             <div className={styles.first}>
-                <img src={"/developer.gif"} alt="" />
+                <img src="developer.png" alt="" />
             </div>
             <div className={styles.second}>
                 <h1
