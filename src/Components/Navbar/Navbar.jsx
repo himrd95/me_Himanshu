@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext } from "react";
 import { ASSETS } from "../../constants/links";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 import styles from "./Navbar.module.css";
+import { DIMENSION_TYPE, resolvedDimention } from "../../helpers/getViewport";
 
 const barStyle = {
     bar1: {
@@ -22,31 +23,19 @@ const barStyle = {
 
 const circle = {
     background: "linear-gradient(40deg, #8983F7, #1c2931 70%)",
+    width: "30px",
+    height: "30px",
 };
 const cresent = {
     transform: "scale(1)",
 };
 
 const Navbar = () => {
-    const [preScrollPos, setPreScrollPos] = useState(window.pageYOffset);
-    const navRef = useRef();
-
     const { newTheme, mode, handleMode, open, handleMenu } =
         useContext(ThemeContext);
 
-    window.onscroll = () => {
-        let currentScrollPos = window.pageYOffset;
-        if (preScrollPos > currentScrollPos) {
-            navRef.current.style.top = "0";
-        } else {
-            navRef.current.style.top = "-80px";
-        }
-        setPreScrollPos(currentScrollPos);
-    };
-
     return (
         <nav
-            ref={navRef}
             className={styles.navContainer}
             style={{
                 background: `${newTheme.background}`,
@@ -56,12 +45,24 @@ const Navbar = () => {
             <div className={styles.navbar}>
                 <a href="https://himrd95.github.io/me_Himanshu">
                     <div className={styles.logo}>
-                        <img src={ASSETS.LOGO} alt="Logo" />
+                        <img
+                            style={{
+                                width: resolvedDimention(
+                                    DIMENSION_TYPE.HORIZONTAL,
+                                    40
+                                ),
+                            }}
+                            src={ASSETS.LOGO}
+                            alt="Logo"
+                        />
                     </div>
                 </a>
 
                 <div
-                    style={{ color: `${newTheme.title}` }}
+                    style={{
+                        width: resolvedDimention(DIMENSION_TYPE.HORIZONTAL),
+                        color: `${newTheme.title}`,
+                    }}
                     className={styles.links}
                 >
                     <a href="#home">Home</a>
@@ -78,7 +79,9 @@ const Navbar = () => {
                             ? "Toggle Light Mode"
                             : "Toggle Dark Mode"
                     }
-                    style={{ color: `${newTheme.title}` }}
+                    style={{
+                        color: `${newTheme.title}`,
+                    }}
                     className={styles.modeButton}
                     onClick={handleMode}
                 >
@@ -97,7 +100,9 @@ const Navbar = () => {
                     <div
                         style={
                             open
-                                ? { background: `${newTheme.title}` }
+                                ? {
+                                      background: `${newTheme.title}`,
+                                  }
                                 : barStyle.bar1
                         }
                     ></div>
