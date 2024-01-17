@@ -1,16 +1,11 @@
 import React from "react";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import WindowSize from "../../Utils/WindowSize";
 import styles from "./About.module.css";
 import { DIMENSION_TYPE, resolvedDimention } from "../../helpers/getViewport";
 
 const About = () => {
     const { newTheme } = React.useContext(ThemeContext);
-    const [width] = WindowSize();
-    const img =
-        width < 650
-            ? "https://github.com/himrd95/me_Himanshu/blob/main/src/assets/profile_pic_without_background.png?raw=true"
-            : "https://github.com/himrd95/portfolio/blob/main/public/developer.gif?raw=true";
+
     return (
         <div
             className={styles.container}
