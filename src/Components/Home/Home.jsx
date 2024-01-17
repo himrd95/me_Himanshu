@@ -84,7 +84,7 @@ const Home = ({ scrollRef }) => {
                             style={{
                                 fontSize: resolvedDimention(
                                     DIMENSION_TYPE.HORIZONTAL,
-                                    25
+                                    23
                                 ),
                             }}
                         >
@@ -96,7 +96,7 @@ const Home = ({ scrollRef }) => {
                                 color: `${newTheme.title}`,
                                 fontSize: resolvedDimention(
                                     DIMENSION_TYPE.HORIZONTAL,
-                                    36
+                                    33
                                 ),
                             }}
                         >
@@ -107,7 +107,7 @@ const Home = ({ scrollRef }) => {
                         style={{
                             fontSize: resolvedDimention(
                                 DIMENSION_TYPE.HORIZONTAL,
-                                22
+                                20
                             ),
                         }}
                     >
