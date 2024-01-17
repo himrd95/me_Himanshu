@@ -55,7 +55,7 @@ const Home = ({ scrollRef }) => {
     const introStyle = {
         color: `${newTheme.para}`,
         // transform: `translateX(-${offset * 2.5}px)`,
-        transform: `scale(${1 - offset / 1000})`,
+        // transform: `scale(${1 - offset / 1000})`,
         opacity: `${offset > 200 ? "0" : offset > 160 ? ".5" : "1"}`,
     };
 
