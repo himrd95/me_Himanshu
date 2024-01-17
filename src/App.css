@@ -7,32 +7,39 @@
 }
 .logoStart img {
 	width: 100px;
-	animation: revolve 0.8s infinite;
+	border-radius: 50%;
+	animation: pulse 0.8s infinite;
 }
 
-
-@keyframes revolve {
-	from {
-		transform: rotate(0deg);
+@keyframes pulse {
+	0% {
+		transform: scale(0.90);
+		box-shadow: 0 0 0 0 #342b5db3;
 	}
-	to {
-		transform: rotate(360deg);
-		/* width: 200px;
-		opacity: 0; */
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 16px #44418600;
+	}
+
+	100% {
+		transform: scale(0.90);
+		box-shadow: 0 0 0 0 #5f5bbb00;
 	}
 }
+
 .components {
 	text-align: center;
-	animation: wakeup 1s;
+	animation: wakeup 0.5s;
 }
-/* @keyframes wakeup {
+@keyframes wakeup {
 	0% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 1;
 	}
-} */
+}
 button {
 	cursor: pointer;
 	outline: none;
