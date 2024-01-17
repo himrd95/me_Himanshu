@@ -20,7 +20,7 @@
 }
 .navbar {
 	width: 80%;
-	margin: auto 10%;
+	margin: auto 8%;
 	height: fit-content;
 
 	display: flex;
@@ -61,7 +61,7 @@
 }
 .bars {
 	position: relative;
-	/* width: 50px; */
+	width: 30px;
 	display: none;
 	flex-direction: column;
 	justify-content: center;
