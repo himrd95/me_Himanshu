@@ -3,8 +3,6 @@ import styles from "./Home.module.css";
 import Card from "../Card/Card";
 import SideIcons from "../SideIcons/SideIcons";
 import TechStacks from "../TechStacks/TechStacks";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 import { Button } from "../Button/Button";
 import About from "../About/About";
@@ -12,19 +10,15 @@ import { projects } from "../../constants/Projects";
 import Contact from "../Contact/Contact";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 import Experiences from "../Experiences/Experiences";
-import { greeting, intro, myName } from "../../constants/constants";
+import { greeting, intro, myName, keyStrengths } from "../../constants/constants";
 import { ASSETS } from "../../constants/links";
-import { DIMENSION_TYPE, resolvedDimention } from "../../helpers/getViewport";
+import { Download, CheckCircle } from "lucide-react";
 
-const Home = ({ scrollRef }) => {
-    const [projectArray, setProjectArray] = useState(projects.slice(0, 4));
+const Home = () => {
+    const [projectArray, setProjectArray] = useState(projects.slice(0, 3));
     const { newTheme } = React.useContext(ThemeContext);
     const [offset, setOffset] = useState(0);
     const [location, setLocation] = useState(0);
-
-    useEffect(() => {
-        AOS.init();
-    });
 
     const handleOffset = () => {
         setOffset(window.pageYOffset);
@@ -41,10 +35,9 @@ const Home = ({ scrollRef }) => {
 
     const handleButton = () => {};
 
-    // console.log(offset);
     const handleShowMoreBtn = () => {
         if (projects.length === projectArray.length) {
-            setProjectArray(projects.slice(0, 4));
+            setProjectArray(projects.slice(0, 3));
             window.scrollTo(0, location);
         } else {
             setProjectArray(projects);
@@ -54,66 +47,29 @@ const Home = ({ scrollRef }) => {
 
     const introStyle = {
         color: `${newTheme.para}`,
-        // transform: `translateX(-${offset * 2.5}px)`,
-        // transform: `scale(${1 - offset / 1000})`,
         opacity: `${offset > 200 ? "0" : offset > 160 ? ".5" : "1"}`,
     };
 
     return (
-        <div ref={scrollRef}>
+        <div>
             <SideIcons />
             <div
                 id="home"
                 className={styles.profile}
                 style={{
                     backgroundColor: `${newTheme.imgBackground}`,
-                    transition: ".3s",
-                    // transform: `scale(${1 - offset / 1000})`,
-                    opacity: `${
-                        offset > 300 ? "0" : offset > 160 ? ".5" : "1"
-                    }`,
                 }}
             >
-                <div
-                    data-aos="fade-zoom-out"
-                    className={styles.intro}
-                    style={introStyle}
-                >
-                    <h1>
-                        <span
-                            style={{
-                                fontSize: resolvedDimention(
-                                    DIMENSION_TYPE.HORIZONTAL,
-                                    23
-                                ),
-                            }}
-                        >
-                            {greeting}
-                        </span>
-                        <div
-                            className={styles.name}
-                            style={{
-                                color: `${newTheme.title}`,
-                                fontSize: resolvedDimention(
-                                    DIMENSION_TYPE.HORIZONTAL,
-                                    33
-                                ),
-                            }}
-                        >
-                            {myName}
-                        </div>
-                    </h1>
-                    <span
+                <div className={styles.leftPane}>
+                    <div
+                        className={styles.profileImage}
                         style={{
-                            fontSize: resolvedDimention(
-                                DIMENSION_TYPE.HORIZONTAL,
-                                20
-                            ),
+                            transform: `scale(${1 - offset / 1000})`,
                         }}
                     >
-                        {intro}
-                    </span>
-                    <div className={styles.btn}>
+                        <img src={ASSETS.PROFILE} alt="Profile pic" />
+                    </div>
+                    <div className={styles.resumeButtonContainer}>
                         <a
                             href="https://github.com/himrd95/me_Himanshu/blob/main/public/him_resume.pdf"
                             target="_blank"
@@ -122,8 +78,8 @@ const Home = ({ scrollRef }) => {
                             <Button
                                 text={
                                     <span className={styles.resumeBtn}>
-                                        <span>Resume</span>
-                                        <i className="fas fa-file-download"></i>
+                                        <span>Download Resume</span>
+                                        <Download size={16} />
                                     </span>
                                 }
                                 handleButton={handleButton}
@@ -132,35 +88,28 @@ const Home = ({ scrollRef }) => {
                     </div>
                 </div>
 
-                <div
-                    style={{
-                        width: resolvedDimention(
-                            DIMENSION_TYPE.HORIZONTAL,
-                            250
-                        ),
-                        height: resolvedDimention(
-                            DIMENSION_TYPE.HORIZONTAL,
-                            250
-                        ),
-                        transform: `scale(${1 - offset / 1000})`,
-                        opacity: `${
-                            offset > 300 ? "0" : offset > 160 ? ".5" : "1"
-                        }`,
-                    }}
-                    className={styles.profileImage}
-                >
-                    <img src={ASSETS.PROFILE} alt="Profile pic" />
+                <div className={styles.rightPane} style={introStyle}>
+                    <h1>
+                        <span className={styles.greeting}>{greeting}</span>
+                        <div
+                            className={styles.name}
+                            style={{
+                                color: `${newTheme.title}`,
+                            }}
+                        >
+                            {myName}
+                        </div>
+                    </h1>
+                    <span className={styles.introText}>{intro}</span>
+                    <div className={styles.keyStrengths}>
+                        {keyStrengths.map((strength, index) => (
+                            <div key={index} className={styles.strengthItem}>
+                                <CheckCircle size={16} color="#667eea" />
+                                <span>{strength}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-
-            <div
-                id="about"
-                style={{
-                    background: `${newTheme.highlightBackground}`,
-                }}
-                className={styles.experience}
-            >
-                <About />
             </div>
 
             <div id="techStacks" className={styles.techStacks}>
@@ -175,41 +124,35 @@ const Home = ({ scrollRef }) => {
                 }}
             >
                 <div
-                    data-aos="fade-right"
-                    data-aos-offset="150"
-                    data-aos-easing="ease-in-sine"
-                    data-aos-duration="700"
                     style={{ color: `${newTheme.para}` }}
                 >
                     <Experiences />
-                    {/* "Himanshu is not only great for development, he is a problem
-					solver who always delivers an exceptional quality of work.
-					Highly recommended." */}
                 </div>
             </div>
 
-            {/* project section from here => */}
             <div id="projects" className={styles.projects}>
                 <h1
                     style={{ color: `${newTheme.title}` }}
                     className={styles.heading}
                 >
-                    Few Things I've Build
+                    Featured Projects
                 </h1>
                 <div className={styles.borderBottom} />
-                <div>
+                <div className={styles.projectsGrid}>
                     {projectArray.map((item, index) => (
                         <Card key={index} {...item} />
                     ))}
                 </div>
-                <Button
-                    text={
-                        projects.length !== projectArray.length
-                            ? "Show More"
-                            : "Show Less"
-                    }
-                    handleButton={handleShowMoreBtn}
-                />
+                <div className={styles.showMoreContainer}>
+                    <Button
+                        text={
+                            projects.length !== projectArray.length
+                                ? "Show More"
+                                : "Show Less"
+                        }
+                        handleButton={handleShowMoreBtn}
+                    />
+                </div>
             </div>
 
             <div

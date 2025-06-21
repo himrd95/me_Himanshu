@@ -1,6 +1,6 @@
 export const projects = [
 	{
-		img: 'https://github.com/himrd95/portfolio/blob/main/public/ProjectImages/masai_refresh.png?raw=true',
+		img: '/ProjectImages/masai_refresh.png',
 		title: 'Masai Refresh',
 		des: 'A Quiz app that tests your knowledge based on your preferred stack topic, and analyses results. A comprehensive report is presented at the end of each quiz.',
 		demo: '',
@@ -9,7 +9,7 @@ export const projects = [
 		technologies: ['React', 'Redux', 'HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://github.com/arshadalitalwar/bookmyshow/blob/main/bookmyshow-app/public/website_images/home_page.JPG?raw=true',
+		img: '/ProjectImages/bookmyshow.png',
 		title: 'Clone of BookMyShow',
 		des: 'BookMyShow website is basically for entertainment purposes, In this app, a user can book movie tickets by choosing the different theatres and timings accordingly. The user also can see some events happening around them and can attend the events.',
 		demo: '',
@@ -18,7 +18,7 @@ export const projects = [
 		technologies: ['React', 'Redux', 'HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://github.com/himrd95/todo/blob/master/public/dashboard.png?raw=true',
+		img: '/ProjectImages/todo.png',
 		title: 'Todo App',
 		des: 'A ToDo application made using React, Redux and a few libraries, wherein the user can add a new task, change the status, edit it, edit sub-task and delete it.',
 		demo: '',
@@ -27,7 +27,7 @@ export const projects = [
 		technologies: ['React', 'Redux', 'HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://user-images.githubusercontent.com/73213873/107113597-f547e200-6885-11eb-8abd-72106074907a.png',
+		img: '/ProjectImages/medium.png',
 		title: 'Clone of Medium',
 		des: 'Clone of a blogging web application, Medium where a user can read the blogs written by others and show their response also, one can share their thoughts by posting a blog.',
 		demo: '',
@@ -36,7 +36,7 @@ export const projects = [
 		technologies: ['React', 'HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://camo.githubusercontent.com/b7f4aa8c34ddf776dd19b78dc3488456470a73e5026f48784e9e753601468802/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4c62507030307771454537386c6f68584d372f67697068792e676966',
+		img: '/ProjectImages/fitness.png',
 		title: 'Clone of Fitness Blender',
 		des: 'This is a clone of the Fitness Blender website. The clone is complete with a Login page, Sign-in page, Shopping Cart, Wishlist and Calendar Scheduling feature. Following is the link to the clone of the website.',
 		demo: '',
@@ -45,7 +45,7 @@ export const projects = [
 		technologies: ['HTML', 'CSS', 'javaScript'],
 	},
 	{
-		img: 'https://github.com/mandarsatam/Mailchimp-Clone/blob/master/Snips/Screenshot%20(79).png?raw=true',
+		img: '/ProjectImages/mailchimp.png',
 		title: 'Mailchimp Clone',
 		des: 'This is a static clone of a website called Mailchimp. This clone includes landing, pricing, our story, and the resources page.',
 		demo: '',

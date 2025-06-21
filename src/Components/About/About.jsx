@@ -1,7 +1,6 @@
 import React from "react";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 import styles from "./About.module.css";
-import { DIMENSION_TYPE, resolvedDimention } from "../../helpers/getViewport";
 
 const About = () => {
     const { newTheme } = React.useContext(ThemeContext);
@@ -25,26 +24,16 @@ const About = () => {
                 <p
                     style={{
                         color: `${newTheme.para}`,
-                        fontSize: resolvedDimention(
-                            DIMENSION_TYPE.HORIZONTAL,
-                            16
-                        ),
                     }}
                     className={styles.aboutMe}
                 >
-                    Hello! My name is Himanshu and I enjoy creating things that
-                    live on the internet. My interest in web development started
-                    back last year when I was trying to edit things on the web —
-                    taught me a lot about HTML & CSS!. <br />
-                    <br /> Fast Forwarding to today, I built a number of web
-                    applications and 4 major projects. Learned a great deal
-                    about teamwork, leadership, and communication. After months
-                    of rigorous training, here I am
-                    <span style={{ color: `#00a0a0` }}>
-                        {" "}
-                        looking for an opportunity as a full stack web developer
-                    </span>
-                    .
+                    I'm a passionate Full Stack Developer with over 3.5 years of experience crafting modern web applications. My journey began with a curiosity about how websites work, which evolved into a deep love for building scalable, user-centric solutions.
+                    <br /><br />
+                    I specialize in the React ecosystem, including Next.js and TypeScript, and have a strong foundation in backend development with Node.js. My approach combines clean code practices with rapid development cycles, ensuring both quality and efficiency.
+                    <br /><br />
+                    Throughout my career, I've collaborated with diverse teams, honing my skills in async communication and project management. I believe in writing maintainable code that not only solves immediate problems but also scales for future growth.
+                    <br /><br />
+                    Currently, I'm focused on building performant web applications and exploring emerging technologies. I'm always excited to take on new challenges and contribute to innovative projects that make a real impact.
                 </p>
             </div>
         </div>

@@ -1,262 +1,288 @@
 .card {
-	width: 70%;
-	margin: 50px auto;
-	padding: 20px;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	border-radius: 16px;
+	overflow: hidden;
+	transition: all 0.3s ease;
 	position: relative;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	height: 550px;
 	display: flex;
-	justify-content: space-between;
-	/* align-items: center; */
-	border-radius: 15px;
-	backdrop-filter: blur(5px);
-	opacity: 0.8;
+	flex-direction: column;
+}
 
+.card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card__Container {
-	width: 90%;
-	/* min-height: 80px; */
+	padding: 1.5rem;
+	position: relative;
+	flex: 1;
 	display: flex;
-	position: relative;
+	flex-direction: column;
 }
+
 .image {
-	width: 100%;
-	margin-right: 20px;
 	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+	aspect-ratio: 16/9;
+	flex-shrink: 0;
 }
+
 .image img {
 	width: 100%;
-	height: 300px;
-	border-radius: 10px 0 0 10px;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
 }
+
 .colorDiv {
-	width: 100%;
-	height: 300px;
-	background: #37687c;
 	position: absolute;
-	z-index: 10;
 	top: 0;
-	opacity: 0.6;
-	border-radius: 10px 0 0 10px;
-	transition: 0.5s;
-}
-.image:hover .colorDiv {
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
 	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.image:hover .colorDiv {
+	opacity: 1;
+}
+
+.image:hover img {
+	transform: scale(1.05);
 }
 
 .card .card__Container .description {
-	width: 130px;
-	padding: 15px;
-	border-radius: 20px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
 	position: absolute;
-	z-index: 16;
-	right: 85%;
-	top: -30%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
 	opacity: 0;
-	transform: translateX(0);
-	transition: 0.5s;
+	transition: opacity 0.3s ease;
+	border-radius: 12px;
 }
 
 .card:hover .card__Container .description {
-	width: 40%;
 	opacity: 1;
-	top: 80%;
-	right: 80%;
-	backdrop-filter: blur(20px);
 }
 
 .titleContainer {
-	text-align: right;
+	margin-bottom: 1rem;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.titleContainer h2 {
+	font-size: clamp(1.2rem, 3vw, 1.5rem);
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	line-height: 1.3;
+}
+
+.titleContainer p {
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	opacity: 0.8;
+	flex: 1;
+}
+
+.titleContainer div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: auto;
+}
+
+.titleContainer div span {
+	background: rgba(102, 126, 234, 0.1);
+	color: #667eea;
+	padding: 0.25rem 0.75rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.description_container {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
 }
 
 .description i {
-	font-size: 30px;
-	transition: 0.3s;
+	font-size: 1.5rem;
+	color: white;
+	transition: transform 0.3s ease;
 }
+
 .description i:hover {
-	transform: translateY(-5px);
+	transform: scale(1.2);
 }
+
 .popupTech {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0;
 }
-.actionBtns a:last-child {
-	margin-left: 20px;
-}
-@media screen and (max-width: 1370px) {
-	.card {
-		width: 80vw;
-	}
-}
-@media screen and (max-width: 1200px) {
-	.card {
-		width: 85vw;
-	}
-}
-@media screen and (max-width: 1000px) {
-	.card {
-		width: 85vw;
-	}
-	.card__Container {
-		height: 180px;
-		transform: translateY(20px);
-	}
-	.image img,
-	.colorDiv {
-		height: 250px;
-		width: 120%;
-	}
-	.colorDiv {
-		display: none;
-	}
-	.titleContainer {
-		height: 230px;
-		opacity: 0.8;
-		padding: 10px;
-		position: absolute;
-		bottom: 25px;
-		width: 130%;
-		right: 0;
-		margin-top: -20px;
-		z-index: 15;
-		border-radius: 10px;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-	}
 
-	.titleContainer p {
-		width: 90%;
-		max-height: 150px;
-		overflow: hidden;
-		margin-top: -20px;
-		/* background: chocolate; */
-	}
-	.titleContainer div {
-		width: 90%;
-		display: flex;
-		flex-wrap: wrap;
-		/* word-break: break-all; */
-	}
-	.card .card__Container .description {
-		width: 60%;
-		position: absolute;
-		background: none;
-		padding: 10px 5px;
-		z-index: 16;
-		right: 10%;
-		opacity: 0.9;
-		top: 90%;
-		transform: translateX(0);
-		transition: 0.5s;
-		justify-content: space-around;
-		align-items: center;
-		text-align: center;
-	}
-	.card:hover .card__Container .description {
-		width: 60%;
-		opacity: 0.9;
-		top: 90%;
-		right: 10%;
-	}
-	.description_container {
-		opacity: 1;
-		padding: 10px 20px;
-		font-size: 25px;
-	}
-	.description i {
-		font-size: 25px;
-	}
+.actionBtns a:last-child {
+	margin-left: 1rem;
 }
+
 .dialogElements {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 1.5rem;
 }
+
 .dialogElements div {
-	width: 65%;
 	display: flex;
-	flex-wrap: wrap;
+	gap: 1rem;
 }
+
 @media screen and (min-width: 800px) {
 	.card {
-		align-items: center;
+		max-width: 100%;
 	}
 }
+
 @media screen and (max-width: 800px) {
 	.card {
-		width: 80vw;
-		background: none !important;
-		box-shadow: none !important;
-		padding: 0;
-		margin: 30px auto !important;
-		flex-direction: column;
+		max-width: 100%;
+		margin: 0;
+		height: 450px;
 	}
+
 	.card__Container {
-		height: fit-content !important;
-		width: 100%;
+		padding: 1rem;
 	}
+
 	.image img {
-		height: fit-content !important;
-		border: 2px solid rgb(163, 163, 163);
-		border-radius: 10px !important;
-		width: 100%;
-		max-height: 250px;
+		height: 200px;
 	}
 
 	.titleContainer {
-		position: relative;
-		width: 100%;
-		height: fit-content !important;
-		flex-direction: row;
-		justify-content: space-between;
-		margin-top: 20px;
-		padding: 0 !important;
-		font-size: 13px;
-		background: none !important;
+		background: rgba(255, 255, 255, 0.05);
+		padding: 1rem;
+		border-radius: 8px;
+		margin-top: 1rem;
 	}
 
 	.card:hover .card__Container {
-		opacity: 1;
-		width: 100%;
+		transform: none;
 	}
 
 	.card .card__Container .description,
-	.titleContainer p,
-	.titleContainer div,
-	.colorDiv {
+	.card:hover .card__Container .description {
 		display: none;
 	}
 
-	.card:hover .card__Container .description {
-		width: 100px;
-		right: 50%;
-		transform: translateX(50%);
-		top: 80%;
-	}
 	.description_container {
-		width: 60px;
-		border-radius: 15px;
-		padding-left: 10px;
-		margin: auto;
 		display: flex;
-		justify-content: space-between;
-		font-size: 20px;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: 1rem;
 	}
+
 	.description i {
-		margin-right: 0;
+		font-size: 1.2rem;
 	}
 }
+
 @media screen and (max-width: 500px) {
 	.card {
-		width: 90%;
+		margin: 0;
+		height: 320px;
 	}
+
 	.titleContainer h2 {
-		width: 40%;
-		text-align: left;
+		font-size: 1.2rem;
+	}
+}
+
+/* Custom Modal Styles */
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	backdrop-filter: blur(5px);
+}
+
+.modalContent {
+	background: white;
+	border-radius: 16px;
+	padding: 2rem;
+	max-width: 90%;
+	max-height: 90%;
+	overflow-y: auto;
+	position: relative;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent .image {
+	margin-bottom: 1.5rem;
+}
+
+.modalContent h2 {
+	margin-bottom: 1rem;
+}
+
+.modalContent p {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+.modalContent .actionBtns {
+	display: flex;
+	gap: 1rem;
+}
+
+.modalContent .actionBtns a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(102, 126, 234, 0.1);
+	transition: all 0.3s ease;
+}
+
+.modalContent .actionBtns a:hover {
+	background: rgba(102, 126, 234, 0.2);
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+	.modalContent {
+		padding: 1.5rem;
+		margin: 1rem;
 	}
 }

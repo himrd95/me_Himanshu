@@ -1,64 +1,251 @@
 .experiences {
-	width: 70vw;
-	margin: auto;
+	padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+	max-width: 900px;
+	margin: 0 auto;
 }
+
 .heading {
-	width: fit-content;
-	margin: auto;
-	color: #8993b1;
-	line-height: 40px;
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 1rem;
 }
+
 .borderBottom {
-	border-bottom: 3px solid #0282bd;
-	width: 200px;
-	margin: 10px auto;
-	border-radius: 10px;
+	width: 80px;
+	height: 4px;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	margin: 0 auto 4rem auto;
+	border-radius: 2px;
 }
-.container {
-	width: 75%;
-	margin: 20px auto;
+
+.timeline {
+	position: relative;
+	padding-left: 2rem;
 }
-.position {
-	font-size: 1.4em;
-	font-weight: 500;
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	left: 1rem;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	border-radius: 1px;
+}
+
+.timelineItem {
+	position: relative;
+	margin-bottom: 3rem;
+	display: flex;
+	align-items: flex-start;
+}
+
+.timelineMarker {
+	position: absolute;
+	left: -2rem;
+	top: 0;
+	width: 2rem;
+	height: 2rem;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+	z-index: 2;
+}
+
+.companyLogo {
+	font-size: 0.8rem;
+	color: white;
+}
+
+.timelineContent {
+	flex: 1;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	padding: 2rem;
+	margin-left: 1rem;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.timelineContent:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.jobHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 1.5rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.jobTitle h3 {
+	font-size: clamp(1.3rem, 3vw, 1.6rem);
+	font-weight: 600;
+	margin-bottom: 0.5rem;
 	line-height: 1.3;
 }
-.position a {
-	text-decoration: none;
-	color: #00a0a0;
+
+.companyInfo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1rem;
+	font-weight: 500;
+	opacity: 0.8;
 }
-.date {
-	margin: 20px;
+
+.jobMeta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: flex-end;
 }
-.responsibilites {
-	width: 90%;
-	margin: auto;
+
+.metaItem {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.9rem;
+	opacity: 0.7;
 }
-.responsibilites ul {
+
+.skillsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.skillChip {
+	background: rgba(102, 126, 234, 0.1);
+	color: #a1a1e5;
+	padding: 0.35rem 0.85rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	border: 1px solid rgba(102, 126, 234, 0.2);
+	transition: all 0.3s ease;
+}
+
+.skillChip:hover {
+	background: rgba(102, 126, 234, 0.2);
+	color: #c0c0f0;
+	transform: translateY(-2px);
+}
+
+/* Job Description */
+.jobDescription {
+	margin-bottom: 1.5rem;
 	text-align: left;
 }
-.responsibilites ul li {
-	margin: 10px;
-	transition: 0.3s;
+
+.jobDescription p {
+	font-size: 1rem;
+	line-height: 1.6;
+	opacity: 0.9;
+	text-align: left;
 }
-@media screen and (max-width: 1100px) {
+
+/* Achievements */
+.achievements h4 {
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	opacity: 0.9;
+	text-align: left;
+}
+
+.achievements ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+.achievements li {
+	position: relative;
+	padding-left: 1.5rem;
+	margin-bottom: 0.75rem;
+	line-height: 1.6;
+	font-size: 0.95rem;
+	text-align: left;
+}
+
+.achievements li::before {
+	content: '•';
+	position: absolute;
+	left: 0;
+	color: #667eea;
+	font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+	.timeline {
+		padding-left: 1.5rem;
+	}
+
+	.timeline::before {
+		left: 0.75rem;
+	}
+
+	.timelineMarker {
+		left: -1.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.companyLogo {
+		font-size: 0.7rem;
+	}
+
+	.timelineContent {
+		padding: 1.5rem;
+		margin-left: 0.5rem;
+	}
+
+	.jobHeader {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+
+	.jobMeta {
+		align-items: flex-start;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	.metaItem {
+		font-size: 0.85rem;
+	}
+
+	.skills {
+		padding: 0.75rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
 	.experiences {
-		width: 85vw;
+		padding: 2rem 1rem;
 	}
-	.container {
-		width: 70%;
+
+	.jobTitle h3 {
+		font-size: 1.2rem;
 	}
-}
-@media screen and (max-width: 900px) {
-	.experiences {
-		width: 95vw;
-	}
-	.container {
-		width: 80%;
-	}
-}
-@media screen and (max-width: 600px) {
-	.container {
-		width: 90%;
+	
+	.skills {
+		font-size: 0.9rem;
 	}
 }

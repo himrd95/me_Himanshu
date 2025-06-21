@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import styles from './Contact.module.css';
+import { Phone, Mail, Twitter, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
 	const { newTheme } = React.useContext(ThemeContext);
@@ -25,11 +26,11 @@ const Contact = () => {
 				>
 					<a
 						href='tel:9454538373'
-						aria-label='GitHub'
+						aria-label='Phone'
 						rel='noreferrer'
 						target='_blank'
 					>
-						<i className='fas fa-phone-alt' />
+						<Phone size={20} />
 					</a>
 					<a
 						href='mailto: himrd95@gmail.com'
@@ -37,7 +38,7 @@ const Contact = () => {
 						target='_blank'
 						rel='noreferrer'
 					>
-						<i className='far fa-envelope'></i>
+						<Mail size={20} />
 					</a>
 					<a
 						href='https://twitter.com/himansh03285202'
@@ -45,7 +46,7 @@ const Contact = () => {
 						target='_blank'
 						rel='noreferrer'
 					>
-						<i className='fab fa-twitter'></i>
+						<Twitter size={20} />
 					</a>
 					<a
 						href='https://github.com/himrd95'
@@ -53,7 +54,7 @@ const Contact = () => {
 						rel='noreferrer'
 						target='_blank'
 					>
-						<i className='fab fa-github' />
+						<Github size={20} />
 					</a>
 
 					<a
@@ -62,7 +63,7 @@ const Contact = () => {
 						target='_blank'
 						rel='noreferrer'
 					>
-						<i className='fab fa-linkedin-in' />
+						<Linkedin size={20} />
 					</a>
 				</div>
 			</div>

@@ -1,115 +1,118 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../ContextProvider/ThemeContext';
 import styles from './TechStacks.module.css';
+import { Code, Palette, FileCode, Atom, Layers, Terminal, Server, Database, Zap, GitBranch, Globe } from 'lucide-react';
+import { techStack } from '../../constants/constants';
 
 const TechStacks = () => {
 	const { newTheme } = useContext(ThemeContext);
+	
+	const techIcons = {
+		'React': Atom,
+		'Next.js': Code,
+		'TypeScript': FileCode,
+		'Node.js': Terminal,
+		'SCSS': Palette,
+		'Styled-components': Layers,
+		'Firebase': Zap,
+		'Git': GitBranch,
+		'REST APIs': Globe
+	};
+
+	const techColors = {
+		'React': '#61dafb',
+		'Next.js': '#000000',
+		'TypeScript': '#3178c6',
+		'Node.js': '#509941',
+		'SCSS': '#cf649a',
+		'Styled-components': '#db7093',
+		'Firebase': '#ffca28',
+		'Git': '#f05032',
+		'REST APIs': '#00d4aa'
+	};
+
 	return (
-		<div
-			data-aos='fade-right'
-			data-aos-offset='200'
-			data-aos-easing='ease-in-sine'
-			data-aos-duration='800'
-		>
+		<div>
 			<h1
 				style={{ color: `${newTheme.title}` }}
 				className={styles.heading}
 			>
-				Proficiencies
+				Tech Stack
 			</h1>
 			<div className={styles.borderBottom} />
-			{/* <h2
-				style={{ color: `${newTheme.para}` }}
-				className={styles.heading}
-			>
-				Frontened
-			</h2> */}
-			<div className={styles.container}>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-html5-plain colored' />
-					<span>HTML</span>
+			
+			{/* Frontend */}
+			<div className={styles.techSection}>
+				<h2 style={{ color: `${newTheme.title}` }} className={styles.sectionTitle}>
+					Frontend
+				</h2>
+				<div className={styles.container}>
+					{techStack.frontend.map((tech) => {
+						const IconComponent = techIcons[tech];
+						return (
+							<div
+								key={tech}
+								style={{
+									color: `${newTheme.title}`,
+									background: `${newTheme.linkHover}`,
+								}}
+								className={styles.logoWrapper}
+							>
+								<IconComponent size={32} color={techColors[tech]} />
+								<span>{tech}</span>
+							</div>
+						);
+					})}
 				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-css3-plain colored' />
-					<span>CSS</span>
+			</div>
+
+			{/* Backend */}
+			<div className={styles.techSection}>
+				<h2 style={{ color: `${newTheme.title}` }} className={styles.sectionTitle}>
+					Backend & Styling
+				</h2>
+				<div className={styles.container}>
+					{techStack.backend.map((tech) => {
+						const IconComponent = techIcons[tech];
+						return (
+							<div
+								key={tech}
+								style={{
+									color: `${newTheme.title}`,
+									background: `${newTheme.linkHover}`,
+								}}
+								className={styles.logoWrapper}
+							>
+								<IconComponent size={32} color={techColors[tech]} />
+								<span>{tech}</span>
+							</div>
+						);
+					})}
 				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-javascript-plain colored' />
-					<span>Javascript</span>
-				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-react-original colored' />
-					<span>React</span>
-				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i
-						style={{ color: '#7248B6' }}
-						className='devicon-redux-original'
-					/>
-					<span>Redux</span>
-				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i
-						style={{ color: '#509941' }}
-						className='devicon-nodejs-plain'
-					/>
-					<span>Node</span>
-				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-express-original' />
-					<span>Express</span>
-				</div>
-				<div
-					style={{
-						color: `${newTheme.title}`,
-						background: `${newTheme.linkHover}`,
-					}}
-					className={styles.logoWrapper}
-				>
-					<i className='devicon-mongodb-plain colored' />
-					<span>MongoDB</span>
+			</div>
+
+			{/* Tools */}
+			<div className={styles.techSection}>
+				<h2 style={{ color: `${newTheme.title}` }} className={styles.sectionTitle}>
+					Tools & APIs
+				</h2>
+				<div className={styles.container}>
+					{techStack.tools.map((tech) => {
+						const IconComponent = techIcons[tech];
+						return (
+							<div
+								key={tech}
+								style={{
+									color: `${newTheme.title}`,
+									background: `${newTheme.linkHover}`,
+								}}
+								className={styles.logoWrapper}
+							>
+								<IconComponent size={32} color={techColors[tech]} />
+								<span>{tech}</span>
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		</div>
