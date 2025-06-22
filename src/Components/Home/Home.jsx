@@ -153,9 +153,22 @@ const Home = () => {
                 </h1>
                 <div className={styles.borderBottom} />
                 <div className={styles.projectsGrid}>
-                    {projectArray.map((item, index) => (
-                        <Card key={index} {...item} />
-                    ))}
+                    {projectArray.map((item, index) => {
+                        const isNew = projectArray.length > 3 && index >= 3;
+                        return (
+                            <div
+                                key={item.title}
+                                className={isNew ? styles.newCard : ''}
+                                style={
+                                    isNew
+                                        ? { animationDelay: `${(index - 3) * 0.1}s` }
+                                        : {}
+                                }
+                            >
+                                <Card {...item} />
+                            </div>
+                        );
+                    })}
                 </div>
                 <div className={styles.showMoreContainer}>
                     <Button
