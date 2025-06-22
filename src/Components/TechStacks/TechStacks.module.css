@@ -34,61 +34,39 @@
 }
 
 .logoWrapper {
+	padding: 1.25rem;
+	border-radius: 12px;
+	transition: all 0.3s ease;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	padding: 1.5rem 1rem;
-	border-radius: 12px;
-	background: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	transition: all 0.3s ease;
-	cursor: pointer;
+	gap: 1rem;
+	text-align: center;
 	position: relative;
 	overflow: hidden;
 }
 
-.logoWrapper::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
 .logoWrapper:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.logoWrapper:hover::before {
-	opacity: 1;
+.logoWrapper i {
+	font-size: 3.5em;
+	transition: 0.5s;
 }
 
-@keyframes shake {
-	0%, 100% {
-		transform: translateX(0);
-	}
-	10%, 30%, 50%, 70%, 90% {
-		transform: translateX(-2px);
-	}
-	20%, 40%, 60%, 80% {
-		transform: translateX(2px);
-	}
-}
-
-.logoWrapper:hover {
-	animation: shake 0.5s ease-in-out;
+.logoWrapper p {
+	font-weight: 500;
+	margin: 0;
+	text-align: center;
 }
 
 .techStacks img {
 	width: 100%;
 	height: auto;
+	margin: 0 auto 3rem auto;
+	border-radius: 2px;
 }
 
 .heading {
@@ -107,18 +85,6 @@
 	border-radius: 2px;
 }
 
-.logoWrapper i {
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
-}
-
-.logoWrapper p {
-	font-size: 0.9rem;
-	font-weight: 500;
-	margin: 0;
-	text-align: center;
-}
-
 @media only screen and (max-width: 1150px) {
 	.container {
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -135,7 +101,8 @@
 	}
 
 	.logoWrapper {
-		padding: 1rem 0.5rem;
+		padding: 1rem;
+		min-width: 120px;
 	}
 
 	.logoWrapper i {
@@ -159,10 +126,10 @@
 @media only screen and (max-width: 450px) {
 	.container {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 0.5rem;
+		gap: 1rem;
 	}
-
 	.logoWrapper {
-		padding: 0.75rem 0.25rem;
+		padding: 1rem 0.5rem;
+		min-width: unset;
 	}
 }

@@ -1,97 +1,178 @@
-.footer {
+.contactSection {
+	padding: 6rem 2rem 0rem;
 	width: 100%;
-	padding: 8vh 0 5vh;
-	margin-top: 5vh;
 }
+
 .container {
-	width: fit-content;
-	margin: auto;
+	max-width: 1100px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	align-items: flex-start;
 }
-.paragraph {
-	width: 45vw;
-	font-size: 1.2em;
-	margin: auto;
-}
-.contactOptions {
-	text-align: center;
+
+.left {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 3rem 0;
-}
-.contactOptions i {
-	font-size: 40px;
-	margin: 20px 40px;
-	transition: 0.5s;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: flex-start;
+	text-align: left;
 }
 
-.contactOptions i:hover {
-	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+.title {
+	font-size: clamp(2rem, 5vw, 2.5rem);
+	font-weight: 700;
+	margin-bottom: 0.5rem;
 }
-@keyframes shake {
-	10%,
-	90% {
-		transform: translate3d(-1px, 0, 0);
-	}
 
-	20%,
-	80% {
-		transform: translate3d(2px, 0, 0);
-	}
-
-	30%,
-	50%,
-	70% {
-		transform: translate3d(-4px, 0, 0);
-	}
-
-	40%,
-	60% {
-		transform: translate3d(4px, 0, 0);
-	}
-}
-.line {
-	width: 80%;
-	height: 1px;
-	margin: 0 auto 5vh;
-}
-.copyright {
-	width: fit-content;
-	margin: auto;
+.paragraph {
 	font-size: 1rem;
-	opacity: 0.7;
+	line-height: 1.6;
+	max-width: 500px;
 }
+
+.contactInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.infoItem {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.infoItem:hover {
+	color: #667eea !important;
+}
+
+.contactOptions {
+	display: flex;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.contactOptions a {
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contactOptions a:hover {
+	transform: translateY(-3px);
+	color: #667eea !important;
+}
+
+/* Form Styles */
+.contactForm {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.formGroup label {
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-align: left;
+}
+
+.formGroup input,
+.formGroup textarea {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border-radius: 8px;
+	font-size: 1rem;
+	outline: none;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+	resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+	border-color: #667eea !important;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.submitButton {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	border: none;
+	padding: 14px 28px;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+	align-self: flex-start;
+}
+
+.submitButton:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.successMessage {
+	padding: 2rem;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.successMessage h2 {
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+}
+
+/* Footer Copyright */
+.footer {
+	padding-top: 4rem;
+}
+
+.line {
+	height: 1px;
+	width: 100%;
+	margin: 0 auto 2rem auto;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 0.9rem;
+	margin-bottom: -4rem;
+}
+
+/* Responsive */
 @media screen and (max-width: 800px) {
-	.paragraph {
-		width: 60vw;
-		font-size: 1.2em;
+	.container {
+		grid-template-columns: 1fr;
+		gap: 4rem;
 	}
-	.contactOptions i {
-		/* font-size: 30px; */
-		margin: 20px 5vw;
+
+	.left {
+		align-items: center;
+		text-align: center;
 	}
-	.contactOptions {
-		flex-wrap: wrap;
+
+	.submitButton {
+		width: 100%;
+	}
+
+	.formGroup label {
+		text-align: center;
 	}
 }
 
 @media screen and (max-width: 500px) {
-	.paragraph {
-		width: 70vw;
-		font-size: 1em;
-		margin: auto;
-	}
-
-	.contactOptions i {
-		font-size: 30px;
-		/* color: blanchedalmond; */
-		margin: 20px 5vw;
-	}
-	.copyright {
-		width: 70vw;
-		text-align: center;
+	.contactSection {
+		padding: 4rem 1rem;
 	}
 }

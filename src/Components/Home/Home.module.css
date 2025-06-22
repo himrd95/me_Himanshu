@@ -14,31 +14,48 @@ body {
 	position: relative;
 	z-index: 4;
 }
-body::before {
-	content: '';
+.bgShape,
+.bgShape2 {
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	opacity: 0.05;
-	z-index: -1;
+	z-index: 0;
 	pointer-events: none;
-}
-body::after {
-	content: '';
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 300px;
-	height: 300px;
-	background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
 	border-radius: 50%;
-	z-index: -1;
-	pointer-events: none;
+	transition: transform 0.2s ease-out;
+    filter: blur(80px);
 }
+
+@keyframes pulse-opacity {
+	0%,
+	100% {
+		opacity: 0.4;
+	}
+	50% {
+		opacity: 0.6;
+	}
+}
+
+.bgShape {
+	width: 50vw;
+	height: 50vw;
+	max-width: 600px;
+	max-height: 600px;
+	top: -150px;
+	left: -150px;
+	background: radial-gradient(circle, rgba(102, 126, 234, 1) 0%, transparent 60%);
+    animation: pulse-opacity 15s ease-in-out infinite;
+}
+
+.bgShape2 {
+	width: 40vw;
+	height: 40vw;
+	max-width: 500px;
+	max-height: 500px;
+	bottom: -150px;
+	right: -150px;
+	background: radial-gradient(circle, rgba(118, 75, 162, 1) 0%, transparent 60%);
+    animation: pulse-opacity 20s ease-in-out infinite;
+}
+
 .intro {
 	display: flex;
 	flex-direction: column;
@@ -49,6 +66,11 @@ body::after {
 	max-width: 600px;
 	transition: all 0.3s ease;
 	text-align: left;
+	border: 1px solid rgba(102, 126, 234, 0.2);
+	transition: all 0.3s ease;
+	backdrop-filter: blur(10px);
+	position: relative;
+	overflow: hidden;
 }
 
 .greeting {
@@ -81,7 +103,7 @@ body::after {
 .name {
 	font-size: clamp(2rem, 6vw, 3.5rem);
 	font-weight: 700;
-	margin: 0.5rem 0;
+	margin: -0.5rem 0 0.5rem;
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -112,6 +134,10 @@ body::after {
 	padding: clamp(2rem, 5vw, 4rem);
 	max-width: 1200px;
 	margin: 0 auto;
+	position: relative;
+	padding-bottom: 100px;
+	z-index: 1;
+	margin-top: 10px;
 }
 
 .leftPane {
@@ -120,6 +146,7 @@ body::after {
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
+	z-index: 2;
 }
 
 .rightPane {
@@ -128,6 +155,7 @@ body::after {
 	justify-content: center;
 	align-items: flex-start;
 	text-align: left;
+	z-index: 2;
 }
 
 .profile::before {
@@ -138,7 +166,7 @@ body::after {
 	right: 0;
 	bottom: 0;
 	background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-	z-index: -1;
+	z-index: 1;
 }
 .profileImage {
 	width: clamp(200px, 30vw, 300px);
@@ -173,25 +201,30 @@ body::after {
 	padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
 }
 .projects {
-	padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+	padding: 6rem 2rem 8rem;
+	position: relative;
+	padding: 100px 2rem 100px;
 }
 .projectsGrid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
 	max-width: 1200px;
-	margin: 0 auto 3rem auto;
+	margin: 4rem auto 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	padding: 0 1rem;
 }
 .showMoreContainer {
 	display: flex;
 	justify-content: center;
 	margin-top: 2rem;
+	animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 .heading {
 	font-size: clamp(2rem, 5vw, 3rem);
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 1rem;
+	margin-top: 5rem;
 	position: relative;
 }
 .borderBottom {
@@ -230,9 +263,7 @@ body::after {
 	align-items: center;
 	gap: 0.75rem;
 	padding: 0.75rem 1.25rem;
-	background: rgba(102, 126, 234, 0.1);
 	border-radius: 12px;
-	border: 1px solid rgba(102, 126, 234, 0.2);
 	transition: all 0.3s ease;
 	backdrop-filter: blur(10px);
 	position: relative;
@@ -246,7 +277,12 @@ body::after {
 	left: -100%;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
 	transition: left 0.5s ease;
 }
 
@@ -255,16 +291,12 @@ body::after {
 }
 
 .strengthItem:hover {
-	background: rgba(102, 126, 234, 0.15);
 	transform: translateX(8px);
-	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .strengthItem span {
 	font-size: 0.95rem;
 	font-weight: 500;
-	color: inherit;
-	position: relative;
 	z-index: 1;
 }
 
@@ -309,10 +341,20 @@ body::after {
 	}
 }
 
+@keyframes pulse {
+	0%, 100% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 0.1;
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.2);
+		opacity: 0.15;
+	}
+}
+
 @media screen and (min-width: 992px) {
 	.profile {
-		grid-template-columns: 4fr 6fr;
-		gap: 4rem;
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
@@ -325,6 +367,39 @@ body::after {
 	.profileImage {
 		order: -1;
 		margin-bottom: 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.mobileBg {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	.profile {
+		padding-bottom: 60px;
+	}
+
+	.experience,
+	.projects {
+		padding: 60px 1rem;
+	}
+
+	.contactWrapper {
+		padding-top: 60px;
+	}
+
+	.profile::after,
+	.experience::after,
+	.projects::after {
+		height: 60px;
 	}
 }
 
@@ -353,6 +428,7 @@ body::after {
 
 	.strengthItem {
 		padding: 0.6rem 1rem;
+		text-align: left;
 	}
 
 	.strengthItem span {
@@ -382,17 +458,13 @@ body::after {
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.projectsGrid {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
-	}
-}
-
 @media screen and (max-width: 480px) {
+	.projects {
+		padding: 3rem 1rem;
+	}
 	.projectsGrid {
 		grid-template-columns: 1fr;
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 }
 
@@ -401,4 +473,66 @@ body::after {
 	justify-content: center;
 	align-items: center;
 	animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.experience,
+.projects,
+.contactWrapper {
+	position: relative;
+	padding: 100px 2rem;
+	margin-top: -100px;
+	z-index: 1;
+}
+
+.experience::before,
+.projects::before,
+.contactWrapper::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	z-index: -1;
+}
+
+.experience::before {
+	background: var(--bg-default);
+}
+.projects::before {
+	background: var(--bg-highlight);
+}
+.contactWrapper::before {
+	background: var(--bg-default);
+}
+
+.profile::after,
+.experience::after,
+.projects::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100px;
+	transform: translateY(50%);
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	z-index: -1;
+}
+
+.profile::after {
+	background: var(--bg-default);
+}
+.experience::after {
+	background: var(--bg-highlight);
+}
+.projects::after {
+	background: var(--bg-default);
+}
+
+.mobileBg {
+	display: none;
 }

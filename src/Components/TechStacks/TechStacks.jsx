@@ -5,7 +5,7 @@ import { Code, Palette, FileCode, Atom, Layers, Terminal, Server, Database, Zap,
 import { techStack } from '../../constants/constants';
 
 const TechStacks = () => {
-	const { newTheme } = useContext(ThemeContext);
+	const { newTheme, mode } = useContext(ThemeContext);
 	
 	const techIcons = {
 		'React': Atom,
@@ -21,7 +21,7 @@ const TechStacks = () => {
 
 	const techColors = {
 		'React': '#61dafb',
-		'Next.js': '#000000',
+		'Next.js': mode === 'dark' ? '#ffffff' : '#000000',
 		'TypeScript': '#3178c6',
 		'Node.js': '#509941',
 		'SCSS': '#cf649a',
@@ -53,13 +53,13 @@ const TechStacks = () => {
 							<div
 								key={tech}
 								style={{
-									color: `${newTheme.title}`,
-									background: `${newTheme.linkHover}`,
+									background: newTheme.highlightBackground,
+									border: `1px solid ${newTheme.line}`,
 								}}
 								className={styles.logoWrapper}
 							>
 								<IconComponent size={32} color={techColors[tech]} />
-								<span>{tech}</span>
+								<span style={{ color: newTheme.para }}>{tech}</span>
 							</div>
 						);
 					})}
@@ -78,13 +78,13 @@ const TechStacks = () => {
 							<div
 								key={tech}
 								style={{
-									color: `${newTheme.title}`,
-									background: `${newTheme.linkHover}`,
+									background: newTheme.highlightBackground,
+									border: `1px solid ${newTheme.line}`,
 								}}
 								className={styles.logoWrapper}
 							>
 								<IconComponent size={32} color={techColors[tech]} />
-								<span>{tech}</span>
+								<span style={{ color: newTheme.para }}>{tech}</span>
 							</div>
 						);
 					})}
@@ -103,13 +103,13 @@ const TechStacks = () => {
 							<div
 								key={tech}
 								style={{
-									color: `${newTheme.title}`,
-									background: `${newTheme.linkHover}`,
+									background: newTheme.highlightBackground,
+									border: `1px solid ${newTheme.line}`,
 								}}
 								className={styles.logoWrapper}
 							>
 								<IconComponent size={32} color={techColors[tech]} />
-								<span>{tech}</span>
+								<span style={{ color: newTheme.para }}>{tech}</span>
 							</div>
 						);
 					})}

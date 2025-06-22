@@ -1,148 +1,63 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
-import WindowSize from "../../Utils/WindowSize";
-import { Button } from "../Button/Button";
 import styles from "./Card.module.css";
 import { Github, ExternalLink as ExternalLinkIcon } from "lucide-react";
 
 const Card = (props) => {
-    const [state, setState] = useState(false);
-    const { newTheme } = React.useContext(ThemeContext);
+    const { newTheme, mode } = useContext(ThemeContext);
     const { img, des, title, live, gitHub, technologies } = props;
 
-    const [width] = WindowSize();
-
-    const handleButton = () => {
-        setState(!state);
-    };
-    const handleClose = (value) => {
-        setState(false);
-    };
     return (
         <div
             className={styles.card}
             style={{
-                boxShadow: `3px 3px 5px ${newTheme.line}`,
-                backgroundColor: `${newTheme.highlightBackground}`,
+                background: newTheme.highlightBackground,
+                border: `1px solid ${newTheme.line}`,
             }}
         >
             <div className={styles.image}>
-                <img src={img} alt="project" loading="lazy" />
+                <img src={img} alt={title} loading="lazy" />
                 <div className={styles.colorDiv} />
             </div>
 
-            <div className={styles.card__Container}>
-                <div
-                    className={styles.titleContainer}
-                >
-                    <h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
-                    {width <= 840 && (
-                        <Button
-                            text="Read More"
-                            handleButton={handleButton}
-                            padding="10px 20px"
-                        />
-                    )}
-                    <p style={{ color: `${newTheme.para}` }}>{des}</p>
-                    <div>
-                        {technologies.map((technology, index) => (
-                            <span
-                                key={index}
-                                style={{
-                                    marginLeft: "20px",
-                                    color: `${newTheme.title}`,
-                                }}
-                            >
-                                {technology}
-                            </span>
-                        ))}
-                    </div>
+            <div className={styles.cardContent}>
+                <h3 className={styles.title} style={{ color: `${newTheme.title}` }}>
+                    {title}
+                </h3>
+                <p className={styles.description} style={{ color: `${newTheme.para}` }}>
+                    {des}
+                </p>
+                <div className={styles.techContainer}>
+                    {technologies.map((tech) => (
+                        <span key={tech} className={styles.techChip} style={{
+                            background: `rgba(102, 126, 234, ${mode === 'dark' ? '0.1' : '0.05'})`,
+                            border: `1px solid rgba(102, 126, 234, ${mode === 'dark' ? '0.2' : '0.1'})`,
+                            color: mode === 'dark' ? '#a1a1e5' : '#5a6ac4'
+                        }}>
+                            {tech}
+                        </span>
+                    ))}
                 </div>
-
-                {/* Custom Modal */}
-                {state && (
-                    <div className={styles.modalOverlay} onClick={handleClose}>
-                        <div 
-                            className={styles.modalContent}
-                            onClick={(e) => e.stopPropagation()}
-                            style={{
-                                backgroundColor: `${newTheme.highlightBackground}`,
-                            }}
-                        >
-                            <div className={styles.image}>
-                                <img src={img} alt="project" loading="lazy" />
-                            </div>
-                            <h2 style={{ color: `${newTheme.title}` }}>{title}</h2>
-                            <p style={{ color: `${newTheme.para}` }}>{des}</p>
-                            <div className={styles.popupTech}>
-                                {technologies.map((technology, index) => (
-                                    <div
-                                        key={index}
-                                        style={{
-                                            marginRight: "20px",
-                                            color: `${newTheme.title}`,
-                                        }}
-                                    >
-                                        {technology}
-                                        {index !== technologies.length - 1
-                                            ? ","
-                                            : "."}
-                                    </div>
-                                ))}
-                            </div>
-                            <div
-                                style={{
-                                    backgroundColor: `${newTheme.line}`,
-                                    height: "1px",
-                                    top: "15px",
-                                }}
-                            />
-                            <br />
-                            <div className={styles.dialogElements}>
-                                <div
-                                    style={{
-                                        color: `${newTheme.title}`,
-                                    }}
-                                    className={styles.actionBtns}
-                                >
-                                    <a
-                                        href={gitHub}
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                        <Github size={20} />
-                                    </a>
-                                    <a
-                                        href={live}
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                        <ExternalLinkIcon size={20} />
-                                    </a>
-                                </div>
-                                <Button
-                                    text="close"
-                                    handleButton={handleClose}
-                                    padding="10px 20px"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* -----------------For hovering container--------------- */}
-                <div
-                    style={{
-                        color: `${newTheme.para}`,
-                        background: `${newTheme.linkHover}`,
-                    }}
-                    className={styles.description}
-                >
-                    <a href={gitHub} rel="noopener noreferrer" target="_blank">
-                        <Github size={20} stroke={newTheme.title} />
+                <div className={styles.linksContainer} style={{ borderTop: `1px solid ${newTheme.line}` }}>
+                    <a
+                        href={live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkButton}
+                        style={{ color: newTheme.title, border: `1px solid ${newTheme.line}` }}
+                    >
+                        <ExternalLinkIcon size={18} />
+                        <span>Live Demo</span>
                     </a>
-                    <a href={live} rel="noopener noreferrer" target="_blank">
-                        <ExternalLinkIcon size={20} stroke={newTheme.title} />
+                    <a
+                        href={gitHub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.linkButton}
+                        style={{ color: newTheme.title, border: `1px solid ${newTheme.line}` }}
+                    >
+                        <Github size={18} />
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>

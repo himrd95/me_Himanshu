@@ -1,146 +1,77 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { ASSETS } from "../../constants/links";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 import styles from "./Navbar.module.css";
-
-const barStyle = {
-    bar1: {
-        position: "absolute",
-        width: "15px",
-        transform: "rotate(45deg)",
-    },
-    bar2: {
-        position: "absolute",
-        left: "-2px",
-    },
-    bar3: {
-        position: "absolute",
-        width: "15px",
-        transform: "rotate(-45deg)",
-    },
-};
-
-const circle = {
-    background: "linear-gradient(40deg, #8983F7, #1c2931 70%)",
-    width: "30px",
-    height: "30px",
-};
-const cresent = {
-    transform: "scale(1)",
-};
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-    const { newTheme, mode, handleMode, open, handleMenu } =
-        useContext(ThemeContext);
+    const { newTheme, mode, handleMode } = useContext(ThemeContext);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const navLinks = [
+        { href: "#home", label: "Home" },
+        { href: "#experience", label: "Experience" },
+        { href: "#projects", label: "Projects" },
+        { href: "#techStacks", label: "Tech Stack" },
+        { href: "#contact", label: "Contact" },
+    ];
 
     return (
-        <nav
-            className={styles.navContainer}
-            style={{
-                background: `${newTheme.background}`,
-                boxShadow: `3px 3px 10px ${newTheme.line}`,
-            }}
-        >
-            <div
+        <>
+            <nav
+                className={styles.navContainer}
                 style={{
-                    background: `${newTheme.menuBackground}`,
-                    color: `${newTheme.title}`,
-                    left: `${open ? '0' : '-100vw'}`,
+                    background: newTheme.background,
+                    boxShadow: `0 4px 30px ${newTheme.shadow}`,
                 }}
-                className={styles.mobileMenu}
             >
-                <a onClick={handleMenu} href='#home'>
-                    Home
-                </a>
-                <a onClick={handleMenu} href='#about'>
-                    About
-                </a>
-                <a onClick={handleMenu} href='#experience'>
-                    Experience
-                </a>
-                <a onClick={handleMenu} href='#projects'>
-                    Projects
-                </a>
-                <a onClick={handleMenu} href='#techStacks'>
-                    Tech Stack
-                </a>
-                <a onClick={handleMenu} href='#contact'>
-                    Contact
-                </a>
-            </div>
-            <div className={styles.navbar}>
-                <a href="https://himrd95.github.io/me_Himanshu">
-                    <div className={styles.logo}>
-                        <img
-                            src={ASSETS.LOGO}
-                            alt="Logo"
-                        />
-                    </div>
-                </a>
+                <div className={styles.navbar}>
+                    <a href="https://himrd95.github.io/me_Himanshu" className={styles.logo}>
+                        <img src={ASSETS.LOGO} alt="Logo" />
+                    </a>
 
-                <div
-                    style={{
-                        color: `${newTheme.title}`,
-                    }}
-                    className={styles.links}
-                >
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <button
-                    aria-label={mode === "dark" ? "Light Mode" : "Dark Mode"}
-                    title={
-                        mode === "dark"
-                            ? "Toggle Light Mode"
-                            : "Toggle Dark Mode"
-                    }
-                    style={{
-                        color: `${newTheme.title}`,
-                    }}
-                    className={styles.modeButton}
-                    onClick={handleMode}
-                >
-                    <div
-                        className={styles.circle}
-                        style={mode === "light" ? circle : {}}
-                    >
-                        <div
-                            style={mode === "light" ? cresent : {}}
-                            className={styles.crescent}
-                        ></div>
+                    <div className={styles.desktopLinks}>
+                        {navLinks.map(link => (
+                            <a key={link.href} href={link.href} style={{ color: newTheme.title }}>
+                                {link.label}
+                            </a>
+                        ))}
                     </div>
+
+                    <div className={styles.actions}>
+                        <button
+                            aria-label={mode === "dark" ? "Light Mode" : "Dark Mode"}
+                            title={mode === "dark" ? "Toggle Light Mode" : "Toggle Dark Mode"}
+                            className={styles.modeButton}
+                            onClick={handleMode}
+                        >
+                            <div className={styles.circle} style={mode === "light" ? { background: "linear-gradient(40deg, #8983F7, #1c2931 70%)" } : {}}>
+                                <div className={styles.crescent} style={mode === "light" ? { transform: "scale(1)" } : {}}></div>
+                            </div>
+                        </button>
+                        <button className={styles.hamburger} onClick={toggleMenu} style={{ color: newTheme.title }}>
+                            <Menu size={28} />
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`} style={{ background: newTheme.menuBackground, color: newTheme.title }}>
+                <button className={styles.closeButton} onClick={toggleMenu} style={{ color: newTheme.title }}>
+                    <X size={32} />
                 </button>
-
-                <div onClick={handleMenu} className={styles.bars}>
-                    <div
-                        style={
-                            open
-                                ? {
-                                      background: `${newTheme.title}`,
-                                  }
-                                : barStyle.bar1
-                        }
-                    ></div>
-                    <div
-                        style={
-                            open
-                                ? { background: `${newTheme.title}` }
-                                : barStyle.bar2
-                        }
-                    ></div>
-                    <div
-                        style={
-                            open
-                                ? { background: `${newTheme.title}` }
-                                : barStyle.bar3
-                        }
-                    ></div>
+                <div className={styles.mobileLinks}>
+                    {navLinks.map(link => (
+                        <a key={link.href} href={link.href} onClick={toggleMenu}>
+                            {link.label}
+                        </a>
+                    ))}
                 </div>
             </div>
-        </nav>
+        </>
     );
 };
 

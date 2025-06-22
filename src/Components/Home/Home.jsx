@@ -13,12 +13,15 @@ import Experiences from "../Experiences/Experiences";
 import { greeting, intro, myName, keyStrengths } from "../../constants/constants";
 import { ASSETS } from "../../constants/links";
 import { Download, CheckCircle } from "lucide-react";
+import useWindowSize from "../../Utils/WindowSize";
 
 const Home = () => {
     const [projectArray, setProjectArray] = useState(projects.slice(0, 3));
-    const { newTheme } = React.useContext(ThemeContext);
+    const { newTheme, mode } = React.useContext(ThemeContext);
     const [offset, setOffset] = useState(0);
     const [location, setLocation] = useState(0);
+    const { width } = useWindowSize();
+    const isMobile = width <= 768;
 
     const handleOffset = () => {
         setOffset(window.pageYOffset);
@@ -47,31 +50,35 @@ const Home = () => {
 
     const introStyle = {
         color: `${newTheme.para}`,
-        opacity: `${offset > 200 ? "0" : offset > 160 ? ".5" : "1"}`,
     };
 
     return (
         <div>
+            {isMobile ? (
+                <div className={styles.mobileBg} />
+            ) : (
+                <>
+                    <div className={styles.bgShape} style={{ transform: `translateY(${offset * 0.1}px)` }} />
+                    <div className={styles.bgShape2} style={{ transform: `translateY(-${offset * 0.15}px)` }} />
+                </>
+            )}
             <SideIcons />
             <div
                 id="home"
                 className={styles.profile}
                 style={{
-                    backgroundColor: `${newTheme.imgBackground}`,
+                    backgroundColor: `${newTheme.background}`,
                 }}
             >
                 <div className={styles.leftPane}>
                     <div
                         className={styles.profileImage}
-                        style={{
-                            transform: `scale(${1 - offset / 1000})`,
-                        }}
                     >
                         <img src={ASSETS.PROFILE} alt="Profile pic" />
                     </div>
                     <div className={styles.resumeButtonContainer}>
                         <a
-                            href="https://github.com/himrd95/me_Himanshu/blob/main/public/him_resume.pdf"
+                            href="https://drive.google.com/file/d/1JYCWImM8DxMhbUhUVn06GfkZ1VGHGSfN/view?usp=sharing"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -103,7 +110,14 @@ const Home = () => {
                     <span className={styles.introText}>{intro}</span>
                     <div className={styles.keyStrengths}>
                         {keyStrengths.map((strength, index) => (
-                            <div key={index} className={styles.strengthItem}>
+                            <div
+                                key={index}
+                                className={styles.strengthItem}
+                                style={{
+                                    background: `rgba(102, 126, 234, ${mode === 'dark' ? '0.1' : '0.05'})`,
+                                    border: `1px solid rgba(102, 126, 234, ${mode === 'dark' ? '0.2' : '0.1'})`,
+                                }}
+                            >
                                 <CheckCircle size={16} color="#667eea" />
                                 <span>{strength}</span>
                             </div>
@@ -156,6 +170,7 @@ const Home = () => {
             </div>
 
             <div
+                className={styles.contactWrapper}
                 style={{
                     background: `${newTheme.highlightBackground}`,
                 }}

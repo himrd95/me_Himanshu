@@ -17,7 +17,6 @@ export const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
 	const [mode, setMode] = React.useState(getMode);
-	const [open, setOpen] = React.useState(true);
 
 	const handleMode = () => {
 		setMode(mode === 'dark' ? 'light' : 'dark');
@@ -26,13 +25,10 @@ const ThemeContextProvider = ({ children }) => {
 	useEffect(() => {
 		localStorage.setItem('theme', JSON.stringify(mode));
 	}, [mode]);
-	const handleMenu = () => {
-		setOpen(!open);
-	};
 
 	const newTheme = theme[mode];
 
-	const value = { mode, newTheme, handleMode, open, handleMenu };
+	const value = { mode, newTheme, handleMode };
 	return (
 		<ThemeContext.Provider value={value}>
 			{children}

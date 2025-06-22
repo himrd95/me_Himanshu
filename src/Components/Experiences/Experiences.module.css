@@ -2,6 +2,7 @@
 	padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
 	max-width: 900px;
 	margin: 0 auto;
+	padding-bottom: 0px;
 }
 
 .heading {
@@ -64,9 +65,6 @@
 
 .timelineContent {
 	flex: 1;
-	background: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 16px;
 	padding: 2rem;
 	margin-left: 1rem;
@@ -128,31 +126,22 @@
 }
 
 .skillChip {
-	background: rgba(102, 126, 234, 0.1);
-	color: #a1a1e5;
 	padding: 0.35rem 0.85rem;
 	border-radius: 20px;
 	font-size: 0.8rem;
 	font-weight: 500;
-	border: 1px solid rgba(102, 126, 234, 0.2);
 	transition: all 0.3s ease;
 }
 
 .skillChip:hover {
-	background: rgba(102, 126, 234, 0.2);
-	color: #c0c0f0;
 	transform: translateY(-2px);
 }
 
 /* Job Description */
 .jobDescription {
-	margin-bottom: 1.5rem;
-	text-align: left;
-}
-
-.jobDescription p {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	line-height: 1.6;
+	margin: 1.5rem 0;
 	opacity: 0.9;
 	text-align: left;
 }
@@ -191,7 +180,7 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
 	.timeline {
 		padding-left: 1.5rem;
 	}
@@ -229,10 +218,11 @@
 
 	.metaItem {
 		font-size: 0.85rem;
+		text-align: left;
 	}
 
-	.skills {
-		padding: 0.75rem;
+	.jobDescription {
+		font-size: 0.85rem;
 	}
 }
 
@@ -241,11 +231,16 @@
 		padding: 2rem 1rem;
 	}
 
+	.jobMeta {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
 	.jobTitle h3 {
 		font-size: 1.2rem;
 	}
-	
-	.skills {
-		font-size: 0.9rem;
+
+	.jobDescription {
+		font-size: 0.8rem;
 	}
 }
