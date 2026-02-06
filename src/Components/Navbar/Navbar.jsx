@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import { ASSETS } from "../../constants/links";
 import { ThemeContext } from "../../ContextProvider/ThemeContext";
 import styles from "./Navbar.module.css";
@@ -7,6 +7,13 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
     const { newTheme, mode, handleMode } = useContext(ThemeContext);
     const [isOpen, setIsOpen] = useState(false);
+
+    const baseUrl = useMemo(
+        () => typeof window !== "undefined"
+            ? `${window.location.origin}${(process.env.PUBLIC_URL || "").replace(/^\.\/?$/, "")}`
+            : "#",
+        []
+    );
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -30,7 +37,7 @@ const Navbar = () => {
                 }}
             >
                 <div className={styles.navbar}>
-                    <a href={typeof window !== "undefined" ? `${window.location.origin}${process.env.PUBLIC_URL || ""}` : "#"} className={styles.logo}>
+                    <a href={baseUrl} className={styles.logo}>
                         <img src={ASSETS.LOGO} alt="Logo" />
                     </a>
 
