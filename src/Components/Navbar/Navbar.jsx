@@ -30,7 +30,7 @@ const Navbar = () => {
                 }}
             >
                 <div className={styles.navbar}>
-                    <a href="https://himrd95.github.io/me_Himanshu" className={styles.logo}>
+                    <a href={typeof window !== "undefined" ? `${window.location.origin}${process.env.PUBLIC_URL || ""}` : "#"} className={styles.logo}>
                         <img src={ASSETS.LOGO} alt="Logo" />
                     </a>
 
